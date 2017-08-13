@@ -12,7 +12,7 @@ class signupStep3: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      print("Lool")
         // Do any additional setup after loading the view.
     }
 
