@@ -132,7 +132,6 @@
                         <outlet property="nextButtonStep1" destination="t1l-pk-aBQ" id="5rl-8N-Ncm"/>
                         <outlet property="passErrorLabel" destination="ovy-ch-nfg" id="y2Y-B3-XtG"/>
                         <outlet property="passTxtField" destination="aRZ-SS-4R9" id="kj7-vn-dYr"/>
-                        <segue destination="hyc-4e-onq" kind="show" identifier="moveToStep2" id="ybd-Zw-Jma"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -595,128 +594,6 @@
             </objects>
             <point key="canvasLocation" x="3680.8000000000002" y="-2962.6686656671668"/>
         </scene>
-        <!--Signup Step2-->
-        <scene sceneID="37n-zB-4AT">
-            <objects>
-                <viewController id="hyc-4e-onq" customClass="signupStep2" customModule="RuqiiSociety" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RtM-ih-w9a"/>
-                        <viewControllerLayoutGuide type="bottom" id="Elo-oC-EwE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gfb-Ct-POg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الملف الشخصي " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-SP-6HI">
-                                <rect key="frame" x="261" y="90" width="105" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="قم بإرفاق صورة الملف الشخصي و تعبئة البيانات التالية." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI4-hy-i8W">
-                                <rect key="frame" x="81" y="119" width="276" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الحساب" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgS-Hf-dDd">
-                                <rect key="frame" x="75" y="292" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الآيبان" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-Uf-8Ds">
-                                <rect key="frame" x="75" y="247" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zb-SH-GNg">
-                                <rect key="frame" x="75" y="201" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البنك" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmx-kt-YEI">
-                                <rect key="frame" x="75" y="335" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="hyc-4e-onq" id="ROz-6J-35Z"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osl-eH-dx3">
-                                <rect key="frame" x="41" y="592" width="293" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0530119389295578" green="0.0" blue="0.42392483353614807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="التالي">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="46m-TX-uUt" kind="show" id="fxi-hy-QFJ"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الإسم الكامل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbf-9G-Wak">
-                                <rect key="frame" x="75" y="155" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azz-dO-L7R">
-                                <rect key="frame" x="39" y="270" width="320" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="0SS-5N-HbW"/>
-                                    <constraint firstAttribute="width" constant="320" id="512-Oj-vkN"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="hyc-4e-onq" id="XTk-aA-qb5"/>
-                                    <outlet property="delegate" destination="hyc-4e-onq" id="dQS-CV-jGm"/>
-                                </connections>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Azz-dO-L7R" firstAttribute="centerX" secondItem="Gfb-Ct-POg" secondAttribute="centerX" constant="11.5" id="Fbz-1F-4pt"/>
-                            <constraint firstItem="Azz-dO-L7R" firstAttribute="centerY" secondItem="Gfb-Ct-POg" secondAttribute="centerY" constant="44.5" id="caS-Bp-FKV"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Xkn-SP-6HI"/>
-                                <exclude reference="OI4-hy-i8W"/>
-                                <exclude reference="tgS-Hf-dDd"/>
-                                <exclude reference="fwx-Uf-8Ds"/>
-                                <exclude reference="3zb-SH-GNg"/>
-                                <exclude reference="dmx-kt-YEI"/>
-                                <exclude reference="osl-eH-dx3"/>
-                                <exclude reference="sbf-9G-Wak"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Xkn-SP-6HI"/>
-                                <include reference="OI4-hy-i8W"/>
-                                <include reference="tgS-Hf-dDd"/>
-                                <include reference="fwx-Uf-8Ds"/>
-                                <include reference="3zb-SH-GNg"/>
-                                <include reference="dmx-kt-YEI"/>
-                                <include reference="osl-eH-dx3"/>
-                                <include reference="sbf-9G-Wak"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <connections>
-                        <outlet property="bankTextField" destination="dmx-kt-YEI" id="vN9-pi-SIJ"/>
-                        <outlet property="dropdownList" destination="Azz-dO-L7R" id="bMP-6F-kEL"/>
-                        <outlet property="nextButtonStep2" destination="osl-eH-dx3" id="drq-tv-Hdk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D4G-lB-ylq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3661.5999999999999" y="-3703.8980509745129"/>
-        </scene>
         <!--Signup Step3-->
         <scene sceneID="VKA-D7-n2M">
             <objects>
@@ -988,6 +865,156 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wS-PP-g7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2760.8000000000002" y="-2175.562218890555"/>
+        </scene>
+        <!--Signup Step2-->
+        <scene sceneID="3yS-3F-m72">
+            <objects>
+                <viewController id="7n9-Xe-mmo" customClass="signupStep2" customModule="RuqiiSociety" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b09-uD-3x6"/>
+                        <viewControllerLayoutGuide type="bottom" id="mm1-uj-fa1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dlV-Kp-sX5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الملف الشخصي " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDH-vU-13e">
+                                <rect key="frame" x="261" y="90" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="قم بإرفاق صورة الملف الشخصي و تعبئة البيانات التالية." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-l9-QP1">
+                                <rect key="frame" x="81" y="119" width="276" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الآيبان" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJH-Lh-ggP">
+                                <rect key="frame" x="75" y="266" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4E-cP-FEc">
+                                <rect key="frame" x="75" y="210" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البنك" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nc5-yI-zkH">
+                                <rect key="frame" x="76" y="324" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7n9-Xe-mmo" id="xUw-te-oao"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og0-bF-Adx">
+                                <rect key="frame" x="41" y="592" width="293" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.053011938930000002" green="0.0" blue="0.42392483349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="التالي">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveToStep3:" destination="7n9-Xe-mmo" eventType="touchUpInside" id="ghJ-s0-ZCK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الإسم الكامل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Gt-dH-3fT">
+                                <rect key="frame" x="75" y="155" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-Zj-Kxu">
+                                <rect key="frame" x="75" y="186" width="250" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTX-Vs-2VF">
+                                <rect key="frame" x="76" y="295" width="250" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz5-lr-dfZ">
+                                <rect key="frame" x="75" y="242" width="251" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3m-jv-s0K">
+                                <rect key="frame" x="37" y="353" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="JZD-9G-exr"/>
+                                    <constraint firstAttribute="width" constant="320" id="nb9-6w-uiE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="7n9-Xe-mmo" id="T1I-qi-hnW"/>
+                                    <outlet property="delegate" destination="7n9-Xe-mmo" id="lNW-HY-fkd"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAi-gX-xbN">
+                                <rect key="frame" x="75" y="353" width="250" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q3m-jv-s0K" firstAttribute="centerX" secondItem="dlV-Kp-sX5" secondAttribute="centerX" constant="9.5" id="C23-bq-XTj"/>
+                            <constraint firstItem="q3m-jv-s0K" firstAttribute="centerY" secondItem="dlV-Kp-sX5" secondAttribute="centerY" constant="127.5" id="VeW-4B-DDn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="YDH-vU-13e"/>
+                                <exclude reference="nG0-l9-QP1"/>
+                                <exclude reference="xJH-Lh-ggP"/>
+                                <exclude reference="V4E-cP-FEc"/>
+                                <exclude reference="nc5-yI-zkH"/>
+                                <exclude reference="og0-bF-Adx"/>
+                                <exclude reference="8Gt-dH-3fT"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="YDH-vU-13e"/>
+                                <include reference="nG0-l9-QP1"/>
+                                <include reference="xJH-Lh-ggP"/>
+                                <include reference="V4E-cP-FEc"/>
+                                <include reference="nc5-yI-zkH"/>
+                                <include reference="og0-bF-Adx"/>
+                                <include reference="8Gt-dH-3fT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="IBANerrorLabel" destination="FTX-Vs-2VF" id="8YA-K7-h4D"/>
+                        <outlet property="IBANtxtField" destination="xJH-Lh-ggP" id="M6D-3i-XYz"/>
+                        <outlet property="bankLabel" destination="SAi-gX-xbN" id="ClH-Xh-Qbi"/>
+                        <outlet property="bankTextField" destination="nc5-yI-zkH" id="jp4-Sm-Fgz"/>
+                        <outlet property="dropdownList" destination="q3m-jv-s0K" id="oJX-lU-sc3"/>
+                        <outlet property="fullNameTxtField" destination="8Gt-dH-3fT" id="BaW-e2-ted"/>
+                        <outlet property="nameErrorLabel" destination="VfU-Zj-Kxu" id="Zg6-Sn-jyC"/>
+                        <outlet property="nextButtonStep2" destination="og0-bF-Adx" id="mL5-vj-pPl"/>
+                        <outlet property="phoneErrorLabel" destination="Cz5-lr-dfZ" id="KJb-PD-2VO"/>
+                        <outlet property="phoneNumTxtField" destination="V4E-cP-FEc" id="XI8-0K-Rx9"/>
+                        <segue destination="46m-TX-uUt" kind="show" identifier="moveToStep3" id="pUj-eG-Zzq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obb-qS-AMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3614" y="-3704"/>
         </scene>
     </scenes>
     <resources>
