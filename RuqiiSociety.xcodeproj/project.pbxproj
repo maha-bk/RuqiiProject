@@ -152,8 +152,8 @@
 			children = (
 				6BE420861F24939F00BD6797 /* AppDelegate.swift */,
 				6BE420881F24939F00BD6797 /* signupStep1.swift */,
-				6BE420B81F24E6AC00BD6797 /* signupStep3.swift */,
 				6BE420B61F24E2EE00BD6797 /* signupStep2.swift */,
+				6BE420B81F24E6AC00BD6797 /* signupStep3.swift */,
 				6B7BAAFE1F25CC280054365E /* SignIn.swift */,
 				6B7BAB041F266A0D0054365E /* Settings.swift */,
 				6BE4208A1F24939F00BD6797 /* Main.storyboard */,
