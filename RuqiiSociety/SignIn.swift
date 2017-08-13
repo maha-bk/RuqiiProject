@@ -217,7 +217,7 @@ class SignIn: UIViewController {
 
     
     @IBAction func signInClicked(_ sender: Any) {
-        
+        print("HIIII LOBNA")
         checkIfAllAreEmpty()
         if(AllFieldsAreEmpty == true){
         return
