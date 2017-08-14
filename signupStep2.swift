@@ -17,6 +17,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var phoneErrorLabel: UILabel!
     @IBOutlet weak var IBANerrorLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var checkboxButton: UIButton!
     
     var bankNames = ["البنك الأهلي التجاري", "مصرف الراجحي", "البنك الأول","مجموعة سامبا","بنك ساب","بنك البلاد","البنك السعودي الفرنسي",
                      "البنك العربي الوطني","بنك الجزيرة","بنك الرياض","مصرف إنماء","البنك السعودي للاستثمار","البنك السعودي الهولندي","أخرى"]
@@ -25,6 +26,15 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     var email = String ()
     var password = String ()
+    // two images to change button state
+    var checkbox = UIImage(named: "checked")
+    var uncheckbox = UIImage(named: "unchecked")
+    var isButtonClicked = Bool()
+    
+    
+    
+    
+    
     
     //Touch up inside next button couse this code implementation
     @IBAction func moveToStep3(_ sender: Any) {
@@ -55,6 +65,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
     }
     
+  
     // function to pass data to another interface "signupStep3"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -65,6 +76,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         step3Interface.expertPhone = phoneNumTxtField.text!
         step3Interface.expertIBAN = IBANtxtField.text!
         step3Interface.expertBankName = bankTextField.text!
+        step3Interface.expertAllowPhone = isButtonClicked
         
     }
     
@@ -244,6 +256,22 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
         
     }
+    // button event to control checkbox state 
+    @IBAction func clickedCheckbox(_ sender: UIButton) {
+        if (isButtonClicked == true){
+            isButtonClicked = false
+        }
+        else{
+            isButtonClicked = true
+        }
+        
+        if (isButtonClicked == true){
+            checkboxButton.setImage(checkbox, for: UIControlState.normal)
+        }
+        else{
+            checkboxButton.setImage(uncheckbox, for: UIControlState.normal )
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -256,7 +284,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         IBANerrorLabel.isHidden = true
         bankLabel.isHidden = true
         dropdownList.isHidden = true
-        
+        isButtonClicked = false
         
         
         
