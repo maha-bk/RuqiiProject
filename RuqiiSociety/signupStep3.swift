@@ -16,10 +16,11 @@ class signupStep3: UIViewController {
     var expertBankName = String ()
     var expertEmail = String ()
     var expertPassword = String ()
+    var expertAllowPhone = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("التجربة الأخيرة")
+        
         // Do any additional setup after loading the view.
     }
     
