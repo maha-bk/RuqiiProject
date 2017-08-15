@@ -9,6 +9,7 @@ import Firebase
 class SignIn: UIViewController {
     
     // Declaring the components of the view or interface
+    
     @IBOutlet weak var passwordTxt: UITextField!
     
     @IBOutlet weak var emptyFieldsErrorLabel: UILabel!
@@ -78,7 +79,6 @@ class SignIn: UIViewController {
             emptyFieldsErrorLabel.isHidden = false
             emptyFieldsErrorLabel.text = "الرجاء تعبئة جميع الحقول"
             clearLabelsWithflushing()
-           
             return true
         }
         else {
@@ -86,7 +86,6 @@ class SignIn: UIViewController {
             emptyFieldsErrorLabel.text = ""
             clearEmailErrorLabel()
             clearPasswordErrorLabel()
-            
             return false
         }
 
