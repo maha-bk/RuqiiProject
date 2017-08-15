@@ -19,16 +19,16 @@ class signupStep1: UIViewController {
     var badEmailFormatFlag = true
     
     //Declare a reference to receive data from/to firebase database
-    var ref: DatabaseReference!
+    //var ref: DatabaseReference!
     var refHandle: DatabaseHandle!
     
     // struct to make emailExistsBefore variable as global var that can be used in entire prpject
     struct emailStruct{
         static var emailExistsBefore = true
     }
-    deinit {
+    /*deinit {
         self.ref.child("messages").removeObserver(withHandle: refHandle)
-    }
+    }*/
 
     // email text field event to check that if email exists before in database or not "it checks after first time editing"
     @IBAction func editingDidEndEmail(_ sender: UITextField) {
