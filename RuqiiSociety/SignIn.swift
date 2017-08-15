@@ -15,12 +15,12 @@ class SignIn: UIViewController {
     @IBOutlet weak var forgetPasswordLabel: UILabel!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
+    
     @IBOutlet weak var emailErrorLabel: UILabel!
+    
     var emailErrorFlag = false
     var passwordErrorFlag = false
-    var invalidAccountErrorFlag = true
-    var AllFieldsAreEmpty = false
-    var OneFieldIsEmpty = false
+
     func clearLabelsWithflushing(){
         self.emailErrorLabel.isHidden = true
         self.emailErrorLabel.text =  " "
@@ -44,7 +44,16 @@ class SignIn: UIViewController {
         passwordErrorLabel.text =  " "
         
     }//end of clearPasswordErrorLabel function to clear the label when needed
-    func checkIfAllAreEmpty(){
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let NextView = segue.destination as! ExpertHome
+        NextView.ViewAppearsAfterLogin = true
+    }
+    
+  
+    
+    func checkIfAllAreEmpty() -> Bool{
         if ((emailTxt.text?.isEmpty)! && (passwordTxt.text?.isEmpty)!)
         {
             emailTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
@@ -52,58 +61,77 @@ class SignIn: UIViewController {
             emptyFieldsErrorLabel.isHidden = false
             emptyFieldsErrorLabel.text = "الرجاء تعبئة جميع الحقول"
             clearLabelsWithflushing()
-            AllFieldsAreEmpty = true
+           
+            return true
         }// checking if all the fields are empty
         else {
             emptyFieldsErrorLabel.isHidden = true
             emptyFieldsErrorLabel.text = ""
             clearEmailErrorLabel()
             clearPasswordErrorLabel()
-            AllFieldsAreEmpty = false
+            
+            return false
         }
 
     
     }
-    func checkIfOneIsEmpty(){
+    func checkIfOneIsEmpty() -> Bool{
+        
+        var returnValue = false
         
         if ((emailTxt.text?.isEmpty)!  || (passwordTxt.text?.isEmpty)!){
+            
             if ((emailTxt.text?.isEmpty)! ){
                 emailTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
                 
                 emailErrorLabel.isHidden = false
                 emailErrorLabel.text =  "الرجاء تعبئة البريد الإلكتروني "
                 checkPassword()
-                OneFieldIsEmpty = true
+                returnValue = true
             }
                 
             else {
                 clearEmailErrorLabel()
-                 OneFieldIsEmpty = false
+                
+                  returnValue = false
             }
             
             
-            if ((passwordTxt.text?.isEmpty)! ){
+            if ((passwordTxt.text?.isEmpty)! )
+            {
                 passwordTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
                 
                 passwordErrorLabel.isHidden = false
                 passwordErrorLabel.text =  " الرجاء تعبئة كلمة المرور"
                 checkEmailPattern()
-                 OneFieldIsEmpty = true
+                
+                  returnValue = true
             }
             else {
                 
                 clearPasswordErrorLabel()
-                 OneFieldIsEmpty = false
+                
+                  returnValue = false
             }
             
             
         }//checking if one of the fields is empty
 
-    
+    return returnValue
     }
+    
     func checkEmailPattern(){
+        
+        if(emailTxt.text?.isEmpty)!{
+            emailTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+            
+            emailErrorLabel.isHidden = false
+            emailErrorLabel.text =  "الرجاء تعبئة البريد الإلكتروني "
+        }
+        else{
         let email = emailTxt.text
         let flag = isValidEmailAddress(emailAddressString: email!)
+        
         if (flag == false){
             self.emailErrorLabel.isHidden = false
             self.emailTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
@@ -111,11 +139,12 @@ class SignIn: UIViewController {
             self.emailErrorFlag = true
         }
         else{
+            
             clearEmailErrorLabel()
             self.emailErrorFlag = false
         }
         
-    
+        }
     }
 
    func isValidEmailAddress(emailAddressString: String) -> Bool {
@@ -144,55 +173,49 @@ class SignIn: UIViewController {
 
     
     
-    func checkAccount() -> Bool{
-        print("INSIDE CHECK ACCOUNT")
+    func checkAccount() {
+        
         let email = emailTxt.text
         let password = passwordTxt.text
                 Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
-            if let errorMessage = error {
-                
-           print(errorMessage.localizedDescription)
-                
-            if(errorMessage.localizedDescription.description.contains("There is no user record corresponding to this identifier. The user may have been deleted.")){
-                    self.emptyFieldsErrorLabel.isHidden = false
-                    self.emailTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-                    self.passwordTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-                    self.emptyFieldsErrorLabel.text = "لا يوجد مستخدم بهذه المعلومات. الرجاء التحقق مرة أخرى."
-                    self.clearLabelsWithflushing()
-                    self.invalidAccountErrorFlag = true
-                    
-                    
+                    if (user != nil) {
+                      
+                         self.performSegue(withIdentifier: "ExpertHome", sender: self)
+                                                        }
                    
-                }
-            else{
-                self.invalidAccountErrorFlag = false
-                    }
-                
-                if(errorMessage.localizedDescription.description.contains("The password is invalid or the user does not have a password.")){
-
-                    self.passwordTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-                    self.passwordErrorLabel.isHidden = false
-                    self.passwordErrorLabel.text = "كلمة المرور غير صحيحة"
-                    self.invalidAccountErrorFlag = true
                     
-                    
-                    
-                }
-                else{
-                    self.invalidAccountErrorFlag = false
-                }
+                        if let errorMessage = error {
+                            
+                            print(errorMessage.localizedDescription)
+                            
+                            if(errorMessage.localizedDescription.description.contains("There is no user record corresponding to this identifier. The user may have been deleted.")){
+                                self.emptyFieldsErrorLabel.isHidden = false
+                                self.emailTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                                self.passwordTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                                self.emptyFieldsErrorLabel.text = "لا يوجد مستخدم بهذه المعلومات. الرجاء التحقق مرة أخرى."
+                                self.clearLabelsWithflushing()
+                               
+                                
+                               
+                                
+                            }
+                          
+                            if(errorMessage.localizedDescription.description.contains("The password is invalid or the user does not have a password.")){
+                                
+                                self.passwordTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                                self.passwordErrorLabel.isHidden = false
+                                self.passwordErrorLabel.text = "كلمة المرور غير صحيحة"
+                               
+                                
+                                
+                                
+                            }
+                         
+                            
+                        }
 
-
-            }
+                    
                   })
-        if (self.invalidAccountErrorFlag == false){
-        print ("VALID ACCOUNT")
-        }
-        else {
-        print ("INVALID ACCOUNT")
-        
-        }
-        return self.invalidAccountErrorFlag
         
         
         
@@ -217,32 +240,27 @@ class SignIn: UIViewController {
 
     
     @IBAction func signInClicked(_ sender: Any) {
-        print("HIIII LOBNA")
-        checkIfAllAreEmpty()
-        if(AllFieldsAreEmpty == true){
-        return
-        }
-        checkIfOneIsEmpty()
-        if (OneFieldIsEmpty == true){
+        
+        if(checkIfAllAreEmpty() == true){
         return
         }
         
-        checkPassword()
-        
-        checkEmailPattern()
-        
-        if(emailErrorFlag == false && passwordErrorFlag == false && checkAccount() == false ){
-        
-            print("INSIDE IF")
-            print("VALUE OF CHECK ACCOUNT ", (checkAccount()))
-             performSegue(withIdentifier: "ExpertHome", sender: self)
+        if (checkIfOneIsEmpty() == true){
+        return
             
         }
         
         
+        checkPassword()
+       
+        checkEmailPattern()
         
-     
-      
+        if (emailErrorFlag == true || passwordErrorFlag == true)
+        {return
+        }
+        
+               checkAccount()
+        
     }//end of signInClicked function
     
     override func didReceiveMemoryWarning() {

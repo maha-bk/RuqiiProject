@@ -7,7 +7,14 @@
 import UIKit
 
 class ExpertHome: UIViewController {
-
+ var ViewAppearsAfterLogin = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (ViewAppearsAfterLogin == true){
+            Utilities().ShowAlert(title: "تم تسجيل الدخول", msg: "أهلا بك مجددا في مجتمع رقي", vc: self)
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
       
