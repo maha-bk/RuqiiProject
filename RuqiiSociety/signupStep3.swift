@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class signupStep3: UIViewController {
     
@@ -17,9 +19,12 @@ class signupStep3: UIViewController {
     var expertEmail = String ()
     var expertPassword = String ()
     var expertAllowPhone = Bool()
-    
+    var ref: DatabaseReference!
+   
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         
         // Do any additional setup after loading the view.
     }
