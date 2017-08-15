@@ -164,7 +164,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
     }
     
-    
+    // function to validate IBAN
     func validateIBAN () -> Bool{
         var ibanErrorsCounter = 0
         var errorFoundFlag = true
