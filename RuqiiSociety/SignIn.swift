@@ -8,18 +8,27 @@ import UIKit
 import Firebase
 class SignIn: UIViewController {
     
+    // Declaring the components of the view or interface
+    
     @IBOutlet weak var passwordTxt: UITextField!
     
     @IBOutlet weak var emptyFieldsErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
-    @IBOutlet weak var forgetPasswordLabel: UILabel!
+    
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
     
     @IBOutlet weak var emailErrorLabel: UILabel!
     
+    @IBOutlet weak var forgetPasswordBtn: UIButton!
+  
+    // Declaring & initializing flag variables to be used whithin the class
+    
     var emailErrorFlag = false
     var passwordErrorFlag = false
+
+    
+    // Clear the text in labels only without resetting the color of the text fields
 
     func clearLabelsWithflushing(){
         self.emailErrorLabel.isHidden = true
@@ -27,8 +36,10 @@ class SignIn: UIViewController {
         self.passwordErrorLabel.isHidden = true
         self.passwordErrorLabel.text =  " "
         
-    }//end of clearLabelsWithFlushing function
+    }// end of clearLabelsWithflushing function
     
+    
+    // Clear the email label and text field if there is no error
     
     func clearEmailErrorLabel(){
         emailTxt.backgroundColor = UIColor.white
@@ -36,22 +47,29 @@ class SignIn: UIViewController {
         emailErrorLabel.text =  " "
         
         
-    }//end of clearEmailErrorLabel function to clear the label when needed
+    }// end of clearEmailErrorLabel function
+    
+    
+    // Clear the password label and text field if there is no error
     
     func clearPasswordErrorLabel(){
         passwordTxt.backgroundColor = UIColor.white
         passwordErrorLabel.isHidden = true
         passwordErrorLabel.text =  " "
         
-    }//end of clearPasswordErrorLabel function to clear the label when needed
+    }// end of clearPasswordErrorLabel function
+    
+    
+    // Passing some data from the current interface to the next one right before performing a segue command (moving to another interface)
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let NextView = segue.destination as! ExpertHome
         NextView.ViewAppearsAfterLogin = true
-    }
+    }// end of prepare function
     
   
+    // Checking if both email and password text fields were empty
     
     func checkIfAllAreEmpty() -> Bool{
         if ((emailTxt.text?.isEmpty)! && (passwordTxt.text?.isEmpty)!)
@@ -61,20 +79,22 @@ class SignIn: UIViewController {
             emptyFieldsErrorLabel.isHidden = false
             emptyFieldsErrorLabel.text = "الرجاء تعبئة جميع الحقول"
             clearLabelsWithflushing()
-           
             return true
-        }// checking if all the fields are empty
+        }
         else {
             emptyFieldsErrorLabel.isHidden = true
             emptyFieldsErrorLabel.text = ""
             clearEmailErrorLabel()
             clearPasswordErrorLabel()
-            
             return false
         }
 
     
-    }
+    }// end of checkIfAllAreEmpty function
+    
+    
+    //Checking if one field either email or password is empty
+    
     func checkIfOneIsEmpty() -> Bool{
         
         var returnValue = false
@@ -115,10 +135,14 @@ class SignIn: UIViewController {
             }
             
             
-        }//checking if one of the fields is empty
+        }
 
     return returnValue
-    }
+        
+    }// end of checkIfOneIsEmpty function
+    
+    
+    // Checking if the email was correctly formatted
     
     func checkEmailPattern(){
         
@@ -145,8 +169,11 @@ class SignIn: UIViewController {
         }
         
         }
-    }
+    }// end of checkEmailPattern function
 
+    
+    // Comparing the passed email address with the valid email pattern (regular expresion)
+    
    func isValidEmailAddress(emailAddressString: String) -> Bool {
      
         var returnValue = true
@@ -169,20 +196,26 @@ class SignIn: UIViewController {
         }
         
         return  returnValue
-    }
+    
+    }//end of isValidEmailAddress function
 
     
+    /* After checking email and password are well formatted, check if
+     the account exists or if the email exists but the user has typed in the wrong password*/
     
     func checkAccount() {
         
         let email = emailTxt.text
         let password = passwordTxt.text
                 Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
+                    // Redirecting the user to the Home interface based on his/her role (Expert or Customer)
+                    
                     if (user != nil) {
                       
                          self.performSegue(withIdentifier: "ExpertHome", sender: self)
                                                         }
-                   
+                    
+                   // Showing proper error message if the user does not exist
                     
                         if let errorMessage = error {
                             
@@ -195,31 +228,26 @@ class SignIn: UIViewController {
                                 self.emptyFieldsErrorLabel.text = "لا يوجد مستخدم بهذه المعلومات. الرجاء التحقق مرة أخرى."
                                 self.clearLabelsWithflushing()
                                
-                                
-                               
-                                
                             }
                           
                             if(errorMessage.localizedDescription.description.contains("The password is invalid or the user does not have a password.")){
-                                
+                    
                                 self.passwordTxt.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
                                 self.passwordErrorLabel.isHidden = false
                                 self.passwordErrorLabel.text = "كلمة المرور غير صحيحة"
-                               
-                                
-                                
-                                
+                           
                             }
                          
-                            
                         }
 
-                    
                   })
         
         
         
-    }//end of checkAccount function
+    }// end of checkAccount function
+    
+    
+    // Checking if the password contains more than 5 characters
     
     func checkPassword(){
         
@@ -234,10 +262,12 @@ class SignIn: UIViewController {
             clearPasswordErrorLabel()
             self.passwordErrorFlag = false
         }
-           }//end of checkPassowrd function
+        
+    }//end of checkPassowrd function
  
     
 
+    // Checking if all inputs are correct when signInBtn is pressed .Then, log the user to his/her account
     
     @IBAction func signInClicked(_ sender: Any) {
         
@@ -249,8 +279,6 @@ class SignIn: UIViewController {
         return
             
         }
-        
-        
         checkPassword()
        
         checkEmailPattern()
@@ -259,14 +287,80 @@ class SignIn: UIViewController {
         {return
         }
         
-               checkAccount()
+        checkAccount()
         
-    }//end of signInClicked function
+    }// end of signInClicked action
     
+    
+    // Restting the password after successful email validation
+    
+    func resetPassword(){
+     let email = emailTxt.text
+        
+        Auth.auth().sendPasswordReset(withEmail: email!) { (error) in
+            
+            if (error != nil) {
+                Utilities().ShowAlert(title: "خطأ", msg:"عذرا حدث خطأ .الرجاء المحاولة مرة أخرى.", vc: self)
+                return
+            }
+            else {
+                Utilities().ShowAlert(title: "تمت العملية بنجاح", msg: " تم إرسال رابط تغيير كلمة المرور إلي بريدك الإلكتروني", vc: self)
+            }
+        }
+
+    
+    }// end of resetPassword function
+    
+    
+    // Validating the email address when forgetPasswordBtn is clicked before reseting the user's password
+    
+    @IBAction func forgetPasswordClicked(_ sender: UIButton) {
+        
+        let email = emailTxt.text
+        
+        // Checking if the email is empty
+        
+        if (email?.isEmpty)!{
+        Utilities().ShowAlert(title: "خطأ", msg: "الرجاء تعبئة البريد الإلكتروني" , vc: self)
+        return
+        }
+        
+        // Checking if the email is correctly formatted
+        
+        let flag = isValidEmailAddress(emailAddressString: email!)
+        if (flag == false) {
+          Utilities().ShowAlert(title: "خطأ", msg: "الرجاء كتابة البريد الالكتروني بصيغة صحيحة" , vc: self)
+        return
+        }
+        
+        // Checking if the email belongs to a registered user or not
+        
+        Auth.auth().fetchProviders(forEmail: email!, completion: { (providers, error) in
+            
+            // The email does not exist in the database
+            
+            if providers == nil{
+                Utilities().ShowAlert(title: "خطأ", msg: "البريد الالكتروني غير مسجل لدينا. الرجاء المحاولة مجددا." , vc: self)
+            }
+             // The email exists in the database
+            else {
+              self.resetPassword()
+  
+            }
+            
+        })
+        
+    }// end of forgetPasswordClicked action
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }//end of didReceiveMemoryWarning function
+    }// end of didReceiveMemoryWarning function
+    
+    
+    /* When the view or interface is loaded for the first time clear all the error labels and create an object of type
+    UITapGestureRecognizer to dismiss the keyboard when it is not in use*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -277,11 +371,14 @@ class SignIn: UIViewController {
         view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
-    }//end of view did load
+    }// end of viewDidLoad function
+    
+    // Not showing the keyboard after editing is finished
+    
     func dismissKeyboard(){
         view.endEditing(true)
         
-    }
+    }// end of dismissKeyboard function
     
     
 }//end of class

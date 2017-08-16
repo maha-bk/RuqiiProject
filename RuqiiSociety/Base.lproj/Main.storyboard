@@ -945,13 +945,16 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نسيت كلمة المرور؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23O-Fk-li9">
-                                <rect key="frame" x="57" y="390" width="100" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pw2-TV-WVM">
+                                <rect key="frame" x="35" y="391" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="  نسيت كلمة المرور؟">
+                                    <color key="titleColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgetPasswordClicked:" destination="M4H-rZ-MPz" eventType="touchUpInside" id="ybs-PF-n7f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -960,7 +963,6 @@
                                 <exclude reference="GqE-5f-Ozh"/>
                                 <exclude reference="ioh-XN-Cl7"/>
                                 <exclude reference="Poh-0H-GLs"/>
-                                <exclude reference="23O-Fk-li9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -969,7 +971,6 @@
                                 <include reference="GqE-5f-Ozh"/>
                                 <include reference="ioh-XN-Cl7"/>
                                 <include reference="Poh-0H-GLs"/>
-                                <include reference="23O-Fk-li9"/>
                             </mask>
                         </variation>
                     </view>
@@ -977,7 +978,7 @@
                         <outlet property="emailErrorLabel" destination="rbP-jz-XVA" id="D7T-LE-T0g"/>
                         <outlet property="emailTxt" destination="GqE-5f-Ozh" id="wiq-Z3-0fx"/>
                         <outlet property="emptyFieldsErrorLabel" destination="Bod-WD-oPY" id="GZ7-2F-BSB"/>
-                        <outlet property="forgetPasswordLabel" destination="23O-Fk-li9" id="Eln-BU-jc8"/>
+                        <outlet property="forgetPasswordBtn" destination="Pw2-TV-WVM" id="s1f-br-fg6"/>
                         <outlet property="passwordErrorLabel" destination="cG4-Me-m32" id="FVW-fq-CLS"/>
                         <outlet property="passwordTxt" destination="ioh-XN-Cl7" id="cKx-r3-vrf"/>
                         <outlet property="signInBtn" destination="Poh-0H-GLs" id="RSf-FW-JA0"/>
