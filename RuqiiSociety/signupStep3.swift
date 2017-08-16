@@ -29,6 +29,37 @@ class signupStep3: UIViewController {
     // handle the return value if firebase functions
     var databaseHandle : DatabaseHandle!
     
+    @IBAction func text(_ sender: UIButton) {
+        print("Lobnaaaaaaa")
+        ref = Database.database().reference()
+        print("ref: ", ref)
+        ref.observe(.value, with: {
+            snapshot in
+            print(snapshot.value!)
+        })
+        fillArrayOfTxtFields()
+        
+   
+        
+        databaseHandle = ref?.child("Services").observe(.childAdded, with: { (snapshot) in
+            let service = snapshot.value as? String
+            print ("Ooo", service!)
+            if let actualSrevice = service {
+                self.servicesName.append(actualSrevice)
+                
+                print("actualSrevice: ",actualSrevice)
+                
+            }
+        })
+        
+        for var i in 0..<self.servicesName.count
+        {
+            self.txtfieldsArray[i].text = self.servicesName[i]
+            print("service: ", self.servicesName[i])
+            
+        }
+
+    }
     //var txtfieds =  [UIButton] ()
     @IBOutlet weak var txtfield1: DesignableTextField!
     @IBOutlet weak var txtfield8: DesignableTextField!
@@ -64,22 +95,7 @@ class signupStep3: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
-        
-        databaseHandle = ref.child("Services").observe(.childChanged, with: { (snapshot) in
-            let service = snapshot.children.value(forKey: "Name") as? String
-            
-            if let actualSrevice = service {
-                self.servicesName.append(actualSrevice)
-                
-            }
-        })
-        
-            for var i in 0..<self.servicesName.count
-            {
-                self.txtfieldsArray[i].text = self.servicesName[i]
-            }
-        /*
+               /*
         let stackView1 = UIStackView(arrangedSubviews: createTxtFields(named: "1", "2","3"))
         stackView1.translatesAutoresizingMaskIntoConstraints = false
         stackView1.axis = .vertical
