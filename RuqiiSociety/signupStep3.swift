@@ -24,40 +24,67 @@ class signupStep3: UIViewController {
     var expertEmail = String ()
     var expertPassword = String ()
     var expertAllowPhone = Bool()
+    
+    var messages: [DataSnapshot]! = [DataSnapshot]()
+    
     var ref: DatabaseReference!
     
-    // handle the return value if firebase functions
+    // handle the return value if firebase functions to able to delete the observer later in deinit function
     var databaseHandle : DatabaseHandle!
     
-    @IBAction func text(_ sender: UIButton) {
-        print("Lobnaaaaaaa")
+    func ConfigureDatabase() {
         ref = Database.database().reference()
-        print("ref: ", ref)
-        ref.observe(.value, with: {
-            snapshot in
+        
+        //Notify us for new messages that comes through every time
+        //observer will notice each new child that added to (messages) and perform some code.
+        databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
+            
+            self.messages.append(snapshot)
             print(snapshot.value!)
         })
-        fillArrayOfTxtFields()
+    }
+    
+    // to remove the observer
+    deinit {
+        self.ref.child("Services").removeObserver(withHandle: databaseHandle)
+    }
+
+    @IBAction func text(_ sender: UIButton) {
         
-   
+        ConfigureDatabase()
+        /* print("Lobnaaaaaaa")
+        ref = Database.database().reference()
+       fillArrayOfTxtFields()
         
-        databaseHandle = ref?.child("Services").observe(.childAdded, with: { (snapshot) in
-            let service = snapshot.value as? String
-            print ("Ooo", service!)
-            if let actualSrevice = service {
-                self.servicesName.append(actualSrevice)
-                
-                print("actualSrevice: ",actualSrevice)
+
+           ref.child("ruqii-lobna").observe(.childAdded, with: { (snapshot) in
+             let keySnapshot = snapshot.key
+            print(keySnapshot)
+            self.ref.child(keySnapshot).observe(.value, with: { (snapshot2) in
+                print(snapshot2)
+            }) { (error) in
+                print("error###\(error)")
                 
             }
-        })
+     })
+            /*if(snapshot.exists()){
+                let service = snapshot.value as? [String:Any]
+                print ("Ooo", service!)
+                if let actualSrevice = service {
+                    
+                    print("actualSrevice: ",actualSrevice)
+                    
+                }
+
+            }
+        })*/
         
         for var i in 0..<self.servicesName.count
         {
             self.txtfieldsArray[i].text = self.servicesName[i]
             print("service: ", self.servicesName[i])
             
-        }
+        }*/
 
     }
     //var txtfieds =  [UIButton] ()
