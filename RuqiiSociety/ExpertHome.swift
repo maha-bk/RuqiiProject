@@ -7,26 +7,26 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-
+import Foundation
 class ExpertHome: UIViewController {
     
-/*var ViewAppearsAfterLogin = false
- var ExpertId: String
- var ExpertbankName: String
- //var ExpertServices: String
- var ExpertCompletedOrders: Int
- var ExpertEmail: String
- var ExperIban: String
- var ExpertPrivatePhone: Bool
- var ExpertName: String
- var ExpertNumOfRating:Int
- var ExpertPendingOrders: Int
- var ExpertPhone: String
+var ViewAppearsAfterLogin = false
+ var ExpertId = ""
+ var ExpertbankName = ""
+ //var ExpertServices = ""
+ //var ExpertCompletedOrders = -1
+ var ExpertEmail = ""
+ var ExperIban = ""
+ var ExpertPrivatePhone = true
+ var ExpertName = ""
+ var ExpertNumOfRating = 0
+ //var ExpertPendingOrders = 0
+ var ExpertPhone = ""
  //var ExpertPortFolio
- var ExpertRating: Int
+ //var ExpertRating = 0
  //var ExpertRatingPoint: Int
- var ExpertTitle: String
-    */
+ var ExpertTitle = ""
+    
     @IBOutlet weak var pendingOrdersCountLabel: UILabel!
 
     @IBOutlet weak var completedOrdersCountLabel: UILabel!
@@ -35,31 +35,16 @@ class ExpertHome: UIViewController {
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var settingsIcon: UIImageView!
     @IBOutlet weak var newOrdersIcon: UIImageView!
-    
-   /* init(snapshot: DataSnapshot){
-    ExpertName = (snapshot.value! as! NSDictionary)["name"] as! String
-    ExpertTitle = (snapshot.value! as! NSDictionary)["title"] as! String
-    ExpertEmail = (snapshot.value! as! NSDictionary)["email"] as! String
-    ExpertPhone = (snapshot.value! as! NSDictionary)["phone"] as! String
-    ExpertRating = (snapshot.value! as! NSDictionary)["numOfRating"] as! Int
-   
-    
-    }*/
-    /*MAHA*/
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-   
-    
-  /*  override func viewWillAppear(_ animated: Bool) {
+
+   override func viewWillAppear(_ animated: Bool) {
         if (ViewAppearsAfterLogin == true){
             Utilities().ShowAlert(title: "تم تسجيل الدخول", msg:" في مجتمع رقي "+ExpertName+" أهلا بك مجددا ", vc: self)
         }
         
-    }*/
+    }
     
-    /*
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -69,7 +54,7 @@ class ExpertHome: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }*/
+    }
     
 
 /* Servicesaddclose

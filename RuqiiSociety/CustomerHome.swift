@@ -11,10 +11,16 @@ class CustomerHome: UIViewController {
 
     var ViewAppearsAfterLogin = false
     var CustomerId = ""
+    var CustomerEmail = ""
+    var CustomerName = ""
+    //var orders
+    var CustomerPhone = ""
+    var CustomerPrivatePhone = true
+    
     
     override func viewWillAppear(_ animated: Bool) {
         if (ViewAppearsAfterLogin == true){
-            Utilities().ShowAlert(title: "تم تسجيل الدخول", msg: "أهلا بك مجددا في مجتمع رقي", vc: self)
+            Utilities().ShowAlert(title: "تم تسجيل الدخول", msg:" في مجتمع رقي "+CustomerName+" أهلا بك مجددا ", vc: self)
         }
         
     }
