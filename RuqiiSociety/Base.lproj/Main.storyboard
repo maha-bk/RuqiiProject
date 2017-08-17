@@ -201,7 +201,7 @@
         <scene sceneID="eSJ-GW-6Q6">
             <objects>
                 <navigationController id="Gnk-b3-Cwc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euQ-Yl-UDq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="euQ-Yl-UDq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -212,6 +212,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfN-MG-QBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1962" y="-2961"/>
+        </scene>
+        <!--Customer Home-->
+        <scene sceneID="nrp-Xt-KGS">
+            <objects>
+                <viewController id="OFT-Xz-did" customClass="CustomerHome" customModule="RuqiiSociety" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jbS-Rd-5Ux"/>
+                        <viewControllerLayoutGuide type="bottom" id="7vq-7a-fEe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eB2-Io-tb2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.1257547399" blue="0.1139928311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSv-T5-pko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="-1383"/>
         </scene>
         <!--Expert Home-->
         <scene sceneID="2W0-io-P80">
@@ -225,10 +243,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SettingsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4s8-vV-Ls1">
-                                <rect key="frame" x="356" y="38" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OrdersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LST-ZH-a8B">
                                 <rect key="frame" x="20" y="38" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,7 +262,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المسمى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-3P-paT">
-                                <rect key="frame" x="338" y="284" width="42" height="21"/>
+                                <rect key="frame" x="338" y="284" width="42" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.71001025883838387" green="0.71001025883838387" blue="0.71001025883838387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -296,11 +310,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SettingsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4s8-vV-Ls1">
+                                <rect key="frame" x="345" y="34" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="4s8-vV-Ls1"/>
                                 <exclude reference="LST-ZH-a8B"/>
                                 <exclude reference="YNz-q3-oBd"/>
                                 <exclude reference="AYP-oS-wu9"/>
@@ -311,11 +328,11 @@
                                 <exclude reference="UEn-as-KLZ"/>
                                 <exclude reference="d73-2P-Ppx"/>
                                 <exclude reference="RXJ-Np-L5g"/>
+                                <exclude reference="4s8-vV-Ls1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="4s8-vV-Ls1"/>
                                 <include reference="LST-ZH-a8B"/>
                                 <include reference="YNz-q3-oBd"/>
                                 <include reference="AYP-oS-wu9"/>
@@ -326,13 +343,23 @@
                                 <include reference="UEn-as-KLZ"/>
                                 <include reference="d73-2P-Ppx"/>
                                 <include reference="RXJ-Np-L5g"/>
+                                <include reference="4s8-vV-Ls1"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="completedOrdersCountLabel" destination="jf8-3E-9XV" id="w4U-Hg-9C9"/>
+                        <outlet property="fullNameLabel" destination="AYP-oS-wu9" id="Gpz-Qd-b6f"/>
+                        <outlet property="newOrdersIcon" destination="LST-ZH-a8B" id="yRL-wN-psL"/>
+                        <outlet property="pendingOrdersCountLabel" destination="UEn-as-KLZ" id="Ust-oc-lJD"/>
+                        <outlet property="ratingCountsLabel" destination="9pt-rc-w0t" id="VR2-PK-JX4"/>
+                        <outlet property="settingsIcon" destination="4s8-vV-Ls1" id="q0N-gy-4g2"/>
+                        <outlet property="titleLabel" destination="cXW-3P-paT" id="HSM-TL-jNP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4d-M4-fQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3417" y="-1383"/>
+            <point key="canvasLocation" x="3416.8000000000002" y="-1383.0584707646178"/>
         </scene>
         <!--Services Settings-->
         <scene sceneID="dQ8-cd-316">
@@ -862,7 +889,7 @@
         <scene sceneID="exc-TI-Jsn">
             <objects>
                 <navigationController id="dE8-df-znS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D6T-1W-wqX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="D6T-1W-wqX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -986,6 +1013,7 @@
                         <outlet property="passwordTxt" destination="ioh-XN-Cl7" id="cKx-r3-vrf"/>
                         <outlet property="signInBtn" destination="Poh-0H-GLs" id="RSf-FW-JA0"/>
                         <segue destination="kco-wH-azw" kind="show" identifier="ExpertHome" id="gMU-tv-FOb"/>
+                        <segue destination="OFT-Xz-did" kind="show" identifier="CustomerHome" id="ra1-b9-TXK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wS-PP-g7O" userLabel="First Responder" sceneMemberID="firstResponder"/>

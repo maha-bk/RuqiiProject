@@ -6,6 +6,8 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+
 class SignIn: UIViewController {
     
     // Declaring the components of the view or interface
@@ -26,7 +28,9 @@ class SignIn: UIViewController {
     
     var emailErrorFlag = false
     var passwordErrorFlag = false
-
+   
+    var UserType = ""
+    var UserId = ""
     
     // Clear the text in labels only without resetting the color of the text fields
 
@@ -62,11 +66,21 @@ class SignIn: UIViewController {
     
     // Passing some data from the current interface to the next one right before performing a segue command (moving to another interface)
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+ /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if (UserType == "Expert"){
         let NextView = segue.destination as! ExpertHome
         NextView.ViewAppearsAfterLogin = true
-    }// end of prepare function
+    
+    
+    
+    
+    }
+    else if (UserType == "Customer"){
+    
+    
+    }
+       
+    }// end of prepare function */
     
   
     // Checking if both email and password text fields were empty
@@ -210,9 +224,10 @@ class SignIn: UIViewController {
                 Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
                     // Redirecting the user to the Home interface based on his/her role (Expert or Customer)
                     
-                    if (user != nil) {
-                      
-                         self.performSegue(withIdentifier: "ExpertHome", sender: self)
+                    if (user != nil){
+                   
+                        
+                        self.distinguishUserType()
                                                         }
                     
                    // Showing proper error message if the user does not exist
@@ -264,14 +279,47 @@ class SignIn: UIViewController {
         }
         
     }//end of checkPassowrd function
+
+    
+    // Knowing the user type and based on it the user will be redirected to the proper home interface
+    
+    func distinguishUserType() {
+    
+        UserId = (Auth.auth().currentUser?.uid)!
+      
+        
+       Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
+        
+        if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+            self.UserType = "Expert"
+            self.performSegue(withIdentifier: "ExpertHome", sender: self)}
+
+        
+        }, withCancel:
+        {(error) in
+        print(error.localizedDescription)
+        })
+        
+        Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
+            if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+                self.UserType = "Customer"
+                self.performSegue(withIdentifier: "CustomerHome", sender: self)}
+            
+            
+        }, withCancel:
+            {(error) in
+                print(error.localizedDescription)
+        })
  
+        
+    }// end of distinguishUserType function
     
 
     // Checking if all inputs are correct when signInBtn is pressed .Then, log the user to his/her account
     
     @IBAction func signInClicked(_ sender: Any) {
         
-        if(checkIfAllAreEmpty() == true){
+     if(checkIfAllAreEmpty() == true){
         return
         }
         
@@ -286,9 +334,10 @@ class SignIn: UIViewController {
         if (emailErrorFlag == true || passwordErrorFlag == true)
         {return
         }
-        
-        checkAccount()
-        
+          checkAccount()
+       
+
+       
     }// end of signInClicked action
     
     
