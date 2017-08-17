@@ -24,6 +24,8 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     
     
+    
+    
     var email = String ()
     var password = String ()
     // two images to change button state
