@@ -12,6 +12,7 @@
 		6B55908D1F36264D000FD7EC /* profileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55908C1F36264D000FD7EC /* profileSettings.swift */; };
 		6B55908F1F362690000FD7EC /* servicesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55908E1F362690000FD7EC /* servicesSettings.swift */; };
 		6B5FBBE11F304F4B004CAFD5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5FBBE01F304F4B004CAFD5 /* AdSupport.framework */; };
+		6B73773F1F44138B00B0323B /* CustomerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73773E1F44138B00B0323B /* CustomerHome.swift */; };
 		6B7BAAFF1F25CC280054365E /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAAFE1F25CC280054365E /* SignIn.swift */; };
 		6B7BAB011F25D56D0054365E /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAB001F25D56D0054365E /* DesignableTextField.swift */; };
 		6B7BAB051F266A0D0054365E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAB041F266A0D0054365E /* Settings.swift */; };
@@ -56,6 +57,7 @@
 		6B55908C1F36264D000FD7EC /* profileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileSettings.swift; sourceTree = "<group>"; };
 		6B55908E1F362690000FD7EC /* servicesSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = servicesSettings.swift; sourceTree = "<group>"; };
 		6B5FBBE01F304F4B004CAFD5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		6B73773E1F44138B00B0323B /* CustomerHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerHome.swift; sourceTree = "<group>"; };
 		6B7BAAFE1F25CC280054365E /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		6B7BAB001F25D56D0054365E /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		6B7BAB041F266A0D0054365E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				6B55908C1F36264D000FD7EC /* profileSettings.swift */,
 				6B55908E1F362690000FD7EC /* servicesSettings.swift */,
 				6B29A9191F403AF100C9222C /* ExpertHome.swift */,
+				6B73773E1F44138B00B0323B /* CustomerHome.swift */,
 			);
 			path = RuqiiSociety;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE420B91F24E6AC00BD6797 /* signupStep3.swift in Sources */,
+				6B73773F1F44138B00B0323B /* CustomerHome.swift in Sources */,
 				6B7BAB011F25D56D0054365E /* DesignableTextField.swift in Sources */,
 				6BE420891F24939F00BD6797 /* signupStep1.swift in Sources */,
 				6B7BAAFF1F25CC280054365E /* SignIn.swift in Sources */,
