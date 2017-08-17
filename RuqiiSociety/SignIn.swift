@@ -43,7 +43,7 @@ class SignIn: UIViewController {
         
     }// end of clearLabelsWithflushing function
     
-    
+    // hi
     // Clear the email label and text field if there is no error
     
     func clearEmailErrorLabel(){
@@ -72,14 +72,14 @@ class SignIn: UIViewController {
         let NextView = segue.destination as! ExpertHome
         NextView.ViewAppearsAfterLogin = true
         NextView.ExpertId = UserId
-       NextView.ExperIban = ExpertProfileDictionary ["iban"] as! String
+      /* NextView.ExperIban = ExpertProfileDictionary ["iban"] as! String
         NextView.ExpertbankName = ExpertProfileDictionary ["bankName"] as! String
         NextView.ExpertPhone = ExpertProfileDictionary ["phone"] as! String
         NextView.ExpertName =  ExpertProfileDictionary ["name"] as! String
         NextView.ExpertEmail = ExpertProfileDictionary ["email"] as! String
         NextView.ExpertTitle = ExpertProfileDictionary ["title"] as! String
         NextView.ExpertNumOfRating = ExpertProfileDictionary ["numOfRating"] as! Int
-        NextView.ExpertPrivatePhone = ExpertProfileDictionary ["isPhonePrivate"] as! Bool
+        NextView.ExpertPrivatePhone = ExpertProfileDictionary ["isPhonePrivate"] as! Bool*/
           }
     else if (UserType == "Customer"){
     
