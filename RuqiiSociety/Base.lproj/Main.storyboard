@@ -201,7 +201,7 @@
         <scene sceneID="eSJ-GW-6Q6">
             <objects>
                 <navigationController id="Gnk-b3-Cwc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="euQ-Yl-UDq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euQ-Yl-UDq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -620,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYe-kY-XHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3680.8000000000002" y="-2962.6686656671668"/>
+            <point key="canvasLocation" x="3809" y="-2982"/>
         </scene>
         <!--Signup Step3-->
         <scene sceneID="VKA-D7-n2M">
@@ -889,7 +889,7 @@
         <scene sceneID="exc-TI-Jsn">
             <objects>
                 <navigationController id="dE8-df-znS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="D6T-1W-wqX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D6T-1W-wqX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

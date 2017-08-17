@@ -25,24 +25,18 @@ class signupStep3: UIViewController {
     var expertPassword = String ()
     var expertAllowPhone = Bool()
     
-    var messages: [DataSnapshot]! = [DataSnapshot]()
+    //var messages: [DataSnapshot]! = [DataSnapshot]()
     
     var ref: DatabaseReference!
     
-    // handle the return value if firebase functions to able to delete the observer later in deinit function "rules": {
-   // ".read": "auth != null",
-//    ".write": "auth != null"
-//}
+    // handle the return value in firebase functions to be able to delete the observer later in deinit
     var databaseHandle : DatabaseHandle!
     
     func ConfigureDatabase() {
         ref = Database.database().reference()
         
-        //Notify us for new messages that comes through every time
-        //observer will notice each new child that added to (messages) and perform some code.
         databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
             
-            self.messages.append(snapshot)
             print(snapshot.value!)
         })
     }
@@ -55,6 +49,10 @@ class signupStep3: UIViewController {
     @IBAction func text(_ sender: UIButton) {
         
         ConfigureDatabase()
+    }
+    
+    
+    
         /* print("Lobnaaaaaaa")
         ref = Database.database().reference()
        fillArrayOfTxtFields()
@@ -89,7 +87,7 @@ class signupStep3: UIViewController {
             
         }*/
 
-    }
+    //}
     //var txtfieds =  [UIButton] ()
     @IBOutlet weak var txtfield1: DesignableTextField!
     @IBOutlet weak var txtfield8: DesignableTextField!
