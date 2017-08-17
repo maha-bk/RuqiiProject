@@ -292,6 +292,7 @@ class signupStep1: UIViewController {
         confirmedErrorLabel.isHidden = true
         emptyFieldsErrorLabel.isHidden = true
         
+       
         
         
     }

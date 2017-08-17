@@ -23,6 +23,34 @@ class Utilities {
         
     }
     
+    /*func KeyboaredNotification(view: UIViewController){
+        NotificationCenter.default.addObserver(view, selector: #selector(keyboardWillShow(_:, vi )), name: NSNotification.Name.UIKeyboardWillShow, object: view.view.window)
+        
+        NotificationCenter.default.addObserver(view, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: view.view.window)
+    }
+    
+    func keyboardWillShow(_ sender: NSNotification, myview: UIViewController) {
+        let userInfo: [NSObject:AnyObject] = sender.userInfo! as [NSObject : AnyObject]
+        
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.cgRectValue().size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.cgRectValue().size
+        
+        if keyboardSize.height == offset.height {
+            if myview.view.frame.origin.y == 0 {
+                UIView.animate(withDuration: 0.15, animations: {
+                    myview.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        }
+        else {
+            UIView.animate(withDuration: 0.15, animations: {
+                myview.view.frame.origin.y+=keyboardSize.height - offset.height
+            })
+        }
+    }*/
+    
+
+    
    
 
 }
