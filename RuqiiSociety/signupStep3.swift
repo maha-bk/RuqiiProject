@@ -29,7 +29,10 @@ class signupStep3: UIViewController {
     
     var ref: DatabaseReference!
     
-    // handle the return value if firebase functions to able to delete the observer later in deinit function
+    // handle the return value if firebase functions to able to delete the observer later in deinit function "rules": {
+   // ".read": "auth != null",
+//    ".write": "auth != null"
+//}
     var databaseHandle : DatabaseHandle!
     
     func ConfigureDatabase() {
