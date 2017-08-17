@@ -43,7 +43,7 @@ class SignIn: UIViewController {
         
     }// end of clearLabelsWithflushing function
     
-    // hi
+    // hi maha bader
     // Clear the email label and text field if there is no error
     
     func clearEmailErrorLabel(){
