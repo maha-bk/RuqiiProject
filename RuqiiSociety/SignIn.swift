@@ -31,7 +31,8 @@ class SignIn: UIViewController {
    
     var UserType = ""
     var UserId = ""
-    
+    var ExpertProfileDictionary = [String: AnyObject]()
+    var CustomerProfileDictionary = [String: AnyObject]()
     // Clear the text in labels only without resetting the color of the text fields
 
     func clearLabelsWithflushing(){
@@ -42,7 +43,7 @@ class SignIn: UIViewController {
         
     }// end of clearLabelsWithflushing function
     
-    
+    // hi maha bader
     // Clear the email label and text field if there is no error
     
     func clearEmailErrorLabel(){
@@ -66,21 +67,33 @@ class SignIn: UIViewController {
     
     // Passing some data from the current interface to the next one right before performing a segue command (moving to another interface)
     
- /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if (UserType == "Expert"){
         let NextView = segue.destination as! ExpertHome
         NextView.ViewAppearsAfterLogin = true
-    
-    
-    
-    
-    }
+        NextView.ExpertId = UserId
+      /* NextView.ExperIban = ExpertProfileDictionary ["iban"] as! String
+        NextView.ExpertbankName = ExpertProfileDictionary ["bankName"] as! String
+        NextView.ExpertPhone = ExpertProfileDictionary ["phone"] as! String
+        NextView.ExpertName =  ExpertProfileDictionary ["name"] as! String
+        NextView.ExpertEmail = ExpertProfileDictionary ["email"] as! String
+        NextView.ExpertTitle = ExpertProfileDictionary ["title"] as! String
+        NextView.ExpertNumOfRating = ExpertProfileDictionary ["numOfRating"] as! Int
+        NextView.ExpertPrivatePhone = ExpertProfileDictionary ["isPhonePrivate"] as! Bool*/
+          }
     else if (UserType == "Customer"){
     
-    
+        let NextView = segue.destination as! CustomerHome
+        NextView.ViewAppearsAfterLogin = true
+        NextView.CustomerId = UserId
+        NextView.CustomerPhone = CustomerProfileDictionary ["phone"] as! String
+        NextView.CustomerEmail = CustomerProfileDictionary ["email"] as! String
+        NextView.CustomerName = CustomerProfileDictionary ["name"] as! String
+        NextView.CustomerPrivatePhone = CustomerProfileDictionary ["phonePrivate"] as! Bool
+        
     }
-       
-    }// end of prepare function */
+    
+    }// end of prepare function 
     
   
     // Checking if both email and password text fields were empty
@@ -93,6 +106,7 @@ class SignIn: UIViewController {
             emptyFieldsErrorLabel.isHidden = false
             emptyFieldsErrorLabel.text = "الرجاء تعبئة جميع الحقول"
             clearLabelsWithflushing()
+            
             return true
         }
         else {
@@ -100,6 +114,7 @@ class SignIn: UIViewController {
             emptyFieldsErrorLabel.text = ""
             clearEmailErrorLabel()
             clearPasswordErrorLabel()
+            
             return false
         }
 
@@ -224,10 +239,8 @@ class SignIn: UIViewController {
                 Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
                     // Redirecting the user to the Home interface based on his/her role (Expert or Customer)
                     
-                    if (user != nil){
-                   
-                        
-                        self.distinguishUserType()
+                    if(user != nil){
+                       self.distinguishUserType()
                                                         }
                     
                    // Showing proper error message if the user does not exist
@@ -291,9 +304,13 @@ class SignIn: UIViewController {
        Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
         
         if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+            
             self.UserType = "Expert"
+            self.ExpertProfileDictionary = DataSnapshot.value as! [String : AnyObject]
+            dump(self.ExpertProfileDictionary)
+            //  let ExpertProfileDictionary = DataSnapshot.value as? [String: AnyObject]
             self.performSegue(withIdentifier: "ExpertHome", sender: self)}
-
+        
         
         }, withCancel:
         {(error) in
@@ -303,8 +320,10 @@ class SignIn: UIViewController {
         Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
             if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
                 self.UserType = "Customer"
+                self.CustomerProfileDictionary = DataSnapshot.value as! [String : AnyObject]
+                dump(self.CustomerProfileDictionary)
                 self.performSegue(withIdentifier: "CustomerHome", sender: self)}
-            
+           
             
         }, withCancel:
             {(error) in
@@ -317,6 +336,8 @@ class SignIn: UIViewController {
 
     // Checking if all inputs are correct when signInBtn is pressed .Then, log the user to his/her account
     
+    
+  
     @IBAction func signInClicked(_ sender: Any) {
         
      if(checkIfAllAreEmpty() == true){
