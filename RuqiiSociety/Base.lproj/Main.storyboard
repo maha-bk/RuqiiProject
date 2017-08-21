@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4H-rZ-MPz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="46m-TX-uUt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -662,97 +662,128 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="egX-Zw-iuV">
-                                <rect key="frame" x="210" y="151" width="135" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFG-vv-RBW">
+                                <rect key="frame" x="196" y="149" width="144" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfU-ZL-my4" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="670-9K-3SI"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="O4A-2O-6W1"/>
-                                            <constraint firstAttribute="width" constant="135" id="sGQ-78-tMQ"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="iconTrans"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="تصميم شعارات" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3SL-bK-9Ji" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="54" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="eun-Zi-S1k"/>
-                                            <constraint firstAttribute="height" constant="30" id="iOA-pZ-FWc"/>
-                                            <constraint firstAttribute="width" constant="135" id="s52-4x-IZQ"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoDesign"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="تصوير شخصي" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BGq-Rt-OPe" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="BnX-53-bAk"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="DWI-C2-PbL"/>
-                                            <constraint firstAttribute="height" constant="30" id="Wxh-UW-iTO"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoCamera"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="عروض  تقديمية" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sYH-cn-w8z" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="162" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="4am-wL-zig"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="c7Y-Rl-suE"/>
-                                            <constraint firstAttribute="height" constant="30" id="od2-qA-nvn"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoPresentation"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="برمجة ويب" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rN8-py-AN6" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="216" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="MGG-bI-k8M"/>
-                                            <constraint firstAttribute="width" constant="135" id="OoQ-TH-WJ2"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="cjK-8O-Ctu"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoWeb"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" قواعد بيانات" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-2b-Q2d" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="270" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="KGz-6H-1VK"/>
-                                            <constraint firstAttribute="width" constant="135" id="Vip-p7-fv3"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="fXu-xc-OMJ"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoDatabase"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXk-4f-C0v">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="KQB-oy-o1L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFv-Dm-scg">
+                                        <rect key="frame" x="0.0" y="57" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="Ak4-78-Tgg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luy-Fm-BzQ">
+                                        <rect key="frame" x="0.0" y="114" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="Kog-LP-bJm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXE-x5-gml">
+                                        <rect key="frame" x="0.0" y="171" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="kYK-kE-n1W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQj-Sv-f6W">
+                                        <rect key="frame" x="0.0" y="228" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="6ty-We-w08"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhl-Tz-0U4">
+                                        <rect key="frame" x="0.0" y="285" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="sc0-YS-BC4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbG-uj-XVL">
+                                <rect key="frame" x="35" y="149" width="144" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY4-os-Vzx">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="NyM-IV-zZ8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZg-KX-gPT">
+                                        <rect key="frame" x="0.0" y="57" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="PSt-9q-vm4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO8-t5-9LK">
+                                        <rect key="frame" x="0.0" y="114" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="emp-pV-VTU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI0-dw-eaU">
+                                        <rect key="frame" x="0.0" y="171" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="Gta-uO-Lh4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEl-xa-rie">
+                                        <rect key="frame" x="0.0" y="228" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="zOg-QN-hNR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSW-aT-EhD">
+                                        <rect key="frame" x="0.0" y="285" width="144" height="40"/>
+                                        <state key="normal" backgroundImage="border">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectInterest:" destination="46m-TX-uUt" eventType="touchUpInside" id="Q0Y-ZP-qEm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oih-Nj-ofA">
-                                <rect key="frame" x="41" y="593" width="293" height="35"/>
+                                <rect key="frame" x="35" y="602" width="305" height="35"/>
                                 <color key="backgroundColor" red="0.02423199069" green="0.018919860520000002" blue="0.32327178029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="ESQ-gB-Tlg"/>
@@ -762,107 +793,14 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="البدء"/>
                                 <connections>
-                                    <action selector="text:" destination="46m-TX-uUt" eventType="touchUpInside" id="Eml-M6-N0j"/>
+                                    <action selector="startbuttonAction:" destination="46m-TX-uUt" eventType="touchUpInside" id="vN4-wy-ZbD"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gLl-SN-T51">
-                                <rect key="frame" x="32" y="151" width="135" height="300"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-ye-oyc" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Ofj-vL-hb1"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="fg7-DC-K6k"/>
-                                            <constraint firstAttribute="width" constant="135" id="lPi-iv-WcA"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoResearch"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="تصميم مطبوعات" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1a-Y5-WzO" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="54" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="KE5-ni-4FV"/>
-                                            <constraint firstAttribute="width" constant="135" id="UsJ-FY-hy2"/>
-                                            <constraint firstAttribute="height" constant="30" id="dq0-pw-Xmd"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoPrint"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="تصوير منتجات" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cd-OA-SYv" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="Cy6-dV-iLT"/>
-                                            <constraint firstAttribute="height" constant="30" id="bIP-t2-0RW"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="tPq-Ep-8ht"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoPackage"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="برمجة تطبيقات" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-8z-Bkc" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="162" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="6fm-BV-PNJ"/>
-                                            <constraint firstAttribute="width" constant="135" id="fyH-Ax-Npd"/>
-                                            <constraint firstAttribute="height" constant="30" id="lEe-Gd-jNP"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoApps"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="تصوير مناسبات" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egL-NM-g6h" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="216" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="39K-9K-z4n"/>
-                                            <constraint firstAttribute="height" constant="30" id="ebM-fX-rnh"/>
-                                            <constraint firstAttribute="width" constant="135" id="yrk-re-FNf"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoEvents"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="مراجعة" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBO-Wn-Y56" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="270" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="BFb-IM-CAv"/>
-                                            <constraint firstAttribute="width" constant="135" id="UGC-NC-QAM"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="aPS-Jq-ayZ"/>
-                                        </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="icoResearch"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oih-Nj-ofA" firstAttribute="centerX" secondItem="6iK-5D-12Z" secondAttribute="centerX" id="JFU-b4-B0h"/>
-                            <constraint firstItem="egX-Zw-iuV" firstAttribute="centerX" secondItem="6iK-5D-12Z" secondAttribute="centerX" constant="90" id="NU0-De-pud"/>
-                            <constraint firstItem="gLl-SN-T51" firstAttribute="centerX" secondItem="6iK-5D-12Z" secondAttribute="centerX" constant="-88" id="PiA-7U-A9d"/>
-                            <constraint firstItem="gLl-SN-T51" firstAttribute="centerY" secondItem="6iK-5D-12Z" secondAttribute="centerY" constant="-32.5" id="uGI-Ir-i9J"/>
                             <constraint firstItem="oih-Nj-ofA" firstAttribute="centerY" secondItem="6iK-5D-12Z" secondAttribute="centerY" constant="276" id="wAB-8W-jc4"/>
-                            <constraint firstItem="egX-Zw-iuV" firstAttribute="centerY" secondItem="6iK-5D-12Z" secondAttribute="centerY" constant="-32.5" id="wcI-7x-1Un"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -880,19 +818,19 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="btn1" destination="KXk-4f-C0v" id="WHg-Ae-Xox"/>
+                        <outlet property="btn10" destination="pEl-xa-rie" id="0WO-N3-Zzp"/>
+                        <outlet property="btn11" destination="dSW-aT-EhD" id="erh-8W-X7W"/>
+                        <outlet property="btn12" destination="mY4-os-Vzx" id="220-cr-Ish"/>
+                        <outlet property="btn2" destination="YFv-Dm-scg" id="2KX-5c-6gM"/>
+                        <outlet property="btn3" destination="luy-Fm-BzQ" id="VQH-kQ-IoN"/>
+                        <outlet property="btn4" destination="cXE-x5-gml" id="1nQ-7i-Icd"/>
+                        <outlet property="btn5" destination="BQj-Sv-f6W" id="cy6-k6-j5d"/>
+                        <outlet property="btn6" destination="hhl-Tz-0U4" id="vR5-V0-Npa"/>
+                        <outlet property="btn7" destination="dZg-KX-gPT" id="jgG-3C-HsM"/>
+                        <outlet property="btn8" destination="NO8-t5-9LK" id="IRW-pf-eL0"/>
+                        <outlet property="btn9" destination="GI0-dw-eaU" id="XsJ-fo-WGx"/>
                         <outlet property="startButtin" destination="oih-Nj-ofA" id="cyK-Qi-jdc"/>
-                        <outlet property="txtfield1" destination="KfU-ZL-my4" id="Byk-SH-QXA"/>
-                        <outlet property="txtfield10" destination="egL-NM-g6h" id="3JQ-iU-6ky"/>
-                        <outlet property="txtfield11" destination="rxE-8z-Bkc" id="k3w-f9-u3W"/>
-                        <outlet property="txtfield12" destination="IBO-Wn-Y56" id="qxp-fk-0mQ"/>
-                        <outlet property="txtfield2" destination="3SL-bK-9Ji" id="aEf-fY-8Gm"/>
-                        <outlet property="txtfield3" destination="BGq-Rt-OPe" id="WIq-QR-zXH"/>
-                        <outlet property="txtfield4" destination="sYH-cn-w8z" id="Y61-2E-Ohb"/>
-                        <outlet property="txtfield5" destination="rN8-py-AN6" id="qAc-xI-nHH"/>
-                        <outlet property="txtfield6" destination="H3m-2b-Q2d" id="oq5-c6-FKb"/>
-                        <outlet property="txtfield7" destination="oYM-ye-oyc" id="j9Y-bW-gTF"/>
-                        <outlet property="txtfield8" destination="O1a-Y5-WzO" id="wEe-YM-bwE"/>
-                        <outlet property="txtfield9" destination="4cd-OA-SYv" id="4fz-ez-eHz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEl-1Z-SfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1263,23 +1201,13 @@
         <image name="OrdersIcon" width="24" height="24"/>
         <image name="RuqiiLogo" width="119" height="138"/>
         <image name="SettingsIcon" width="24" height="24"/>
+        <image name="border" width="144" height="40"/>
         <image name="editIcon" width="20" height="21"/>
         <image name="goldUserProfileIcon" width="21" height="22"/>
-        <image name="icoApps" width="20" height="19"/>
         <image name="icoBankName" width="30" height="30"/>
-        <image name="icoCamera" width="21" height="21"/>
         <image name="icoCardNumber" width="30" height="29"/>
-        <image name="icoDatabase" width="21" height="21"/>
-        <image name="icoDesign" width="21" height="20"/>
-        <image name="icoEvents" width="21" height="21"/>
-        <image name="icoPackage" width="21" height="21"/>
         <image name="icoPhone" width="30" height="30"/>
-        <image name="icoPresentation" width="21" height="21"/>
-        <image name="icoPrint" width="19" height="19"/>
-        <image name="icoResearch" width="19" height="19"/>
         <image name="icoUser" width="30" height="30"/>
-        <image name="icoWeb" width="19" height="19"/>
-        <image name="iconTrans" width="19" height="19"/>
         <image name="phoneIcon" width="30" height="30"/>
         <image name="unchecked" width="256" height="256"/>
     </resources>
