@@ -30,6 +30,8 @@
 		6BE420B91F24E6AC00BD6797 /* signupStep3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE420B81F24E6AC00BD6797 /* signupStep3.swift */; };
 		79AF75B9CF0C87AE2E541C26 /* Pods_RuqiiSocietyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AEC0F363D09C229D2A80F2 /* Pods_RuqiiSocietyTests.framework */; };
 		826DF6EED6FA7F009568AFA4 /* Pods_RuqiiSociety.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE5EC11639EFAFFD2D5DD63 /* Pods_RuqiiSociety.framework */; };
+		CE2162FA1F482463006AD11B /* ExpertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2162F91F482463006AD11B /* ExpertInformation.swift */; };
+		CE2162FC1F48247E006AD11B /* CustomerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2162FB1F48247E006AD11B /* CustomerInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		82AEC0F363D09C229D2A80F2 /* Pods_RuqiiSocietyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSocietyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96912D796B3ADC16F8F9BF94 /* Pods-RuqiiSocietyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF6BF0F7439C18F14AA1B1C /* Pods-RuqiiSocietyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyUITests/Pods-RuqiiSocietyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE2162F91F482463006AD11B /* ExpertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertInformation.swift; sourceTree = "<group>"; };
+		CE2162FB1F48247E006AD11B /* CustomerInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInformation.swift; sourceTree = "<group>"; };
 		DCA0E2D7DD84B68B539EA65B /* Pods-RuqiiSocietyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E56D9947EF333435535D4113 /* Pods-RuqiiSociety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSociety.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,8 @@
 				6B55908E1F362690000FD7EC /* servicesSettings.swift */,
 				6B29A9191F403AF100C9222C /* ExpertHome.swift */,
 				6B73773E1F44138B00B0323B /* CustomerHome.swift */,
+				CE2162F91F482463006AD11B /* ExpertInformation.swift */,
+				CE2162FB1F48247E006AD11B /* CustomerInformation.swift */,
 			);
 			path = RuqiiSociety;
 			sourceTree = "<group>";
@@ -494,9 +500,11 @@
 				6B7BAAFF1F25CC280054365E /* SignIn.swift in Sources */,
 				6B29A91A1F403AF100C9222C /* ExpertHome.swift in Sources */,
 				6B7BAB051F266A0D0054365E /* Settings.swift in Sources */,
+				CE2162FC1F48247E006AD11B /* CustomerInformation.swift in Sources */,
 				6BE420871F24939F00BD6797 /* AppDelegate.swift in Sources */,
 				6B55908D1F36264D000FD7EC /* profileSettings.swift in Sources */,
 				6B8CD9A61F2EF868002F08E8 /* Utilities.swift in Sources */,
+				CE2162FA1F482463006AD11B /* ExpertInformation.swift in Sources */,
 				6B7BAB091F27293F0054365E /* CustomizedCell.swift in Sources */,
 				6B55908F1F362690000FD7EC /* servicesSettings.swift in Sources */,
 				6BE420B71F24E2EE00BD6797 /* signupStep2.swift in Sources */,

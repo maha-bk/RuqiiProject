@@ -201,17 +201,17 @@
         <scene sceneID="eSJ-GW-6Q6">
             <objects>
                 <navigationController id="Gnk-b3-Cwc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="euQ-Yl-UDq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euQ-Yl-UDq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="VmY-ej-Al9" kind="relationship" relationship="rootViewController" id="z3m-Kq-SFK"/>
+                        <segue destination="VmY-ej-Al9" kind="relationship" relationship="rootViewController" id="zaf-GB-MRa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfN-MG-QBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-2961"/>
+            <point key="canvasLocation" x="1970" y="-2985"/>
         </scene>
         <!--Customer Home-->
         <scene sceneID="nrp-Xt-KGS">
@@ -224,12 +224,24 @@
                     <view key="view" contentMode="scaleToFill" id="eB2-Io-tb2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X02-mm-7FJ">
+                                <rect key="frame" x="93" y="223" width="139" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.1257547399" blue="0.1139928311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="customerNameLabel" destination="X02-mm-7FJ" id="eLl-R4-rV4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSv-T5-pko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2148" y="-1383"/>
+            <point key="canvasLocation" x="2360.8000000000002" y="-1397.4512743628186"/>
         </scene>
         <!--Expert Home-->
         <scene sceneID="2W0-io-P80">
@@ -255,65 +267,69 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الإسم الكامل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYP-oS-wu9">
-                                <rect key="frame" x="245" y="250" width="135" height="34"/>
+                                <rect key="frame" x="225" y="242" width="135" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المسمى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-3P-paT">
-                                <rect key="frame" x="338" y="284" width="42" height="27"/>
+                                <rect key="frame" x="317" y="284" width="42" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.71001025883838387" green="0.71001025883838387" blue="0.71001025883838387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pt-rc-w0t">
-                                <rect key="frame" x="338" y="342" width="50" height="22"/>
+                                <rect key="frame" x="317" y="342" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تقييم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seu-LJ-BtE">
-                                <rect key="frame" x="339" y="372" width="50" height="23"/>
+                                <rect key="frame" x="317" y="372" width="50" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf8-3E-9XV">
-                                <rect key="frame" x="283" y="342" width="50" height="22"/>
+                                <rect key="frame" x="259" y="342" width="50" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEn-as-KLZ">
-                                <rect key="frame" x="225" y="342" width="50" height="22"/>
+                                <rect key="frame" x="189" y="342" width="50" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مهام" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d73-2P-Ppx">
-                                <rect key="frame" x="225" y="373" width="50" height="23"/>
+                                <rect key="frame" x="189" y="372" width="50" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مكتمل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-Np-L5g">
-                                <rect key="frame" x="287" y="373" width="50" height="23"/>
+                                <rect key="frame" x="259" y="372" width="50" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SettingsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4s8-vV-Ls1">
-                                <rect key="frame" x="345" y="34" width="28" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nht-i1-lWD">
+                                <rect key="frame" x="317" y="38" width="61" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" image="SettingsIcon"/>
+                                <connections>
+                                    <action selector="settingsClicked:" destination="kco-wH-azw" eventType="touchUpInside" id="0fM-p6-gpt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -328,7 +344,6 @@
                                 <exclude reference="UEn-as-KLZ"/>
                                 <exclude reference="d73-2P-Ppx"/>
                                 <exclude reference="RXJ-Np-L5g"/>
-                                <exclude reference="4s8-vV-Ls1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -343,23 +358,22 @@
                                 <include reference="UEn-as-KLZ"/>
                                 <include reference="d73-2P-Ppx"/>
                                 <include reference="RXJ-Np-L5g"/>
-                                <include reference="4s8-vV-Ls1"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="completedOrdersCountLabel" destination="jf8-3E-9XV" id="w4U-Hg-9C9"/>
                         <outlet property="fullNameLabel" destination="AYP-oS-wu9" id="Gpz-Qd-b6f"/>
-                        <outlet property="newOrdersIcon" destination="LST-ZH-a8B" id="yRL-wN-psL"/>
                         <outlet property="pendingOrdersCountLabel" destination="UEn-as-KLZ" id="Ust-oc-lJD"/>
                         <outlet property="ratingCountsLabel" destination="9pt-rc-w0t" id="VR2-PK-JX4"/>
-                        <outlet property="settingsIcon" destination="4s8-vV-Ls1" id="q0N-gy-4g2"/>
+                        <outlet property="settingsButton" destination="Nht-i1-lWD" id="Qga-8o-9Ul"/>
                         <outlet property="titleLabel" destination="cXW-3P-paT" id="HSM-TL-jNP"/>
+                        <segue destination="VmY-ej-Al9" kind="show" identifier="settings" id="l5V-Vt-qDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4d-M4-fQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3416.8000000000002" y="-1383.0584707646178"/>
+            <point key="canvasLocation" x="3168.8000000000002" y="-1396.5517241379312"/>
         </scene>
         <!--Services Settings-->
         <scene sceneID="dQ8-cd-316">
@@ -394,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhx-4b-UHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3573.5999999999999" y="-2203.4482758620693"/>
+            <point key="canvasLocation" x="3809" y="-2247"/>
         </scene>
         <!--الإعدادات-->
         <scene sceneID="ON7-ao-3HW">
@@ -486,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCc-SW-4t6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2816.8000000000002" y="-2962.6686656671668"/>
+            <point key="canvasLocation" x="2924" y="-2985"/>
         </scene>
         <!--Profile Settings-->
         <scene sceneID="CzJ-pQ-QVa">
@@ -620,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYe-kY-XHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3809" y="-2982"/>
+            <point key="canvasLocation" x="3809" y="-2963"/>
         </scene>
         <!--Signup Step3-->
         <scene sceneID="VKA-D7-n2M">
@@ -889,7 +903,7 @@
         <scene sceneID="exc-TI-Jsn">
             <objects>
                 <navigationController id="dE8-df-znS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="D6T-1W-wqX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D6T-1W-wqX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1269,4 +1283,7 @@
         <image name="phoneIcon" width="30" height="30"/>
         <image name="unchecked" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zaf-GB-MRa"/>
+    </inferredMetricsTieBreakers>
 </document>
