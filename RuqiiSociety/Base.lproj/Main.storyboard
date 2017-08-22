@@ -1221,6 +1221,7 @@
         <image name="unchecked" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zaf-GB-MRa"/>
         <segue reference="y3p-qe-C9k"/>
     </inferredMetricsTieBreakers>
 </document>

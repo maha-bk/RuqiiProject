@@ -141,10 +141,9 @@ class signupStep3: UIViewController {
         }
  
         createUser()
-        if(flag == true){
-            self.performSegue(withIdentifier: "moveToHome", sender: self)
+       
 
-        }
+       
         
        
         /*for (key , value) in expertTitle{
@@ -191,7 +190,7 @@ class signupStep3: UIViewController {
           
             
         }
-         self.createNewExpert()
+      
       
        
     }
@@ -209,8 +208,10 @@ class signupStep3: UIViewController {
                 print(error.localizedDescription)
                 self.userID = (Auth.auth().currentUser?.uid)!
                 print("Lobnaaaa")
-               
+                self.createNewExpert()
                 self.checkCategory()
+                self.performSegue(withIdentifier: "moveToHome", sender: self)
+
 
                 
             }
@@ -220,8 +221,9 @@ class signupStep3: UIViewController {
     
     func createNewExpert(){
       ref.child("Experts").childByAutoId().setValue(userID)
-        print("Nrw Expert")
-        flag = true
+        print("New Expert")
+       
+      
         
     }
     
