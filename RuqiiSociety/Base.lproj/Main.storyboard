@@ -626,15 +626,25 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="LockIcon"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK4-o0-atC">
+                                <rect key="frame" x="329" y="356" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="checkBoxBtnIsClicked:" destination="ZIb-0p-jpV" eventType="touchUpInside" id="aLB-Xy-OYX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="checkBoxBtn" destination="EK4-o0-atC" id="E7d-bB-Zz8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYe-kY-XHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3809" y="-2963"/>
+            <point key="canvasLocation" x="3808.8000000000002" y="-2963.568215892054"/>
         </scene>
         <!--Signup Step3-->
         <scene sceneID="VKA-D7-n2M">

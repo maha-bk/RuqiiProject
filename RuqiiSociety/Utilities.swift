@@ -11,7 +11,29 @@ import UIKit
 
 class Utilities {
     
-    // function to show an Error alert to user by pop up 
+    /*static var checkbox = UIImage(named: "checked")
+    static var uncheckbox = UIImage(named: "unchecked")
+    static var isButtonClicked = Bool()
+    
+     static func clickedCheckbox() {
+       
+        
+        if (Utilities.isButtonClicked == true){
+            Utilities.isButtonClicked = false
+        }
+        else{
+           Utilities.isButtonClicked  = true
+        }
+        
+        if (Utilities.isButtonClicked == true){
+            checkboxButton.setImage(Utilities.checkbox, for: UIControlState.normal)
+        }
+        else{
+            checkboxButton.setImage(Utilities.uncheckbox, for: UIControlState.normal )
+        }
+    }*/
+
+    // function to show an Error alert to user by pop up
     // Note: UIAlertController is considered as UIViewController as well.
     func ShowAlert (title: String, msg: String, vc: UIViewController){
         
