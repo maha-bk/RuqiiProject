@@ -122,7 +122,9 @@ class signupStep3: UIViewController {
         
     }
    
-    
+    func test(){
+       createUser()
+    }
 
     @IBAction func startbuttonAction(_ sender: Any) {
         
@@ -141,6 +143,7 @@ class signupStep3: UIViewController {
         }
  
         createUser()
+        test()
        
 
        
@@ -159,6 +162,7 @@ class signupStep3: UIViewController {
     func checkCategory (){
       
         for var i in 0..<selectedInterests.count{
+            var flag = false
             databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
                 
                 let service = snapshot.childSnapshot(forPath: "Name").value as? String
@@ -181,17 +185,22 @@ class signupStep3: UIViewController {
                                 print("No title")
                                 
                             }
+                          flag = true
                         }
                     }
                 }
-               
-               
-            })
+                if(i == self.selectedInterests.count - 1){
+                    self.performSegue(withIdentifier: "moveToHome", sender: self)
+
+                }
+                             })
           
             
         }
+    
+        
       
-      
+        
        
     }
     
@@ -211,8 +220,7 @@ class signupStep3: UIViewController {
                 self.userID = (Auth.auth().currentUser?.uid)!
                 print("Lobnaaaa")
                 self.createNewExpert()
-                self.checkCategory()
-                self.performSegue(withIdentifier: "moveToHome", sender: self)
+               
 
 
                 
@@ -224,7 +232,8 @@ class signupStep3: UIViewController {
     func createNewExpert(){
       ref.child("Experts").childByAutoId().setValue(userID)
         print("New Expert")
-       
+        self.checkCategory()
+   
       
         
     }
