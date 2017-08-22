@@ -1,4 +1,4 @@
-// SignIn.swift
+/// SignIn.swift
 //  RuqiiSociety
 //  Created by Maha alkatheiry on 24/07/2017.
 //  Copyright © 2017 Maha alkatheiry. All rights reserved.
@@ -71,25 +71,14 @@ class SignIn: UIViewController {
     if (UserType == "Expert"){
         let NextView = segue.destination as! ExpertHome
         NextView.ViewAppearsAfterLogin = true
-        NextView.ExpertId = UserId
-      /* NextView.ExperIban = ExpertProfileDictionary ["iban"] as! String
-        NextView.ExpertbankName = ExpertProfileDictionary ["bankName"] as! String
-        NextView.ExpertPhone = ExpertProfileDictionary ["phone"] as! String
-        NextView.ExpertName =  ExpertProfileDictionary ["name"] as! String
-        NextView.ExpertEmail = ExpertProfileDictionary ["email"] as! String
-        NextView.ExpertTitle = ExpertProfileDictionary ["title"] as! String
-        NextView.ExpertNumOfRating = ExpertProfileDictionary ["numOfRating"] as! Int
-        NextView.ExpertPrivatePhone = ExpertProfileDictionary ["isPhonePrivate"] as! Bool*/
+        
+     
           }
     else if (UserType == "Customer"){
     
         let NextView = segue.destination as! CustomerHome
         NextView.ViewAppearsAfterLogin = true
-        NextView.CustomerId = UserId
-        NextView.CustomerPhone = CustomerProfileDictionary ["phone"] as! String
-        NextView.CustomerEmail = CustomerProfileDictionary ["email"] as! String
-        NextView.CustomerName = CustomerProfileDictionary ["name"] as! String
-        NextView.CustomerPrivatePhone = CustomerProfileDictionary ["phonePrivate"] as! Bool
+       
         
     }
     
@@ -306,9 +295,13 @@ class SignIn: UIViewController {
         if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
             
             self.UserType = "Expert"
-            self.ExpertProfileDictionary = DataSnapshot.value as! [String : AnyObject]
-            dump(self.ExpertProfileDictionary)
-            //  let ExpertProfileDictionary = DataSnapshot.value as? [String: AnyObject]
+            let expertRef = Database.database().reference().child("Experts/\(self.UserId)")
+            expertRef.observe(.value , with: {
+                (snapshot) in
+            ExpertInformation.loadExpertInfo(snapshot: snapshot,expertId: self.UserId)
+      
+            }, withCancel: nil)
+
             self.performSegue(withIdentifier: "ExpertHome", sender: self)}
         
         
@@ -320,8 +313,12 @@ class SignIn: UIViewController {
         Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
             if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
                 self.UserType = "Customer"
-                self.CustomerProfileDictionary = DataSnapshot.value as! [String : AnyObject]
-                dump(self.CustomerProfileDictionary)
+                let customerRef = Database.database().reference().child("Customers/\(self.UserId)")
+                customerRef.observe(.value , with: {
+                    (snapshot) in
+                    CustomerInformation.loadCustomerInfo(snapshot: snapshot,customerId: self.UserId)
+                    
+                }, withCancel: nil)
                 self.performSegue(withIdentifier: "CustomerHome", sender: self)}
            
             
