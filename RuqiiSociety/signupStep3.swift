@@ -33,7 +33,14 @@ class signupStep3: UIViewController {
     var isButtonClicked = Bool()
     var btnNumber = Int()
     var selectedInterests = [String] ()
+    var expertTitle = ["writer" : "", "photo" : "", "designer" : "", "programmer" : ""]
+    var userID = String ()
+    var flag = Bool ()
+    
+    
+    
 
+    @IBOutlet weak var interestErrorLabel: UILabel!
     @IBOutlet weak var btn12: UIButton!
     @IBOutlet weak var btn11: UIButton!
     @IBOutlet weak var btn10: UIButton!
@@ -118,21 +125,113 @@ class signupStep3: UIViewController {
     
 
     @IBAction func startbuttonAction(_ sender: Any) {
+        
         selectedInterests.removeAll()
         for var i in 0..<ButtonsArray.count{
             if(ButtonsArray[i].currentBackgroundImage == #imageLiteral(resourceName: "darkBlue")){
                 selectedInterests.append(ButtonsArray[i].currentTitle!)
+                interestErrorLabel.isHidden = true
+               
             }
+        }
+        if(selectedInterests.count == 0){
+            interestErrorLabel.text = "يجب إختيار إهتمام واحد على الأقل"
+            interestErrorLabel.isHidden = false
+             return
+        }
+ 
+        createUser()
+        if(flag == true){
+            self.performSegue(withIdentifier: "moveToHome", sender: self)
+
         }
         
        
+        /*for (key , value) in expertTitle{
+            print(value)
+            
+        }
+        expertTitle = ["writer" : "", "photo" : "", "designer" : "", "programmer" : ""]
+        */
+        }
+    
+   
+    
+    func checkCategory (){
+      
+        for var i in 0..<selectedInterests.count{
+            databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
+                
+                let service = snapshot.childSnapshot(forPath: "Name").value as? String
+                if let actualSrevice = service {
+                    if (actualSrevice.contains(self.selectedInterests[i])){
+                        let catog = snapshot.childSnapshot(forPath: "Category").value as? String
+                        //unwrapping
+                        if let category = catog{
+                            switch(category){
+                            case "Category4":
+                                self.expertTitle["programmer"] =  "مبرمجة"
+                                print("Mahaaaa")
+                            case "Category2":
+                                self.expertTitle["designer"] = "مصممة"
+                            case "Category3":
+                                self.expertTitle["photo"] = "مصورة"
+                            case "Category1":
+                                self.expertTitle["writer"] = "أديبة"
+                            default:
+                                print("No title")
+                                
+                            }
+                        }
+                    }
+                }
+               
+               
+            })
+          
+            
+        }
+         self.createNewExpert()
+      
+       
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let expertHome = segue.destination as! ExpertHome
+   
+        
+    }
+    
+    func createUser(){
+        Auth.auth().createUser(withEmail: expertEmail, password: expertPassword, completion: { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                self.userID = (Auth.auth().currentUser?.uid)!
+                print("Lobnaaaa")
+               
+                self.checkCategory()
+
+                
+            }
+            
+        })
+    }
+    
+    func createNewExpert(){
+      ref.child("Experts").childByAutoId().setValue(userID)
+        print("Nrw Expert")
+        flag = true
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startButtin.backgroundColor = colors.selectedColor
         self.fillArrayOfButtons()
         self.getServices()
         isButtonClicked = false
+        interestErrorLabel.isHidden = true
         
         /*for var i in 0..<ButtonsArray.count{
             btnNumber = i

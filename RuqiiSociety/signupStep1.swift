@@ -131,44 +131,7 @@ class signupStep1: UIViewController {
         }
         
     }
-        /* Auth.auth().createUser(withEmail: email!, password: password!, completion: { (user, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                
-                if(error.localizedDescription.description.contains("The email address is badly formatted.")){
-                   self.emailTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-                   self.emailErrorLabel.isHidden = false
-                   self.emailErrorLabel.text = "الرجاء كتابة البريد الإلكتروني بالصيغة الصحيحة"
-                   self.emailCounter+=1
-                   print("Hello from check Emaaail")
-                   return
-                }
-                else{
-                    self.emailTxtField.backgroundColor = UIColor.white
-                    self.emailErrorLabel.isHidden = true
-                    
-                    
-                }
-                
-                
-                if(error.localizedDescription.description.contains("The email address is already in use by another account.")){
-                    self.emailErrorLabel.isHidden = false
-                    self.emailTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-                    self.emailErrorLabel.text = "البريد الإلكتروني موجود سابقاً"
-                    self.emailCounter+=1
-                    return
-                }
-                else{
-                    
-                    self.emailTxtField.backgroundColor = UIColor.white
-                    self.emailErrorLabel.isHidden = true
-                    return
-
-                }
-                
-            }
-            
-        }) */
+       
 
         
     

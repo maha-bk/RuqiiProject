@@ -44,27 +44,31 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             print("Move success")
             // implement the moving to "signupStep3" with id of segua (moveToStep3)
             self.performSegue(withIdentifier: "moveToStep3", sender: self)
-        }
-        if(!validateName()){
-            print("Invalid name")
-        }
-        if(!validatePhone()){
-            print("invalid phone")
-        }
-        if(!validateIBAN()){
-            print("invalid IBAN")
-        }
-        if(bankTextField.text?.isEmpty)!{
-            print("empty bank field")
-            self.bankTextField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-            bankLabel.text = "الرجاء تعبئة هذا الحقل"
-            bankLabel.isHidden = false
-        }
-        else{
-            self.bankTextField.backgroundColor = UIColor.white
-            bankLabel.isHidden = true
             
         }
+        else{
+            if(!validateName()){
+                print("Invalid name")
+            }
+            if(!validatePhone()){
+                print("invalid phone")
+            }
+            if(!validateIBAN()){
+                print("invalid IBAN")
+            }
+            if(bankTextField.text?.isEmpty)!{
+                print("empty bank field")
+                self.bankTextField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                bankLabel.text = "الرجاء تعبئة هذا الحقل"
+                bankLabel.isHidden = false
+            }
+            else{
+                self.bankTextField.backgroundColor = UIColor.white
+                bankLabel.isHidden = true
+                
+            }
+        }
+       
     }
     
   
