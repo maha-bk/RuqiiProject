@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0942CE390ECC55BCA6B9FE68 /* Pods_RuqiiSocietyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C58800A05DF8B1A9B2A5CF4 /* Pods_RuqiiSocietyUITests.framework */; };
+		39BDF1248A4C497A30FEBB76 /* Pods_RuqiiSocietyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82E373A96271641F6120864 /* Pods_RuqiiSocietyUITests.framework */; };
 		6B29A91A1F403AF100C9222C /* ExpertHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29A9191F403AF100C9222C /* ExpertHome.swift */; };
 		6B55908D1F36264D000FD7EC /* profileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55908C1F36264D000FD7EC /* profileSettings.swift */; };
 		6B55908F1F362690000FD7EC /* servicesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55908E1F362690000FD7EC /* servicesSettings.swift */; };
-		6B5FBBE11F304F4B004CAFD5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5FBBE01F304F4B004CAFD5 /* AdSupport.framework */; };
 		6B73773F1F44138B00B0323B /* CustomerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73773E1F44138B00B0323B /* CustomerHome.swift */; };
 		6B7BAAFF1F25CC280054365E /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAAFE1F25CC280054365E /* SignIn.swift */; };
 		6B7BAB011F25D56D0054365E /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAB001F25D56D0054365E /* DesignableTextField.swift */; };
 		6B7BAB051F266A0D0054365E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAB041F266A0D0054365E /* Settings.swift */; };
 		6B7BAB091F27293F0054365E /* CustomizedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7BAB081F27293F0054365E /* CustomizedCell.swift */; };
 		6B8CD9A61F2EF868002F08E8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CD9A51F2EF868002F08E8 /* Utilities.swift */; };
-		6BE39A161F293AFD0054D95C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BE39A151F293AFD0054D95C /* GoogleService-Info.plist */; };
 		6BE420871F24939F00BD6797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE420861F24939F00BD6797 /* AppDelegate.swift */; };
 		6BE420891F24939F00BD6797 /* signupStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE420881F24939F00BD6797 /* signupStep1.swift */; };
 		6BE4208C1F24939F00BD6797 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4208A1F24939F00BD6797 /* Main.storyboard */; };
@@ -28,11 +26,11 @@
 		6BE420A71F24939F00BD6797 /* RuqiiSocietyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE420A61F24939F00BD6797 /* RuqiiSocietyUITests.swift */; };
 		6BE420B71F24E2EE00BD6797 /* signupStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE420B61F24E2EE00BD6797 /* signupStep2.swift */; };
 		6BE420B91F24E6AC00BD6797 /* signupStep3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE420B81F24E6AC00BD6797 /* signupStep3.swift */; };
-		79AF75B9CF0C87AE2E541C26 /* Pods_RuqiiSocietyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AEC0F363D09C229D2A80F2 /* Pods_RuqiiSocietyTests.framework */; };
-		826DF6EED6FA7F009568AFA4 /* Pods_RuqiiSociety.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE5EC11639EFAFFD2D5DD63 /* Pods_RuqiiSociety.framework */; };
+		6BF85DAF1F4D4AFF00E0AB96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BF85DAE1F4D4AFF00E0AB96 /* GoogleService-Info.plist */; };
+		B68FFF08028C901255CAF9A2 /* Pods_RuqiiSociety.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215B86CC20773F0A558A7000 /* Pods_RuqiiSociety.framework */; };
+		CDC633442540F71ED2CCF21D /* Pods_RuqiiSocietyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8276E64B8C087F0A154375EB /* Pods_RuqiiSocietyTests.framework */; };
 		CE2162FA1F482463006AD11B /* ExpertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2162F91F482463006AD11B /* ExpertInformation.swift */; };
 		CE2162FC1F48247E006AD11B /* CustomerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2162FB1F48247E006AD11B /* CustomerInformation.swift */; };
-		CE8AC1C81F4C04E60049BA9B /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC1C71F4C04E60049BA9B /* test1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,20 +51,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B1C0E32103E3E7DA86A0AE4 /* Pods-RuqiiSocietyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyUITests/Pods-RuqiiSocietyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2AE5EC11639EFAFFD2D5DD63 /* Pods_RuqiiSociety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSociety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		405B9AF665D2E104C773A633 /* Pods-RuqiiSociety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSociety.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety.debug.xcconfig"; sourceTree = "<group>"; };
+		215B86CC20773F0A558A7000 /* Pods_RuqiiSociety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSociety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		607E43BAC751CE80BB9862DF /* Pods-RuqiiSocietyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B29A9191F403AF100C9222C /* ExpertHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertHome.swift; sourceTree = "<group>"; };
 		6B55908C1F36264D000FD7EC /* profileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileSettings.swift; sourceTree = "<group>"; };
 		6B55908E1F362690000FD7EC /* servicesSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = servicesSettings.swift; sourceTree = "<group>"; };
-		6B5FBBE01F304F4B004CAFD5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		6B73773E1F44138B00B0323B /* CustomerHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerHome.swift; sourceTree = "<group>"; };
 		6B7BAAFE1F25CC280054365E /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		6B7BAB001F25D56D0054365E /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		6B7BAB041F266A0D0054365E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6B7BAB081F27293F0054365E /* CustomizedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedCell.swift; sourceTree = "<group>"; };
 		6B8CD9A51F2EF868002F08E8 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		6BE39A151F293AFD0054D95C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6BE420831F24939F00BD6797 /* RuqiiSociety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuqiiSociety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE420861F24939F00BD6797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE420881F24939F00BD6797 /* signupStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupStep1.swift; sourceTree = "<group>"; };
@@ -82,15 +77,16 @@
 		6BE420A81F24939F00BD6797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE420B61F24E2EE00BD6797 /* signupStep2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = signupStep2.swift; path = ../signupStep2.swift; sourceTree = "<group>"; };
 		6BE420B81F24E6AC00BD6797 /* signupStep3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupStep3.swift; sourceTree = "<group>"; };
-		6C58800A05DF8B1A9B2A5CF4 /* Pods_RuqiiSocietyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSocietyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82AEC0F363D09C229D2A80F2 /* Pods_RuqiiSocietyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSocietyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96912D796B3ADC16F8F9BF94 /* Pods-RuqiiSocietyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9AF6BF0F7439C18F14AA1B1C /* Pods-RuqiiSocietyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyUITests/Pods-RuqiiSocietyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BF85DAE1F4D4AFF00E0AB96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7ADC884D4576DD1FF2F084E2 /* Pods-RuqiiSocietyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81B9204B1669D380338D37EA /* Pods-RuqiiSociety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSociety.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety.release.xcconfig"; sourceTree = "<group>"; };
+		8276E64B8C087F0A154375EB /* Pods_RuqiiSocietyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSocietyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9762AA3E2FA3CEECA1CC451C /* Pods-RuqiiSocietyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyUITests/Pods-RuqiiSocietyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A7DF755290603B69598F76B1 /* Pods-RuqiiSocietyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyUITests/Pods-RuqiiSocietyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B82E373A96271641F6120864 /* Pods_RuqiiSocietyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSocietyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2162F91F482463006AD11B /* ExpertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertInformation.swift; sourceTree = "<group>"; };
 		CE2162FB1F48247E006AD11B /* CustomerInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInformation.swift; sourceTree = "<group>"; };
-		CE8AC1C71F4C04E60049BA9B /* test1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test1.swift; sourceTree = "<group>"; };
-		DCA0E2D7DD84B68B539EA65B /* Pods-RuqiiSocietyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.release.xcconfig"; sourceTree = "<group>"; };
-		E56D9947EF333435535D4113 /* Pods-RuqiiSociety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSociety.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety.release.xcconfig"; sourceTree = "<group>"; };
+		EE6DD696B7D081CED6B3ECC7 /* Pods-RuqiiSociety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSociety.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B5FBBE11F304F4B004CAFD5 /* AdSupport.framework in Frameworks */,
-				826DF6EED6FA7F009568AFA4 /* Pods_RuqiiSociety.framework in Frameworks */,
+				B68FFF08028C901255CAF9A2 /* Pods_RuqiiSociety.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79AF75B9CF0C87AE2E541C26 /* Pods_RuqiiSocietyTests.framework in Frameworks */,
+				CDC633442540F71ED2CCF21D /* Pods_RuqiiSocietyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,24 +110,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0942CE390ECC55BCA6B9FE68 /* Pods_RuqiiSocietyUITests.framework in Frameworks */,
+				39BDF1248A4C497A30FEBB76 /* Pods_RuqiiSocietyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52339F13EB56045F4D5386C9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6B5FBBE01F304F4B004CAFD5 /* AdSupport.framework */,
-				2AE5EC11639EFAFFD2D5DD63 /* Pods_RuqiiSociety.framework */,
-				82AEC0F363D09C229D2A80F2 /* Pods_RuqiiSocietyTests.framework */,
-				6C58800A05DF8B1A9B2A5CF4 /* Pods_RuqiiSocietyUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6BE4207A1F24939F00BD6797 = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +124,8 @@
 				6BE4209A1F24939F00BD6797 /* RuqiiSocietyTests */,
 				6BE420A51F24939F00BD6797 /* RuqiiSocietyUITests */,
 				6BE420841F24939F00BD6797 /* Products */,
-				8E3710A5407B5904DA58F944 /* Pods */,
-				52339F13EB56045F4D5386C9 /* Frameworks */,
+				E4C3A5A1DF85E9762C57B798 /* Pods */,
+				EF48A4A330372C00C341E9C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,17 +152,16 @@
 				6B7BAB081F27293F0054365E /* CustomizedCell.swift */,
 				6BE4208D1F24939F00BD6797 /* Assets.xcassets */,
 				6BE4208F1F24939F00BD6797 /* LaunchScreen.storyboard */,
-				6BE39A151F293AFD0054D95C /* GoogleService-Info.plist */,
 				6BE420921F24939F00BD6797 /* Info.plist */,
 				6B7BAB001F25D56D0054365E /* DesignableTextField.swift */,
 				6B8CD9A51F2EF868002F08E8 /* Utilities.swift */,
+				6BF85DAE1F4D4AFF00E0AB96 /* GoogleService-Info.plist */,
 				6B55908C1F36264D000FD7EC /* profileSettings.swift */,
 				6B55908E1F362690000FD7EC /* servicesSettings.swift */,
 				6B29A9191F403AF100C9222C /* ExpertHome.swift */,
 				6B73773E1F44138B00B0323B /* CustomerHome.swift */,
 				CE2162F91F482463006AD11B /* ExpertInformation.swift */,
 				CE2162FB1F48247E006AD11B /* CustomerInformation.swift */,
-				CE8AC1C71F4C04E60049BA9B /* test1.swift */,
 			);
 			path = RuqiiSociety;
 			sourceTree = "<group>";
@@ -201,17 +184,27 @@
 			path = RuqiiSocietyUITests;
 			sourceTree = "<group>";
 		};
-		8E3710A5407B5904DA58F944 /* Pods */ = {
+		E4C3A5A1DF85E9762C57B798 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				405B9AF665D2E104C773A633 /* Pods-RuqiiSociety.debug.xcconfig */,
-				E56D9947EF333435535D4113 /* Pods-RuqiiSociety.release.xcconfig */,
-				96912D796B3ADC16F8F9BF94 /* Pods-RuqiiSocietyTests.debug.xcconfig */,
-				DCA0E2D7DD84B68B539EA65B /* Pods-RuqiiSocietyTests.release.xcconfig */,
-				9AF6BF0F7439C18F14AA1B1C /* Pods-RuqiiSocietyUITests.debug.xcconfig */,
-				1B1C0E32103E3E7DA86A0AE4 /* Pods-RuqiiSocietyUITests.release.xcconfig */,
+				EE6DD696B7D081CED6B3ECC7 /* Pods-RuqiiSociety.debug.xcconfig */,
+				81B9204B1669D380338D37EA /* Pods-RuqiiSociety.release.xcconfig */,
+				7ADC884D4576DD1FF2F084E2 /* Pods-RuqiiSocietyTests.debug.xcconfig */,
+				607E43BAC751CE80BB9862DF /* Pods-RuqiiSocietyTests.release.xcconfig */,
+				9762AA3E2FA3CEECA1CC451C /* Pods-RuqiiSocietyUITests.debug.xcconfig */,
+				A7DF755290603B69598F76B1 /* Pods-RuqiiSocietyUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF48A4A330372C00C341E9C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				215B86CC20773F0A558A7000 /* Pods_RuqiiSociety.framework */,
+				8276E64B8C087F0A154375EB /* Pods_RuqiiSocietyTests.framework */,
+				B82E373A96271641F6120864 /* Pods_RuqiiSocietyUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,9 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE420911F24939F00BD6797 /* LaunchScreen.storyboard in Resources */,
+				6BF85DAF1F4D4AFF00E0AB96 /* GoogleService-Info.plist in Resources */,
 				6BE4208E1F24939F00BD6797 /* Assets.xcassets in Resources */,
 				6BE4208C1F24939F00BD6797 /* Main.storyboard in Resources */,
-				6BE39A161F293AFD0054D95C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +368,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RuqiiSociety-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3695F85E31BF2679008B8788 /* [CP] Copy Pods Resources */ = {
@@ -405,9 +401,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,13 +440,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RuqiiSocietyTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5B5032EDF6B1EC0300684D1 /* [CP] Copy Pods Resources */ = {
@@ -465,13 +473,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RuqiiSocietyUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA8897B9BA67F9AAD1A77D1C /* [CP] Embed Pods Frameworks */ = {
@@ -503,7 +514,6 @@
 				6B7BAAFF1F25CC280054365E /* SignIn.swift in Sources */,
 				6B29A91A1F403AF100C9222C /* ExpertHome.swift in Sources */,
 				6B7BAB051F266A0D0054365E /* Settings.swift in Sources */,
-				CE8AC1C81F4C04E60049BA9B /* test1.swift in Sources */,
 				CE2162FC1F48247E006AD11B /* CustomerInformation.swift in Sources */,
 				6BE420871F24939F00BD6797 /* AppDelegate.swift in Sources */,
 				6B55908D1F36264D000FD7EC /* profileSettings.swift in Sources */,
@@ -651,7 +661,7 @@
 		};
 		6BE420AC1F2493A000BD6797 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 405B9AF665D2E104C773A633 /* Pods-RuqiiSociety.debug.xcconfig */;
+			baseConfigurationReference = EE6DD696B7D081CED6B3ECC7 /* Pods-RuqiiSociety.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = YES;
@@ -665,7 +675,7 @@
 		};
 		6BE420AD1F2493A000BD6797 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E56D9947EF333435535D4113 /* Pods-RuqiiSociety.release.xcconfig */;
+			baseConfigurationReference = 81B9204B1669D380338D37EA /* Pods-RuqiiSociety.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = YES;
@@ -679,7 +689,7 @@
 		};
 		6BE420AF1F2493A000BD6797 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96912D796B3ADC16F8F9BF94 /* Pods-RuqiiSocietyTests.debug.xcconfig */;
+			baseConfigurationReference = 7ADC884D4576DD1FF2F084E2 /* Pods-RuqiiSocietyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RuqiiSocietyTests/Info.plist;
@@ -693,7 +703,7 @@
 		};
 		6BE420B01F2493A000BD6797 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCA0E2D7DD84B68B539EA65B /* Pods-RuqiiSocietyTests.release.xcconfig */;
+			baseConfigurationReference = 607E43BAC751CE80BB9862DF /* Pods-RuqiiSocietyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RuqiiSocietyTests/Info.plist;
@@ -707,7 +717,7 @@
 		};
 		6BE420B21F2493A000BD6797 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AF6BF0F7439C18F14AA1B1C /* Pods-RuqiiSocietyUITests.debug.xcconfig */;
+			baseConfigurationReference = 9762AA3E2FA3CEECA1CC451C /* Pods-RuqiiSocietyUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RuqiiSocietyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -721,7 +731,7 @@
 		};
 		6BE420B31F2493A000BD6797 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B1C0E32103E3E7DA86A0AE4 /* Pods-RuqiiSocietyUITests.release.xcconfig */;
+			baseConfigurationReference = A7DF755290603B69598F76B1 /* Pods-RuqiiSocietyUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RuqiiSocietyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

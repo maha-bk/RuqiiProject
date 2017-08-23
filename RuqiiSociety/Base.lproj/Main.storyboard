@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dE8-df-znS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="46m-TX-uUt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -813,6 +813,20 @@
                                 <color key="textColor" red="1" green="0.1257547399" blue="0.1139928311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" جاري إنشاء الملف الشخصي..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15m-Vm-F1q">
+                                <rect key="frame" x="35" y="514" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.62505006571354416" green="0.62767578125000001" blue="0.077784462458178202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="جاري الإتصال بقواعد البيانات..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCC-hO-d07">
+                                <rect key="frame" x="35" y="558" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.24122283996808619" green="0.54203124999999996" blue="0.19781085965986367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -847,6 +861,8 @@
                         <outlet property="btn7" destination="dZg-KX-gPT" id="jgG-3C-HsM"/>
                         <outlet property="btn8" destination="NO8-t5-9LK" id="IRW-pf-eL0"/>
                         <outlet property="btn9" destination="GI0-dw-eaU" id="XsJ-fo-WGx"/>
+                        <outlet property="dataConnectLabel" destination="JCC-hO-d07" id="huJ-Sm-hWD"/>
+                        <outlet property="dataLoadLabel" destination="15m-Vm-F1q" id="lMX-oW-HJZ"/>
                         <outlet property="interestErrorLabel" destination="5Eh-ni-sYb" id="w3P-j4-n4X"/>
                         <outlet property="startButtin" destination="oih-Nj-ofA" id="cyK-Qi-jdc"/>
                         <segue destination="kco-wH-azw" kind="show" identifier="moveToHome" id="y3p-qe-C9k"/>
@@ -855,33 +871,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEl-1Z-SfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4509.6000000000004" y="-3703.8980509745129"/>
-        </scene>
-        <!--Test1-->
-        <scene sceneID="4F7-eG-tbJ">
-            <objects>
-                <viewController id="CsK-Kc-UZe" customClass="test1" customModule="RuqiiSociety" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vFN-Px-FjZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="n80-JB-lrc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G1K-Hh-Oq2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3b-b9-mU7">
-                                <rect key="frame" x="166" y="254" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G9A-0O-fLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5328.8000000000002" y="-3711.0944527736133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="exc-TI-Jsn">

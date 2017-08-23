@@ -6,10 +6,11 @@ target 'RuqiiSociety' do
   use_frameworks!
 
   # Pods for RuqiiSociety
-
-pod ‘Firebase/Core’
+pod 'Firebase/Core’
 pod ‘Firebase/Database’
-pod ‘Firebase/Auth’
+pod 'Firebase/Auth'
+pod 'Firebase/Storage'
+
 
   target 'RuqiiSocietyTests' do
     inherit! :search_paths
@@ -20,7 +21,5 @@ pod ‘Firebase/Auth’
     inherit! :search_paths
     # Pods for testing
   end
-
-
 
 end
