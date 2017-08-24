@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39BDF1248A4C497A30FEBB76 /* Pods_RuqiiSocietyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82E373A96271641F6120864 /* Pods_RuqiiSocietyUITests.framework */; };
+		6B210A771F4ECE1D00D49E95 /* signUpCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B210A761F4ECE1C00D49E95 /* signUpCustomer.swift */; };
 		6B29A91A1F403AF100C9222C /* ExpertHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B29A9191F403AF100C9222C /* ExpertHome.swift */; };
 		6B55908D1F36264D000FD7EC /* profileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55908C1F36264D000FD7EC /* profileSettings.swift */; };
 		6B55908F1F362690000FD7EC /* servicesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B55908E1F362690000FD7EC /* servicesSettings.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		215B86CC20773F0A558A7000 /* Pods_RuqiiSociety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuqiiSociety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607E43BAC751CE80BB9862DF /* Pods-RuqiiSocietyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSocietyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSocietyTests/Pods-RuqiiSocietyTests.release.xcconfig"; sourceTree = "<group>"; };
+		6B210A761F4ECE1C00D49E95 /* signUpCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpCustomer.swift; sourceTree = "<group>"; };
 		6B29A9191F403AF100C9222C /* ExpertHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertHome.swift; sourceTree = "<group>"; };
 		6B55908C1F36264D000FD7EC /* profileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileSettings.swift; sourceTree = "<group>"; };
 		6B55908E1F362690000FD7EC /* servicesSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = servicesSettings.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				6B73773E1F44138B00B0323B /* CustomerHome.swift */,
 				CE2162F91F482463006AD11B /* ExpertInformation.swift */,
 				CE2162FB1F48247E006AD11B /* CustomerInformation.swift */,
+				6B210A761F4ECE1C00D49E95 /* signUpCustomer.swift */,
 			);
 			path = RuqiiSociety;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				6B7BAAFF1F25CC280054365E /* SignIn.swift in Sources */,
 				6B29A91A1F403AF100C9222C /* ExpertHome.swift in Sources */,
 				6B7BAB051F266A0D0054365E /* Settings.swift in Sources */,
+				6B210A771F4ECE1D00D49E95 /* signUpCustomer.swift in Sources */,
 				CE2162FC1F48247E006AD11B /* CustomerInformation.swift in Sources */,
 				6BE420871F24939F00BD6797 /* AppDelegate.swift in Sources */,
 				6B55908D1F36264D000FD7EC /* profileSettings.swift in Sources */,

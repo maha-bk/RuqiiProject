@@ -99,7 +99,9 @@ class signupStep3: UIViewController {
             }
             for i in 0..<self.servicesName.count
             {
-                self.ButtonsArray[i].setTitle(self.servicesName[i], for: .normal)
+                self.ButtonsArray[i].imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 6)
+                
+                self.ButtonsArray[i].setTitle("   " + self.servicesName[i], for: .normal)
                 if (i == self.ButtonsArray.count - 1){
                     self.dataConnectLabel.isHidden = true
                 }
@@ -271,11 +273,11 @@ class signupStep3: UIViewController {
          
                for (_, value) in self.expertTitle{
                     signupStep3.expertTitleString += " " + value
-                    
+                
                 }
                 
              print(signupStep3.expertTitleString)
-             //elf.ref.child("Experts").child(self.userID).child("title").setValue(signupStep3.expertTitleString)
+             
 
              self.performSegue(withIdentifier: "moveToHome", sender: self)
            
@@ -290,7 +292,7 @@ class signupStep3: UIViewController {
     
     
     //self.ref.child("Experts").child(self.userID).child("title").setValue(signupStep3.expertTitleString)
-    func addServicesToExpertChild(){
+    /*func addServicesToExpertChild(){
         for i in 0..<self.servicesNumbersArray.count{
             self.ref.child("Experts").child(self.userID).child("Services").child(self.servicesNumbersArray[i])
                 .child("price_from").setValue(0)
@@ -301,15 +303,18 @@ class signupStep3: UIViewController {
             
             
         }
-    }
+    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         startButtin.backgroundColor = colors.selectedColor
+        //(top: 10, left: 10, bottom: 10, right: 10)
+        btn1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 6)
         self.fillArrayOfButtons()
         self.getServices()
         isButtonClicked = false
         interestErrorLabel.isHidden = true
         dataLoadLabel.isHidden = true
+        
         
         /*for var i in 0..<ButtonsArray.count{
             btnNumber = i

@@ -14,7 +14,7 @@ import FirebaseDatabase
 struct ExpertInformation {
     
     
-   static var ExpertName: String!
+   static var ExpertName: String?
    static var ExpertEmail: String!
    static var ExpertPhone: String!
    static var ExpertId: String!
@@ -39,8 +39,10 @@ struct ExpertInformation {
     
         // Setting the values for non optional global variables
     
-    Database.database().reference().child("Experts/\( ExpertInformation.ExpertId)").observe(.value , with: {
+    Database.database().reference().child("Experts").child(expertId).observe(.childAdded , with: {
         (snapshot) in
+    
+
         
         
         ExpertInformation.ExpertName = (snapshot.value! as! NSDictionary)["name"] as! String

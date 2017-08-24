@@ -291,6 +291,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         bankLabel.isHidden = true
         dropdownList.isHidden = true
         isButtonClicked = false
+        nextButtonStep2.backgroundColor = colors.selectedColor
         
         
         

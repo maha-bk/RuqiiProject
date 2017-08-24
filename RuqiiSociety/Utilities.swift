@@ -11,6 +11,8 @@ import UIKit
 
 class Utilities {
     
+  
+    
     /*static var checkbox = UIImage(named: "checked")
     static var uncheckbox = UIImage(named: "unchecked")
     static var isButtonClicked = Bool()

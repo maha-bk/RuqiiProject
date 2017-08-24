@@ -254,7 +254,7 @@ class signupStep1: UIViewController {
         passErrorLabel.isHidden = true
         confirmedErrorLabel.isHidden = true
         emptyFieldsErrorLabel.isHidden = true
-        
+        nextButtonStep1.backgroundColor = colors.selectedColor
        
         
         
