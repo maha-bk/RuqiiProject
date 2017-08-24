@@ -10,6 +10,14 @@ import UIKit
 
 class signUpCustomer: UIViewController {
 
+    @IBOutlet weak var confiremdPassErrorLabel: UILabel!
+    @IBOutlet weak var confiremedPassTxtField: DesignableTextField!
+  
+    @IBOutlet weak var passErrorLabel: DesignableTextField!
+    @IBOutlet weak var emailErrorLabel: UILabel!
+    @IBOutlet weak var emailTxtField: DesignableTextField!
+    @IBOutlet weak var confirmedPassTxtField: DesignableTextField!
+    @IBOutlet weak var passwordTxtField: DesignableTextField!
     @IBOutlet weak var createAccountBtn: UIButton!
     @IBOutlet weak var signUpAsExpertBtn: UIButton!
     override func viewDidLoad() {
