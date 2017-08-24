@@ -33,51 +33,60 @@ struct ExpertInformation {
     
    // The following function acts as an initializer
     
-   static func loadExpertInfo(snapshot: DataSnapshot ,expertId: String){
-   
+   static func loadExpertInfo(expertId: String){
+    
+   ExpertInformation.ExpertId = expertId
+    
         // Setting the values for non optional global variables
     
+    Database.database().reference().child("Experts/\( ExpertInformation.ExpertId)").observe(.value , with: {
+        (snapshot) in
+        
+        
         ExpertInformation.ExpertName = (snapshot.value! as! NSDictionary)["name"] as! String
         ExpertInformation.ExpertEmail = (snapshot.value! as! NSDictionary)["email"] as! String
         ExpertInformation.ExpertPhone = (snapshot.value! as! NSDictionary)["phone"] as! String
         ExpertInformation.ExpertBankName = (snapshot.value! as! NSDictionary)["bankName"] as! String
         ExpertInformation.ExpertIban = (snapshot.value! as! NSDictionary)["iban"] as! String
         ExpertInformation.ExpertIsPhonePrivate = (snapshot.value! as! NSDictionary)["isPhonePrivate"] as! Bool
-    
-    
+        
+        
         // Setting the values for optional global variables
-    
+        
         let temp1 = (snapshot.value! as! NSDictionary)["numOfRating"] as? Int
         if (temp1 != nil){
-        ExpertInformation.ExpertNumOfRating = temp1
+            ExpertInformation.ExpertNumOfRating = temp1
         }
         else {ExpertInformation.ExpertNumOfRating = 0}
-    
+        
         let temp2 = (snapshot.value! as! NSDictionary)["title"] as? String
         if (temp2 != nil){
-        ExpertInformation.ExpertTitle = temp2
+            ExpertInformation.ExpertTitle = temp2
         }
-        else { ExpertInformation.ExpertTitle = ""}
-    
+        else { ExpertInformation.ExpertTitle = signupStep3.expertTitleString}
         let temp3 = (snapshot.childSnapshot(forPath:"completed_orders").value) as? [String: Bool]
         if (temp3 != nil){ExpertInformation.ExpertCompletedOrdersDic = temp3}
         else {ExpertInformation.ExpertCompletedOrdersDic = [String: Bool]()}
-    
+        
         let temp4 = (snapshot.childSnapshot(forPath:"pending_orders").value) as? [String: Bool]
         if (temp4 != nil){ExpertInformation.ExpertPendingOrdersDic = temp4}
         else {ExpertInformation.ExpertPendingOrdersDic = [String: Bool]()}
-    
+        
         let temp5 = (snapshot.childSnapshot(forPath:"portfolio").value) as? [String: String]
         if (temp5 != nil) {ExpertInformation.ExpertPortfolioDic = temp5}
         else {ExpertInformation.ExpertPortfolioDic = [String: String]()}
-    
+        
         let temp6 = (snapshot.childSnapshot(forPath:"Services").value) as? [String]
         if(temp6 != nil) {ExpertInformation.ExpertServicesDic = temp6}
         else {ExpertInformation.ExpertServicesDic = [String]()}
-    
+        
         ExpertInformation.ExpertCompletedOrdersCount = Int(snapshot.childSnapshot(forPath:"completed_orders").childrenCount)
-    
+        
         ExpertInformation.ExpertPendingOrdersCount = Int(snapshot.childSnapshot(forPath:"pending_orders").childrenCount)
+        
+
+        
+    }, withCancel: nil)
     
     
     

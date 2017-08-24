@@ -37,8 +37,10 @@ class signupStep3: UIViewController {
     var selectedInterests = [String] ()
     var expertTitle = ["writer" : "", "photo" : "", "designer" : "", "programmer" : ""]
     var userID = String ()
+    static var  expertTitleString = ""
+    var servicesNumbersArray = [String] ()
    
-    
+   
     
     
 
@@ -91,10 +93,10 @@ class signupStep3: UIViewController {
         databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
        
             let service = snapshot.childSnapshot(forPath: "Name").value as? String
-            print(service!)
-            /*if let actualSrevice = service {
+            
+            if let actualSrevice = service {
                self.servicesName.append(actualSrevice)
-            }*/
+            }
             for i in 0..<self.servicesName.count
             {
                 self.ButtonsArray[i].setTitle(self.servicesName[i], for: .normal)
@@ -138,6 +140,7 @@ class signupStep3: UIViewController {
     @IBAction func startbuttonAction(_ sender: Any) {
         
         selectedInterests.removeAll()
+        expertTitle = ["writer" : "", "photo" : "", "designer" : "", "programmer" : ""]
         
         //to know the selected interests
         for var i in 0..<ButtonsArray.count{
@@ -158,33 +161,39 @@ class signupStep3: UIViewController {
         createUser()
        
        
-        /*for (key , value) in expertTitle{
-            print(value)
-            
-        }
-        expertTitle = ["writer" : "", "photo" : "", "designer" : "", "programmer" : ""]
-        */
+       
         }
     
-   
+  
     
     func checkCategory (){
       
-        for var i in 0..<selectedInterests.count{
+        for i in 0..<selectedInterests.count{
     
             databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
                 
                 let service = snapshot.childSnapshot(forPath: "Name").value as? String
                 if let actualSrevice = service {
                     if (actualSrevice.contains(self.selectedInterests[i])){
-                        let catog = snapshot.childSnapshot(forPath: "Category").value as? String
+                    let catog = snapshot.childSnapshot(forPath: "Category").value as? String
                         //unwrapping
                         if let category = catog{
+                            let serviceNumber = snapshot.key as? String
+                            //self.servicesNumbersArray.append(serviceNumber!)
+                            
+                            // add additional nodes to same created user (selected services numbers)
+                            self.ref.child("Experts").child(self.userID).child("Services").child(serviceNumber!)
+                                .child("price_from").setValue(0)
+                            self.ref.child("Experts").child(self.userID).child("Services").child(serviceNumber!)
+                                .child("price_to").setValue(0)
+                            
+                            // add expert to Experts_Services node to know each service with corrusponding experts work with it.
+                            self.ref.child("Experts_Services").child(serviceNumber!).child("Experts")
+                            .child(self.userID).setValue("true")
+
                             switch(category){
                             case "Category4":
                                 self.expertTitle["programmer"] =  "مبرمجة"
-                                print("Mahaaaa")
-                                
                             case "Category2":
                                 self.expertTitle["designer"] = "مصممة"
                             case "Category3":
@@ -208,15 +217,20 @@ class signupStep3: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-       segue.destination as! ExpertHome
-   
+       
+        let NextView = segue.destination as! ExpertHome
+        NextView.ViewAppearsAfterSignup = true
+        NextView.userId = self.userID
+        NextView.expertTit =  signupStep3.expertTitleString
+        
+
         
     }
     
     
     
     func createUser(){
-        
+        // add expert to Authentication sectoin in firebase
         Auth.auth().createUser(withEmail: expertEmail, password: expertPassword, completion: { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -224,11 +238,9 @@ class signupStep3: UIViewController {
             }
             else {
                 self.userID = (Auth.auth().currentUser?.uid)!
-                print( self.userID )
+                //add all expert's informatoin to database sectoin
                 self.createNewExpert()
-                
-                
-                
+
                 
             }
             
@@ -247,35 +259,52 @@ class signupStep3: UIViewController {
       ref.child("Experts").child(userID).child("numOfRating").setValue(0)
       ref.child("Experts").child(userID).child("rating").setValue(0)
       ref.child("Experts").child(userID).child("ratingPoints").setValue(0)
+      ref.child("Experts").child(userID).child("title").setValue("")
+  
         
-      print("New Expert")
-      checkCategory()
 
-        
-     var expertTitle = ""
+      checkCategory() // to know expert title and the selected interest belong to which catogory
+      
         Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userID).observe(.value, with: { (DataSnapshot) in
-            
-            if(DataSnapshot.exists()){
-                for (key , value) in self.expertTitle{
-                    expertTitle += value + " . "
+           
+            if(DataSnapshot.hasChild(self.userID) && DataSnapshot.exists()){
+         
+               for (_, value) in self.expertTitle{
+                    signupStep3.expertTitleString += " " + value
                     
                 }
-                self.ref.child("Experts").child(self.userID).child("title").setValue(expertTitle)
-                self.performSegue(withIdentifier: "moveToHome", sender: self)
+                
+             print(signupStep3.expertTitleString)
+             //elf.ref.child("Experts").child(self.userID).child("title").setValue(signupStep3.expertTitleString)
 
+             self.performSegue(withIdentifier: "moveToHome", sender: self)
+           
             }
             else{
                 print("Not exist")
             }
                 })
                 
-        
-    }
+               }
     
+    
+    
+    //self.ref.child("Experts").child(self.userID).child("title").setValue(signupStep3.expertTitleString)
+    func addServicesToExpertChild(){
+        for i in 0..<self.servicesNumbersArray.count{
+            self.ref.child("Experts").child(self.userID).child("Services").child(self.servicesNumbersArray[i])
+                .child("price_from").setValue(0)
+            self.ref.child("Experts").child(self.userID).child("Services").child(self.servicesNumbersArray[i])
+                .child("price_to").setValue(0)
+            print("i: ", i)
+           
+            
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         startButtin.backgroundColor = colors.selectedColor
-     
         self.fillArrayOfButtons()
         self.getServices()
         isButtonClicked = false

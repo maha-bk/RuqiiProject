@@ -11,7 +11,7 @@ import Foundation
 class ExpertHome: UIViewController {
     
 var ViewAppearsAfterLogin = false
-
+var ViewAppearsAfterSignup = false
     @IBOutlet weak var pendingOrdersCountLabel: UILabel!
 
    
@@ -20,14 +20,17 @@ var ViewAppearsAfterLogin = false
     @IBOutlet weak var ratingCountsLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
-  
+    var userId = String ()
+    var expertTit = String ()
+    var ref: DatabaseReference! 
+    
     
 
    override func viewWillAppear(_ animated: Bool) {
-        if (ViewAppearsAfterLogin == true){
-            let firstName = ExpertInformation.ExpertName.components(separatedBy:" ").first
+        /*if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true){
+            let firstName = ExpertInformation.ExpertName!.components(separatedBy:" ").first
             Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
-                  }
+                  }*/
    
     }
     
@@ -37,7 +40,21 @@ var ViewAppearsAfterLogin = false
     }
     
     override func viewDidLoad() {
+      
         super.viewDidLoad()
+         //ExpertInformation.loadExpertInfo(expertId: self.userId)
+       //print(expertTit)
+        /*Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userId).observe(.value, with: { (DataSnapshot) in
+            
+            if(DataSnapshot.exists()){
+                self.ref.child("Experts").child(self.userId).child("title").setValue(self.expertTit)
+
+        }
+            else{
+                print("Not exist")
+            }
+        })*/
+       
       
         // Do any additional setup after loading the view.
     }
