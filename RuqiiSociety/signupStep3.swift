@@ -23,6 +23,7 @@ class signupStep3: UIViewController {
     
     var ButtonsArray = [UIButton]()
     
+    
     // to hold services names from database
     var servicesName = [String] ()
     var expertName = String ()
@@ -169,51 +170,59 @@ class signupStep3: UIViewController {
   
     
     func checkCategory (){
-      
-        for i in 0..<selectedInterests.count{
-    
+   
+        //for i in 0..<selectedInterests.count{
             databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
-                
-                let service = snapshot.childSnapshot(forPath: "Name").value as? String
-                if let actualSrevice = service {
-                    if (actualSrevice.contains(self.selectedInterests[i])){
-                    let catog = snapshot.childSnapshot(forPath: "Category").value as? String
-                        //unwrapping
-                        if let category = catog{
-                            let serviceNumber = snapshot.key as? String
-                            //self.servicesNumbersArray.append(serviceNumber!)
-                            
-                            // add additional nodes to same created user (selected services numbers)
-                            self.ref.child("Experts").child(self.userID).child("Services").child(serviceNumber!)
-                                .child("price_from").setValue(0)
-                            self.ref.child("Experts").child(self.userID).child("Services").child(serviceNumber!)
-                                .child("price_to").setValue(0)
-                            
-                            // add expert to Experts_Services node to know each service with corrusponding experts work with it.
-                            self.ref.child("Experts_Services").child(serviceNumber!).child("Experts")
-                            .child(self.userID).setValue("true")
-
-                            switch(category){
-                            case "Category4":
-                                self.expertTitle["programmer"] =  "مبرمجة"
-                            case "Category2":
-                                self.expertTitle["designer"] = "مصممة"
-                            case "Category3":
-                                self.expertTitle["photo"] = "مصورة"
-                            case "Category1":
-                                self.expertTitle["writer"] = "أديبة"
-                            default:
-                                print("No title")
+                let service2 = snapshot.childSnapshot(forPath: "Name").value as? String
+                if let actualSrevice2 = service2 {
+                    print("inside actualSrevice")
+                    print(actualSrevice2, self.selectedInterests[0])
+                        if (actualSrevice2.hasSuffix(self.selectedInterests[0]) == true){
+                            print("inside contains")
+                            let catog = snapshot.childSnapshot(forPath: "Category").value as? String
+                            print("catog", catog!)
+                            //unwrapping
+                            if let category = catog{
+                                print("inside catog")
+                                let serviceNumber = snapshot.key as? String
+                                //self.servicesNumbersArray.append(serviceNumber!)
                                 
-                            }// end switch
-                         
-                        }// end catog if
-                    }// end contains if
+                                // add additional nodes to same created user (selected services numbers)
+                                self.ref.child("Experts").child(self.userID).child("Services").child(serviceNumber!)
+                                    .child("price_from").setValue(0)
+                                self.ref.child("Experts").child(self.userID).child("Services").child(serviceNumber!)
+                                    .child("price_to").setValue(0)
+                                print("after catog")
+                                
+                                // add expert to Experts_Services node to know each service with corrusponding experts work with it.
+                                self.ref.child("Experts_Services").child(serviceNumber!).child("Experts")
+                                    .child(self.userID).setValue("true")
+                                
+                                
+                                switch(category){
+                                case "Category4":
+                                    self.expertTitle["programmer"] =  "مبرمجة"
+                                    print("inside switch")
+                                case "Category2":
+                                    self.expertTitle["designer"] = "مصممة"
+                                case "Category3":
+                                    self.expertTitle["photo"] = "مصورة"
+                                case "Category1":
+                                    self.expertTitle["writer"] = "أديبة"
+                                default:
+                                    print("No title")
+                                    
+                                }// end switch
+                                
+                            }// end catog if
+                        }// end contains if
+                    
+                 
                 }//end actualSrevice if
              
             })// end observe
 
-       }//end for loop
+       //}//end for loop
 
     }
     
@@ -241,7 +250,9 @@ class signupStep3: UIViewController {
             else {
                 self.userID = (Auth.auth().currentUser?.uid)!
                 //add all expert's informatoin to database sectoin
+                
                 self.createNewExpert()
+                print("inside createUser")
 
                 
             }
@@ -262,16 +273,18 @@ class signupStep3: UIViewController {
       ref.child("Experts").child(userID).child("rating").setValue(0)
       ref.child("Experts").child(userID).child("ratingPoints").setValue(0)
       ref.child("Experts").child(userID).child("title").setValue("")
-  
-        
-
+      
       checkCategory() // to know expert title and the selected interest belong to which catogory
       
+     
+        
+        
+        
         Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userID).observe(.value, with: { (DataSnapshot) in
-           
             if(DataSnapshot.hasChild(self.userID) && DataSnapshot.exists()){
+                print("55555555555555555")
          
-               for (_, value) in self.expertTitle{
+               for (key, value) in self.expertTitle{
                     signupStep3.expertTitleString += " " + value
                 
                 }
