@@ -75,7 +75,7 @@ class signUpCustomer: UIViewController {
         
     }
     
-    
+    //test
     func createCustomer(){
         // add new customer to Authentication sectoin in firebase
         let email = emailTxtField.text
@@ -94,7 +94,7 @@ class signUpCustomer: UIViewController {
             
         })
     }
-    
+    //jjj
     func addCustomerToDatabase(){
         
         ref.child("Customers").child(customerID).child("name").setValue("...")
@@ -114,13 +114,12 @@ class signUpCustomer: UIViewController {
             }
         })
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let customerHome = segue.destination as! CustomerHome
+        let x = segue.destination as! CustomerHome
+ 
         
-        
-    }
+    }*/
     
     func checkEmail() -> Bool{
         
