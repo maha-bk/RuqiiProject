@@ -114,13 +114,12 @@ class signUpCustomer: UIViewController {
             }
         })
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let customerHome = segue.destination as! CustomerHome
+        let x = segue.destination as! CustomerHome
+ 
         
-        
-    }
+    }*/
     
     func checkEmail() -> Bool{
         
