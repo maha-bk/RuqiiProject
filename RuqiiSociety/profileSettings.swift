@@ -9,7 +9,7 @@ import UIKit
 
 class profileSettings: UIViewController {
     // hi maha
-    
+    //hi lobna
     @IBOutlet weak var checkBoxBtn: UIButton!
    
     override func viewDidLoad() {
