@@ -75,7 +75,7 @@ class signUpCustomer: UIViewController {
         
     }
     
-    
+    //test
     func createCustomer(){
         // add new customer to Authentication sectoin in firebase
         let email = emailTxtField.text
