@@ -94,7 +94,7 @@ class signUpCustomer: UIViewController {
             
         })
     }
-    
+    //jjj
     func addCustomerToDatabase(){
         
         ref.child("Customers").child(customerID).child("name").setValue("...")
