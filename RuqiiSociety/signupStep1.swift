@@ -13,30 +13,20 @@ class signupStep1: UIViewController {
     @IBOutlet weak var confirmedErrorLabel: UILabel!
     @IBOutlet weak var passErrorLabel: UILabel!
     
-    // this will hold the data from database
-    var messages : [DataSnapshot]! = [DataSnapshot] ()
-    // counter to know if there is any errors in email
+    
+    
     var badEmailFormatFlag = true
+    static var emailExistsBefore = true
     
-    //Declare a reference to receive data from/to firebase database
-    //var ref: DatabaseReference!
-    var refHandle: DatabaseHandle!
     
-    // struct to make emailExistsBefore variable as global var that can be used in entire prpject
-    struct emailStruct{
-        static var emailExistsBefore = true
-    }
-    /*deinit {
-        self.ref.child("messages").removeObserver(withHandle: refHandle)
-    }*/
-
+    
     // email text field event to check that if email exists before in database or not "it checks after first time editing"
     @IBAction func editingDidEndEmail(_ sender: UITextField) {
         let email = self.emailTxtField.text
         Auth.auth().fetchProviders(forEmail: email!, completion: { (providers, error) in
             if providers == nil{
-                emailStruct.emailExistsBefore = true
-                if (emailStruct.emailExistsBefore == true && self.badEmailFormatFlag == true){
+                signupStep1.emailExistsBefore = true
+                if (signupStep1.emailExistsBefore == true && self.badEmailFormatFlag == true){
                     self.emailTxtField.backgroundColor = UIColor.white
                     self.emailErrorLabel.isHidden = true
                     
@@ -47,17 +37,43 @@ class signupStep1: UIViewController {
                 self.emailErrorLabel.isHidden = false
                 self.emailTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
                 self.emailErrorLabel.text = "البريد الإلكتروني موجود سابقاً"
-                emailStruct.emailExistsBefore = false
+                signupStep1.emailExistsBefore = false
                 print("Auth.auth().fetchProviders")
                 
             }
             
         })
-
+        
     }
-   
+    
+    // email text field event to check that if email exists before in database or not "it checks after editing for second time"
+    @IBAction func editingChangedEmail(_ sender: UITextField) {
+        let email = self.emailTxtField.text
+        Auth.auth().fetchProviders(forEmail: email!, completion: { (providers, error) in
+            if providers == nil{
+                signupStep1.emailExistsBefore = true
+                if (signupStep1.emailExistsBefore == true && self.badEmailFormatFlag == true){
+                    self.emailTxtField.backgroundColor = UIColor.white
+                    self.emailErrorLabel.isHidden = true
+                    
+                }
+                
+            }
+            else {
+                self.emailErrorLabel.isHidden = false
+                self.emailTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                self.emailErrorLabel.text = "البريد الإلكتروني موجود سابقاً"
+                signupStep1.emailExistsBefore = false
+                print("Auth.auth().fetchProviders")
+                
+            }
+            
+        })
+        
+    }
+    
     @IBAction func moveToStep2Action(_ sender: UIButton) {
-        if (checkInput() == false || emailStruct.emailExistsBefore == false) {
+        if (checkInput() == false || signupStep1.emailExistsBefore == false) {
             return
         }
         else
@@ -78,42 +94,18 @@ class signupStep1: UIViewController {
     }
     
     
-// email text field event to check that if email exists before in database or not "it checks after editing for second time"
-    @IBAction func editingChangedEmail(_ sender: UITextField) {
-        let email = self.emailTxtField.text
-        Auth.auth().fetchProviders(forEmail: email!, completion: { (providers, error) in
-            if providers == nil{
-                emailStruct.emailExistsBefore = true
-                if (emailStruct.emailExistsBefore == true && self.badEmailFormatFlag == true){
-                    self.emailTxtField.backgroundColor = UIColor.white
-                    self.emailErrorLabel.isHidden = true
-  
-                }
-
-            }
-            else {
-                self.emailErrorLabel.isHidden = false
-                self.emailTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-                self.emailErrorLabel.text = "البريد الإلكتروني موجود سابقاً"
-                emailStruct.emailExistsBefore = false
-                print("Auth.auth().fetchProviders")
-                
-            }
-            
-        })
-
-    }
     
-
+    
+    
     
     //this function call isValidEmailAddress function to ckeck email format
     func checkEmail(){
-  
+        
         let email = self.emailTxtField.text
         
         let emailValidateFlag = self.isValidEmailAddress(emailAddressString: email!) // call the function and store its return value
         
-            if emailValidateFlag == false{
+        if emailValidateFlag == false{
             self.emailTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
             self.emailErrorLabel.isHidden = false
             self.emailErrorLabel.text = "الرجاء كتابة البريد الإلكتروني بالصيغة الصحيحة"
@@ -122,18 +114,18 @@ class signupStep1: UIViewController {
         else{
             self.badEmailFormatFlag = true
         }
-      
-        if (emailStruct.emailExistsBefore == true && badEmailFormatFlag == true){
+        
+        if (signupStep1.emailExistsBefore == true && badEmailFormatFlag == true){
             self.emailTxtField.backgroundColor = UIColor.white
             self.emailErrorLabel.isHidden = true
             
-
+            
         }
         
     }
-       
-
-        
+    
+    
+    
     
     
     //check if entered email is in correct format or not
@@ -161,21 +153,7 @@ class signupStep1: UIViewController {
         
         return  returnValue
     }
-   
-
-
     
-    
-   /* func ConfigureDatabase() {
-        ref = Database.database().reference()
-        
-        //Notify us for new messages that comes through every time
-        //observer will notice each new child that added to (messages) and perform some code.
-        refHandle = self.ref.child("messages").observe(.childAdded, with: {(snapshot) -> Void in
-            
-            self.messages.append(snapshot)
-        })
-    }*/
     
     
     // function foe check all entered inputs
@@ -202,7 +180,7 @@ class signupStep1: UIViewController {
             emptyFieldsErrorLabel.isHidden=true
         }
         
-
+        
         
         //check if password less than 5 charecters
         if ((passTxtField.text?.characters.count)! <= 5)
@@ -232,10 +210,10 @@ class signupStep1: UIViewController {
             errorsCounter+=1
         }
         // call for check email function
-       checkEmail()
-     
+        checkEmail()
         
-        if (errorsCounter > 0 || emailStruct.emailExistsBefore == false || badEmailFormatFlag == false){
+        
+        if (errorsCounter > 0 || signupStep1.emailExistsBefore == false || badEmailFormatFlag == false){
             return false
         }
         else{
@@ -243,10 +221,10 @@ class signupStep1: UIViewController {
         }
         
     }
-
     
-
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -255,11 +233,11 @@ class signupStep1: UIViewController {
         confirmedErrorLabel.isHidden = true
         emptyFieldsErrorLabel.isHidden = true
         nextButtonStep1.backgroundColor = colors.selectedColor
-       
+        
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
