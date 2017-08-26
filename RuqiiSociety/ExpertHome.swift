@@ -27,13 +27,18 @@ var ViewAppearsAfterSignup = false
     
 
    override func viewWillAppear(_ animated: Bool) {
-    /*
+
         if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true){
             let firstName = ExpertInformation.ExpertName!.components(separatedBy:" ").first
             Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
+            fullNameLabel.text = ExpertInformation.ExpertName
+            ratingCountsLabel.text = String(ExpertInformation.ExpertNumOfRating ?? 0)
+            titleLabel.text = ExpertInformation.ExpertTitle
+            pendingOrdersCountLabel.text =  String(ExpertInformation.ExpertPendingOrdersCount ?? 0)
+            completedOrdersCountLabel.text = String(ExpertInformation.ExpertCompletedOrdersCount ?? 0)
                   }
- */
-   fullNameLabel.text = ExpertInformation.ExpertName
+ 
+   
     }
     
     
@@ -44,20 +49,7 @@ var ViewAppearsAfterSignup = false
     override func viewDidLoad() {
       
         super.viewDidLoad()
-         //ExpertInformation.loadExpertInfo(expertId: self.userId)
-       //print(expertTit)
-        /*Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userId).observe(.value, with: { (DataSnapshot) in
-            
-            if(DataSnapshot.exists()){
-                self.ref.child("Experts").child(self.userId).child("title").setValue(self.expertTit)
-
-        }
-            else{
-                print("Not exist")
-            }
-        })*/
        
-      
         // Do any additional setup after loading the view.
     }
 

@@ -293,11 +293,13 @@ class SignIn: UIViewController {
        Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
         
         if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
-            
-          
             self.UserType = "Expert"
-            ExpertInformation.loadExpertInfo(expertId: self.UserId)
-          
+            let expertRef = Database.database().reference().child("Experts/\(self.UserId)")
+            expertRef.observe(.value , with: {
+                (snapshot) in
+                ExpertInformation.loadExpertInfo(snapshot: snapshot,expertId: self.UserId)
+                
+            }, withCancel: nil)
             self.performSegue(withIdentifier: "ExpertHome", sender: self)}
         
         

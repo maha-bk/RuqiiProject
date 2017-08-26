@@ -10,11 +10,12 @@ class CustomerHome: UIViewController {
 
     var ViewAppearsAfterLogin = false
  
+
     @IBOutlet weak var customerNameLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         if (ViewAppearsAfterLogin == true){
         
-                let firstName = CustomerInformation.CustomerName.components(separatedBy:" ").first
+                let firstName = CustomerInformation.CustomerName?.components(separatedBy:" ").first
                 Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
          customerNameLabel.text = CustomerInformation.CustomerName
         }

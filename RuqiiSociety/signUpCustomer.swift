@@ -106,7 +106,17 @@ class signUpCustomer: UIViewController {
             
             if(DataSnapshot.hasChild(self.customerID) && DataSnapshot.exists()){
                 print("inside if")
-                self.performSegue(withIdentifier: "moveToCustomerHome", sender: self)
+                
+                let customerRef = Database.database().reference().child("Customers/\(self.customerID)")
+                customerRef.observe(.value , with: {
+                    (snapshot) in
+                    CustomerInformation.loadCustomerInfo(snapshot: snapshot,customerId: self.customerID)
+                     self.performSegue(withIdentifier: "moveToCustomerHome", sender: self)
+                }, withCancel: nil)
+                
+
+                
+               
                 
             }
             else{
