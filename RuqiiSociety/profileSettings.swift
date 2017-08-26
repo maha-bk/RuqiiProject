@@ -14,6 +14,7 @@ class profileSettings: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "إعدادات الملف الشخصي"
 
         // Do any additional setup after loading the view.
     }
@@ -22,10 +23,7 @@ class profileSettings: UIViewController {
         
      //   Utilities.clickedCheckbox(_ sender)
     }
-    override func viewWillAppear(_ animated: Bool) {
-    self.navigationItem.title = "إعدادات الملف الشخصي"
-    }
-
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

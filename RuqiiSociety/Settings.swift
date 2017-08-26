@@ -15,13 +15,10 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-    
+      self.navigationItem.title = "الإعدادات"
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "الإعدادات"
-        
-    }
+  
     @IBOutlet weak var tableView: UITableView!
     var ChoiceLabelArray = ["الملف الشخصي","أسعار الخدمات"]
     var Icons = [UIImage(named: "UserProfileIcon"),UIImage(named: "CostIcon")]

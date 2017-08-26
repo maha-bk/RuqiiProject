@@ -14,12 +14,11 @@ class servicesSettings: UIViewController {
     @IBOutlet weak var serviceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "إعدادات أسعار الخدمات"
 
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "إعدادات أسعار الخدمات"
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

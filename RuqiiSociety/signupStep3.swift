@@ -268,18 +268,27 @@ class signupStep3: UIViewController {
       checkCategory() // to know expert title and the selected interest belong to which catogory
       
         Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userID).observe(.value, with: { (DataSnapshot) in
-           
+       
             if(DataSnapshot.hasChild(self.userID) && DataSnapshot.exists()){
-         
-               for (_, value) in self.expertTitle{
+                for (_, value) in self.expertTitle{
                     signupStep3.expertTitleString += " " + value
-                
+                    
                 }
+                
+                let expertRef = Database.database().reference().child("Experts/\(self.userID)")
+                expertRef.observe(.value , with: {
+                    (snapshot) in
+                    ExpertInformation.loadExpertInfo(snapshot: snapshot,expertId: self.userID)
+                    self.performSegue(withIdentifier: "moveToHome", sender: self)
+                }, withCancel: nil)
+                
+              
+         
                 
              print(signupStep3.expertTitleString)
              
-
-             self.performSegue(withIdentifier: "moveToHome", sender: self)
+ 
+             
            
             }
             else{

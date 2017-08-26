@@ -14,7 +14,7 @@ import FirebaseDatabase
 struct ExpertInformation {
     
     
-   static var ExpertName: String?
+   static var ExpertName: String!
    static var ExpertEmail: String!
    static var ExpertPhone: String!
    static var ExpertId: String!
@@ -33,14 +33,13 @@ struct ExpertInformation {
     
    // The following function acts as an initializer
     
-   static func loadExpertInfo(expertId: String){
+    static func loadExpertInfo(snapshot: DataSnapshot,expertId: String){
     
    ExpertInformation.ExpertId = expertId
     
         // Setting the values for non optional global variables
     
-    Database.database().reference().child("Experts").child(expertId).observe(.childAdded , with: {
-        (snapshot) in
+  
     
 
         
@@ -82,13 +81,19 @@ struct ExpertInformation {
         if(temp6 != nil) {ExpertInformation.ExpertServicesDic = temp6}
         else {ExpertInformation.ExpertServicesDic = [String]()}
         
-        ExpertInformation.ExpertCompletedOrdersCount = Int(snapshot.childSnapshot(forPath:"completed_orders").childrenCount)
+        let temp7 = Int(snapshot.childSnapshot(forPath:"completed_orders").childrenCount)
+        if(temp7 != 0){
+        ExpertInformation.ExpertCompletedOrdersCount = temp7
+        }
+        else{ExpertInformation.ExpertCompletedOrdersCount = 0}
         
-        ExpertInformation.ExpertPendingOrdersCount = Int(snapshot.childSnapshot(forPath:"pending_orders").childrenCount)
+        let temp8 = Int(snapshot.childSnapshot(forPath:"pending_orders").childrenCount)
+        if(temp8 != 0){
+            ExpertInformation.ExpertPendingOrdersCount = temp8
+        }
+        else{ExpertInformation.ExpertPendingOrdersCount = 0}
         
-
-        
-    }, withCancel: nil)
+   
     
     
     
