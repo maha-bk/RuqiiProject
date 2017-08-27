@@ -22,7 +22,7 @@ class signupStep3: UIViewController {
 
     
     var ButtonsArray = [UIButton]()
-    
+      var s1 = String ()
     
     // to hold services names from database
     var servicesName = [String] ()
@@ -135,8 +135,7 @@ class signupStep3: UIViewController {
         ButtonsArray.append(btn10)
         ButtonsArray.append(btn11)
         ButtonsArray.append(btn12)
-     
-        
+
     }
    
 
@@ -170,14 +169,12 @@ class signupStep3: UIViewController {
   
     
     func checkCategory (){
-   
-        //for i in 0..<selectedInterests.count{
+      
+        for i in 0..<selectedInterests.count{
             databaseHandle = self.ref.child("Services").observe(.childAdded, with: {(snapshot) -> Void in
                 let service2 = snapshot.childSnapshot(forPath: "Name").value as? String
                 if let actualSrevice2 = service2 {
-                    print("inside actualSrevice")
-                    print(actualSrevice2, self.selectedInterests[0])
-                        if (actualSrevice2.hasSuffix(self.selectedInterests[0]) == true){
+                        if ((self.selectedInterests[i]).contains(actualSrevice2) == true){
                             print("inside contains")
                             let catog = snapshot.childSnapshot(forPath: "Category").value as? String
                             print("catog", catog!)
@@ -194,7 +191,7 @@ class signupStep3: UIViewController {
                                     .child("price_to").setValue(0)
                                 print("after catog")
                                 
-                                // add expert to Experts_Services node to know each service with corrusponding experts work with it.
+                                // add the current expert to Experts_Services node to know each service who are the experts work with it.
                                 self.ref.child("Experts_Services").child(serviceNumber!).child("Experts")
                                     .child(self.userID).setValue("true")
                                 
@@ -214,15 +211,29 @@ class signupStep3: UIViewController {
                                     
                                 }// end switch
                                 
+                                // add the title to the current expert
+                                signupStep3.expertTitleString = ""
+                                for (key, value) in self.expertTitle{
+                                    signupStep3.expertTitleString += value
+                                }
+                              
+                            signupStep3.expertTitleString = (signupStep3.expertTitleString as NSString).replacingOccurrences(of: " ", with: "،")
+                                
+                                print(signupStep3.expertTitleString)
+
+                                 self.ref.child("Experts").child(self.userID).child("title").setValue( signupStep3.expertTitleString)
+                                
                             }// end catog if
                         }// end contains if
+                    
+                    
                     
                  
                 }//end actualSrevice if
              
             })// end observe
 
-       //}//end for loop
+       }//end for loop
 
     }
     
@@ -275,20 +286,11 @@ class signupStep3: UIViewController {
       ref.child("Experts").child(userID).child("title").setValue("")
       
       checkCategory() // to know expert title and the selected interest belong to which catogory
-      
-     
-        
-        
-        
-        Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userID).observe(.value, with: { (DataSnapshot) in
+
+      Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: userID).observe(.value, with: { (DataSnapshot) in
             if(DataSnapshot.hasChild(self.userID) && DataSnapshot.exists()){
-                print("55555555555555555")
-         
-               for (key, value) in self.expertTitle{
-                    signupStep3.expertTitleString += " " + value
-                    
-                }
-                
+  
+                // to represent expert info in his profile page.
                 let expertRef = Database.database().reference().child("Experts/\(self.userID)")
                 expertRef.observe(.value , with: {
                     (snapshot) in
@@ -296,14 +298,7 @@ class signupStep3: UIViewController {
                     self.performSegue(withIdentifier: "moveToHome", sender: self)
                 }, withCancel: nil)
                 
-              
-         
-                
-             print(signupStep3.expertTitleString)
-             
- 
-             
-           
+
             }
             else{
                 print("Not exist")
@@ -313,20 +308,6 @@ class signupStep3: UIViewController {
                }
     
     
-    
-    //self.ref.child("Experts").child(self.userID).child("title").setValue(signupStep3.expertTitleString)
-    /*func addServicesToExpertChild(){
-        for i in 0..<self.servicesNumbersArray.count{
-            self.ref.child("Experts").child(self.userID).child("Services").child(self.servicesNumbersArray[i])
-                .child("price_from").setValue(0)
-            self.ref.child("Experts").child(self.userID).child("Services").child(self.servicesNumbersArray[i])
-                .child("price_to").setValue(0)
-            print("i: ", i)
-           
-            
-            
-        }
-    }*/
     override func viewDidLoad() {
         super.viewDidLoad()
         startButtin.backgroundColor = colors.selectedColor
@@ -337,8 +318,17 @@ class signupStep3: UIViewController {
         isButtonClicked = false
         interestErrorLabel.isHidden = true
         dataLoadLabel.isHidden = true
+      
+        s1 = " مبرمجة مصممة مصورة "
+        var x = s1.startIndex
+        var y = s1.endIndex
+        //s1 = s1.substring(from: x + 1)
+        //s1 = s1.substring(to: y - 1)
+        print("x ", x , "y ", y)
+        //s1.in
         
         
+        //code for adding actoin manully
         /*for var i in 0..<ButtonsArray.count{
             btnNumber = i
             ButtonsArray[i].addTarget(self, action: #selector(selectInterst), for: .t)
