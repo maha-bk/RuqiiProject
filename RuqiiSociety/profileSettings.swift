@@ -8,8 +8,11 @@
 import UIKit
 
 class profileSettings: UIViewController {
-    // hi maha
-    //hi lobna
+    
+    var checkbox = UIImage(named: "checked")
+    var uncheckbox = UIImage(named: "unchecked")
+    var isButtonClicked = Bool()
+    
     @IBOutlet weak var checkBoxBtn: UIButton!
    
     override func viewDidLoad() {
@@ -20,8 +23,24 @@ class profileSettings: UIViewController {
     }
     
     @IBAction func checkBoxBtnIsClicked(_ sender: UIButton) {
-        
-     //   Utilities.clickedCheckbox(_ sender)
+      
+        func clickedCheckbox() {
+            
+            
+            if (isButtonClicked == true){
+                isButtonClicked = false
+            }
+            else{
+               isButtonClicked  = true
+            }
+            
+            if (isButtonClicked == true){
+               sender.setImage(checkbox, for: UIControlState.normal)
+            }
+            else{
+                sender.setImage(uncheckbox, for: UIControlState.normal )
+            }
+        }
     }
   
     override func didReceiveMemoryWarning() {

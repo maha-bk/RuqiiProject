@@ -19,6 +19,9 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     }
 
   
+    @IBOutlet weak var backBtn: UIButton!
+   
+  
     @IBOutlet weak var tableView: UITableView!
     var ChoiceLabelArray = ["الملف الشخصي","أسعار الخدمات"]
     var Icons = [UIImage(named: "UserProfileIcon"),UIImage(named: "CostIcon")]
@@ -27,7 +30,12 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let NextView = segue.destination as! ExpertHome
+            NextView.ViewAppearsAfterSettings = true
+     
+        
+    }// end of prepare function
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
    
         return ChoiceLabelArray.count
@@ -42,7 +50,11 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     }
     
+    @IBAction func backBtnClicked(_ sender: Any) {
+         self.performSegue(withIdentifier: "ExpertHome", sender: self)
+    }
     
+  
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {

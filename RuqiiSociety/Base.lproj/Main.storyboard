@@ -559,16 +559,29 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="الإعدادات" id="rWi-fu-fmF"/>
+                    <navigationItem key="navigationItem" title="الإعدادات" id="rWi-fu-fmF">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="6gJ-Ja-shI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="838-F0-v33">
+                                <rect key="frame" x="16" y="12" width="25" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backArrowIcon"/>
+                                <connections>
+                                    <action selector="backBtnClicked:" destination="VmY-ej-Al9" eventType="touchUpInside" id="SM2-Bh-ofW"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backBtn" destination="838-F0-v33" id="0SD-L8-ozs"/>
                         <outlet property="tableView" destination="8Na-lA-IHQ" id="6a3-q4-Lyk"/>
                         <segue destination="ZIb-0p-jpV" kind="show" identifier="الملف الشخصي" id="6qQ-4j-HAP"/>
                         <segue destination="5g7-tR-PuA" kind="show" identifier="أسعار الخدمات" id="d3T-R0-apL"/>
+                        <segue destination="kco-wH-azw" kind="show" identifier="ExpertHome" id="nGC-KJ-Ho1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCc-SW-4t6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2924" y="-2985"/>
+            <point key="canvasLocation" x="2930" y="-2964"/>
         </scene>
         <!--Profile Settings-->
         <scene sceneID="CzJ-pQ-QVa">
@@ -614,8 +627,8 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="goldUserProfileIcon"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   الخدمة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLd-Na-5Gu" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
-                                <rect key="frame" x="39" y="174" width="320" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  المسمى" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLd-Na-5Gu" customClass="DesignableTextField" customModule="RuqiiSociety" customModuleProvider="target">
+                                <rect key="frame" x="39" y="172" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -694,9 +707,17 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightIcon" value="LockIcon"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK4-o0-atC">
-                                <rect key="frame" x="329" y="356" width="30" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="عرض رقم الجوال في الملف الشخصي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0G-vf-kVD">
+                                <rect key="frame" x="133" y="364" width="186" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK4-o0-atC">
+                                <rect key="frame" x="335" y="365" width="16" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="border"/>
                                 <connections>
                                     <action selector="checkBoxBtnIsClicked:" destination="ZIb-0p-jpV" eventType="touchUpInside" id="aLB-Xy-OYX"/>
                                 </connections>
@@ -1058,6 +1079,13 @@
                                     <action selector="forgetPasswordClicked:" destination="M4H-rZ-MPz" eventType="touchUpInside" id="ybs-PF-n7f"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="جاري الاتصال بقواعد البيانات .." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGl-Gf-gSy">
+                                <rect key="frame" x="84" y="475" width="221" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.71302734369999998" green="0.65300097820000003" blue="0.031784013719999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -1082,6 +1110,7 @@
                         <outlet property="emailTxt" destination="GqE-5f-Ozh" id="wiq-Z3-0fx"/>
                         <outlet property="emptyFieldsErrorLabel" destination="Bod-WD-oPY" id="GZ7-2F-BSB"/>
                         <outlet property="forgetPasswordBtn" destination="Pw2-TV-WVM" id="s1f-br-fg6"/>
+                        <outlet property="loadingLabel" destination="CGl-Gf-gSy" id="urG-mw-1Ou"/>
                         <outlet property="passwordErrorLabel" destination="cG4-Me-m32" id="FVW-fq-CLS"/>
                         <outlet property="passwordTxt" destination="ioh-XN-Cl7" id="cKx-r3-vrf"/>
                         <outlet property="signInBtn" destination="Poh-0H-GLs" id="RSf-FW-JA0"/>
@@ -1091,7 +1120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wS-PP-g7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8000000000002" y="-2175.562218890555"/>
+            <point key="canvasLocation" x="2783" y="-2167"/>
         </scene>
         <!--Signup Step2-->
         <scene sceneID="3yS-3F-m72">
@@ -1491,6 +1520,7 @@
         <image name="RuqiiLogo" width="119" height="138"/>
         <image name="SettingsIcon" width="24" height="24"/>
         <image name="arrow" width="33" height="27"/>
+        <image name="backArrowIcon" width="1600" height="1600"/>
         <image name="border" width="144" height="40"/>
         <image name="editIcon" width="20" height="21"/>
         <image name="goldUserProfileIcon" width="21" height="22"/>
@@ -1514,7 +1544,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Fcj-R2-vDm"/>
-        <segue reference="Dz7-Ec-vDs"/>
-        <segue reference="gMU-tv-FOb"/>
+        <segue reference="cwO-a0-Og7"/>
+        <segue reference="nGC-KJ-Ho1"/>
     </inferredMetricsTieBreakers>
 </document>

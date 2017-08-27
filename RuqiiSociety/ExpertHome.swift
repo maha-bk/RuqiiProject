@@ -12,6 +12,7 @@ class ExpertHome: UIViewController {
     
 var ViewAppearsAfterLogin = false
 var ViewAppearsAfterSignup = false
+var ViewAppearsAfterSettings = false
     @IBOutlet weak var pendingOrdersCountLabel: UILabel!
 
    
@@ -28,7 +29,8 @@ var ViewAppearsAfterSignup = false
 
    override func viewWillAppear(_ animated: Bool) {
 
-        if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true){
+        if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true || ViewAppearsAfterSettings == true ){
+            
             let firstName = ExpertInformation.ExpertName!.components(separatedBy:" ").first
             Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
             fullNameLabel.text = ExpertInformation.ExpertName

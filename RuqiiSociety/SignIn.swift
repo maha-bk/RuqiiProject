@@ -12,6 +12,7 @@ class SignIn: UIViewController {
     
     // Declaring the components of the view or interface
     
+    @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var passwordTxt: UITextField!
     
     @IBOutlet weak var emptyFieldsErrorLabel: UILabel!
@@ -293,6 +294,7 @@ class SignIn: UIViewController {
        Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
         
         if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+            self.loadingLabel.isHidden = false
             self.UserType = "Expert"
             let expertRef = Database.database().reference().child("Experts/\(self.UserId)")
             expertRef.observe(.value , with: {
@@ -310,6 +312,8 @@ class SignIn: UIViewController {
         
         Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
             if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+                self.loadingLabel.isHidden = false
+
                 self.UserType = "Customer"
                 let customerRef = Database.database().reference().child("Customers/\(self.UserId)")
                 customerRef.observe(.value , with: {
@@ -432,6 +436,7 @@ class SignIn: UIViewController {
         emailErrorLabel.isHidden = true
         passwordErrorLabel.isHidden = true
         emptyFieldsErrorLabel.isHidden = true
+        loadingLabel.isHidden = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
