@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4H-rZ-MPz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="46m-TX-uUt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -341,13 +341,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المسمى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-3P-paT">
-                                <rect key="frame" x="317" y="284" width="42" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.71001025883838387" green="0.71001025883838387" blue="0.71001025883838387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pt-rc-w0t">
                                 <rect key="frame" x="317" y="342" width="72" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -398,6 +391,13 @@
                                     <action selector="settingsClicked:" destination="kco-wH-azw" eventType="touchUpInside" id="0fM-p6-gpt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المسمى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-3P-paT">
+                                <rect key="frame" x="156" y="284" width="203" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.71001025883838387" green="0.71001025883838387" blue="0.71001025883838387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -405,13 +405,13 @@
                                 <exclude reference="LST-ZH-a8B"/>
                                 <exclude reference="YNz-q3-oBd"/>
                                 <exclude reference="AYP-oS-wu9"/>
-                                <exclude reference="cXW-3P-paT"/>
                                 <exclude reference="9pt-rc-w0t"/>
                                 <exclude reference="seu-LJ-BtE"/>
                                 <exclude reference="jf8-3E-9XV"/>
                                 <exclude reference="UEn-as-KLZ"/>
                                 <exclude reference="d73-2P-Ppx"/>
                                 <exclude reference="RXJ-Np-L5g"/>
+                                <exclude reference="cXW-3P-paT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -419,13 +419,13 @@
                                 <include reference="LST-ZH-a8B"/>
                                 <include reference="YNz-q3-oBd"/>
                                 <include reference="AYP-oS-wu9"/>
-                                <include reference="cXW-3P-paT"/>
                                 <include reference="9pt-rc-w0t"/>
                                 <include reference="seu-LJ-BtE"/>
                                 <include reference="jf8-3E-9XV"/>
                                 <include reference="UEn-as-KLZ"/>
                                 <include reference="d73-2P-Ppx"/>
                                 <include reference="RXJ-Np-L5g"/>
+                                <include reference="cXW-3P-paT"/>
                             </mask>
                         </variation>
                     </view>
@@ -441,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4d-M4-fQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="-1336"/>
+            <point key="canvasLocation" x="3440.8000000000002" y="-1336.2818590704649"/>
         </scene>
         <!--Services Settings-->
         <scene sceneID="dQ8-cd-316">
@@ -747,7 +747,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إهتماماتي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-XK-p4a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="إهتماماتي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-XK-p4a">
                                 <rect key="frame" x="291" y="82" width="68" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="bPK-8r-fHk"/>
@@ -756,7 +756,7 @@
                                 <color key="textColor" red="0.02423199069" green="0.018919860520000002" blue="0.32327178029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قم بتحديد اهتماماتك. بإمكانك إختيار أكثر من اهتمام." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOs-Ot-dXY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="قم بتحديد اهتماماتك. بإمكانك إختيار أكثر من اهتمام." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOs-Ot-dXY">
                                 <rect key="frame" x="38" y="111.5" width="321" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

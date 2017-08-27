@@ -40,10 +40,6 @@ struct ExpertInformation {
         // Setting the values for non optional global variables
     
   
-    
-
-        
-        
         ExpertInformation.ExpertName = (snapshot.value! as! NSDictionary)["name"] as! String
         ExpertInformation.ExpertEmail = (snapshot.value! as! NSDictionary)["email"] as! String
         ExpertInformation.ExpertPhone = (snapshot.value! as! NSDictionary)["phone"] as! String
