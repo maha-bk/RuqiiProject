@@ -3,7 +3,7 @@
 //  RuqiiSociety
 //  Created by  Maha Alkathiery on 05/08/2017.
 //  Copyright © 2017 Maha Alkathiery All rights reserved.
-//
+///////
 
 import UIKit
 
