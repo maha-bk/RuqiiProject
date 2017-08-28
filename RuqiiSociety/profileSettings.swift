@@ -56,7 +56,7 @@ class profileSettings: UIViewController {
         phoneTxt.text = ExpertInformation.ExpertPhone
         currentPasswordTxt.text = ExpertInformation.ExpertPassword
         
-        currentPasswordTxt.isEnabled = false
+        
         // Do any additional setup after loading the view.
     }
     
