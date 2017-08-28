@@ -111,6 +111,8 @@ class signUpCustomer: UIViewController {
                 let customerRef = Database.database().reference().child("Customers/\(self.customerID)")
                 customerRef.observe(.value , with: {
                     (snapshot) in
+                    CustomerInformation.CustomerPassword = self.passwordTxtField.text
+
                     CustomerInformation.loadCustomerInfo(snapshot: snapshot,customerId: self.customerID)
                      self.performSegue(withIdentifier: "moveToCustomerHome", sender: self)
                 }, withCancel: nil)
@@ -374,6 +376,14 @@ class signUpCustomer: UIViewController {
           Utilities().checkBox(sender: sender)
        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+            let NextView = segue.destination as! CustomerHome
+            NextView.ViewAppearsAfterSignUp = true
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpAsExpertBtn.setTitleColor(UIColor.init(red: 161/255 , green: 143/255 , blue: 69/255, alpha: 1)

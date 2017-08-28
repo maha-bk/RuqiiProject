@@ -313,8 +313,8 @@ class SignIn: UIViewController {
         
         Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
             if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
-                self.loadingLabel.isHidden = false
-
+                CustomerInformation.CustomerPassword = self.passwordTxt.text
+               
                 self.UserType = "Customer"
                 let customerRef = Database.database().reference().child("Customers/\(self.UserId)")
                 customerRef.observe(.value , with: {

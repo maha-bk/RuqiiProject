@@ -21,7 +21,7 @@ struct CustomerInformation {
     static var CustomerIsPhonePrivate: Bool?
     static var CustomerOrdersCount: Int?
     static var CustomerOrdersDic: [String:Bool]?
-    
+    static var CustomerPassword: String!
     
     // The following function acts as an initializer
     
