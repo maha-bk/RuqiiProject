@@ -11,7 +11,9 @@ import UIKit
 
 class Utilities {
     
-  
+    static var isButtonClicked = Bool ()
+    var checkbox = UIImage(named: "checked")
+    var uncheckbox = UIImage(named: "unchecked")
     
     /*static var checkbox = UIImage(named: "checked")
     static var uncheckbox = UIImage(named: "unchecked")
@@ -45,6 +47,23 @@ class Utilities {
         alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
         vc.present(alert, animated: true, completion: nil)
         
+    }
+    
+    func checkBox (sender: UIButton){
+        if (Utilities.isButtonClicked == true){
+            Utilities.isButtonClicked = false
+        }
+        else{
+            Utilities.isButtonClicked = true
+        }
+        
+        if (Utilities.isButtonClicked == true){
+           sender.setImage(checkbox, for: UIControlState.normal)
+        }
+        else{
+            sender.setImage(uncheckbox, for: UIControlState.normal )
+        }
+
     }
     
     /*func KeyboaredNotification(view: UIViewController){

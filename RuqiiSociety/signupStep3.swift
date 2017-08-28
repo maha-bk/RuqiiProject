@@ -214,10 +214,10 @@ class signupStep3: UIViewController {
                                 // add the title to the current expert
                                 signupStep3.expertTitleString = ""
                                 for (key, value) in self.expertTitle{
-                                    signupStep3.expertTitleString += value
+                                    signupStep3.expertTitleString += " " + value
                                 }
                               
-                            signupStep3.expertTitleString = (signupStep3.expertTitleString as NSString).replacingOccurrences(of: " ", with: "،")
+                            //signupStep3.expertTitleString = (signupStep3.expertTitleString as NSString).replacingOccurrences(of: " ", with: "،")
                                 
                                 print(signupStep3.expertTitleString)
 
@@ -225,9 +225,6 @@ class signupStep3: UIViewController {
                                 
                             }// end catog if
                         }// end contains if
-                    
-                    
-                    
                  
                 }//end actualSrevice if
              
@@ -298,7 +295,6 @@ class signupStep3: UIViewController {
                     
                     self.performSegue(withIdentifier: "moveToHome", sender: self)
                 }, withCancel: nil)
-                
 
             }
             else{
@@ -319,14 +315,7 @@ class signupStep3: UIViewController {
         isButtonClicked = false
         interestErrorLabel.isHidden = true
         dataLoadLabel.isHidden = true
-      
-        s1 = " مبرمجة مصممة مصورة "
-        var x = s1.startIndex
-        var y = s1.endIndex
-        //s1 = s1.substring(from: x + 1)
-        //s1 = s1.substring(to: y - 1)
-        print("x ", x , "y ", y)
-        //s1.in
+ 
         
         
         //code for adding actoin manully
