@@ -13,14 +13,15 @@ class signUpCustomer: UIViewController {
     @IBOutlet weak var createAccountBtn: UIButton!
     @IBOutlet weak var signUpAsExpertBtn: UIButton!
     @IBOutlet weak var confiremedPassTxtField: UITextField!
-    
+    @IBOutlet weak var checkPhoneBtn: UIButton!
     @IBOutlet weak var passErrorLabel: UILabel!
     static var emailExistsBefore = true
     var badEmailFormatFlag = true
     var ref: DatabaseReference!
-    
-    
-    
+    @IBOutlet weak var phoneTxtField: UITextField!
+    @IBOutlet weak var phoneErrorLabel: UILabel!
+    @IBOutlet weak var nameTxtField: UITextField!
+    @IBOutlet weak var nameErrorLabel: UILabel!
     var customerID = String()
     
     
@@ -94,13 +95,13 @@ class signUpCustomer: UIViewController {
             
         })
     }
-    //jjj
+    
     func addCustomerToDatabase(){
         
-        ref.child("Customers").child(customerID).child("name").setValue("...")
+        ref.child("Customers").child(customerID).child("name").setValue(nameTxtField.text)
         ref.child("Customers").child(customerID).child("email").setValue(emailTxtField.text)
-        ref.child("Customers").child(customerID).child("phone").setValue("....")
-        ref.child("Customers").child(customerID).child("phonePrivate").setValue("....")
+        ref.child("Customers").child(customerID).child("phone").setValue(phoneTxtField.text)
+        ref.child("Customers").child(customerID).child("phonePrivate").setValue(Utilities.isButtonClicked)
         
         Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: customerID).observe(.value, with: { (DataSnapshot) in
             
@@ -192,11 +193,101 @@ class signUpCustomer: UIViewController {
         return  returnValue
     }
     
+    func validateName() -> Bool{
+        var  numFoundFlag = true
+        
+        if (nameTxtField.text == ""){
+            self.nameTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+            nameErrorLabel.text = "الرجاء تعبئة هذا الحقل"
+            nameErrorLabel.isHidden = false
+            return false
+        }
+        
+        // this line to extract all numbers (if exist) in name string
+        let testName = nameTxtField.text?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+       
+       // test the name if it contains special characters
+        var characterSet:NSCharacterSet = NSCharacterSet(charactersIn: "@!$%#^&*()?/.,\"[]{}':;|><=+\\±§،")
+        
+        if(testName != "" || self.nameTxtField.text?.rangeOfCharacter(from: characterSet as CharacterSet) != nil){
+            numFoundFlag = false
+            self.nameTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+            nameErrorLabel.text = "الرجاء كتابة الإسم بشكل صحيح"
+            nameErrorLabel.isHidden = false
+        }
+        else{
+            numFoundFlag = true
+            self.nameTxtField.backgroundColor = UIColor.white
+            nameErrorLabel.isHidden = true
+        }
+        
+        return numFoundFlag
+    }// end of validateName() function
+
+    
+    // funcion to validate phone number
+    func validatePhone() -> Bool{
+        
+        var errorFoundFlag = true
+        var phoneErrorCounter = 0
+        
+        if (phoneTxtField.text == ""){
+            phoneErrorCounter+=1
+            self.phoneTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+            phoneErrorLabel.text = "الرجاء تعبئة هذا الحقل"
+            phoneErrorLabel.isHidden = false
+            print("empty phone")
+            return false
+            
+        }
+        let testPhone = phoneTxtField.text?.components(separatedBy: CharacterSet.letters.inverted).joined(separator: "")
+        
+        if(testPhone != ""){
+            phoneErrorCounter+=1
+            self.phoneTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+            phoneErrorLabel.text = "الرجاء كتابة رقم الجوال بشكل صحيح"
+            phoneErrorLabel.isHidden = false
+            return false
+        }
+        if (phoneTxtField.text?.characters.count != 10){
+            phoneErrorCounter+=1
+            self.phoneTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+            phoneErrorLabel.text = "رقم الجوال يجب أن يكون ١٠ خانات"
+            phoneErrorLabel.isHidden = false
+            
+        }
+        if (phoneTxtField.text?.hasPrefix("05") == false ){
+            if(phoneTxtField.text?.hasPrefix("٠٥") == false){
+                phoneErrorCounter+=1
+                self.phoneTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                phoneErrorLabel.text = "رقم الجوال يجب أن يبدأ بـ 05"
+                phoneErrorLabel.isHidden = false
+            }
+       
+        }
+        
+        if (phoneErrorCounter == 0){
+            print("No error found with phone")
+            errorFoundFlag = true
+            phoneErrorLabel.isHidden = true
+            self.phoneTxtField.backgroundColor = UIColor.white
+            
+        }
+        else{
+            errorFoundFlag = false
+        }
+        
+        return errorFoundFlag
+        
+    }
+    
+    
     func checkPassword() -> Bool{
         var passErrorCounter = 0
         
         if (passwordTxtField.text?.isEmpty)!{
             passErrorLabel.text = "الرجاء تعبئة هذا الحقل"
+            passwordTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
             passErrorLabel.isHidden = false
             passErrorCounter+=1
             return false
@@ -225,6 +316,7 @@ class signUpCustomer: UIViewController {
         var confirmedErrorCounter = 0
         
         if(confiremedPassTxtField.text?.isEmpty)!{
+            confiremedPassTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
             confiremdPassErrorLabel.text = "الرجاء تعبئة هذا الحقل"
             confiremdPassErrorLabel.isHidden = false
             confirmedErrorCounter+=1
@@ -253,7 +345,7 @@ class signUpCustomer: UIViewController {
     
     @IBAction func createAccountBtnActoin(_ sender: UIButton) {
         
-        if( signUpCustomer.emailExistsBefore == true && checkEmail() && checkPassword() && checkConfirmedPassword() ){
+        if( signUpCustomer.emailExistsBefore == true && checkEmail() && checkPassword() && checkConfirmedPassword() && validateName() && validatePhone()){
             createCustomer()
             
             
@@ -269,9 +361,19 @@ class signUpCustomer: UIViewController {
             {
                 print("invalid confiremd")
             }
+            if(!validateName()){
+                print("Invalid name")
+            }
+            if(!validatePhone()){
+                print("invalid phone")
+            }
         }
     }
     
+    @IBAction func checkBoxPhone(_ sender: UIButton) {
+          Utilities().checkBox(sender: sender)
+       
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpAsExpertBtn.setTitleColor(UIColor.init(red: 161/255 , green: 143/255 , blue: 69/255, alpha: 1)
@@ -280,9 +382,13 @@ class signUpCustomer: UIViewController {
         createAccountBtn.backgroundColor = colors.selectedColor
         emailErrorLabel.isHidden = true
         passErrorLabel.isHidden = true
+        phoneErrorLabel.isHidden = true
+        nameErrorLabel.isHidden = true
         confiremdPassErrorLabel.isHidden = true
         
         ref = Database.database().reference()
+        
+        Utilities.isButtonClicked = false
         
     }
     

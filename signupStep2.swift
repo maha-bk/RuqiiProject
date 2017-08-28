@@ -29,9 +29,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var email = String ()
     var password = String ()
     // two images to change button state
-    var checkbox = UIImage(named: "checked")
-    var uncheckbox = UIImage(named: "unchecked")
-    var isButtonClicked = Bool()
+
     
     
     
@@ -82,7 +80,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         step3Interface.expertPhone = phoneNumTxtField.text!
         step3Interface.expertIBAN = IBANtxtField.text!
         step3Interface.expertBankName = bankTextField.text!
-        step3Interface.expertAllowPhone = isButtonClicked
+        step3Interface.expertAllowPhone = Utilities.isButtonClicked
         
     }
     
@@ -100,8 +98,11 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         // this line to extract all numbers (if exist) in name string
         let testName = fullNameTxtField.text?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+        // test the name if it contains special characters
+        var characterSet:NSCharacterSet = NSCharacterSet(charactersIn: "@!$%#^&*()?/.,\"[]{}':;|><=+\\±§،")
+      
         
-        if(testName != ""){
+        if(testName != "" || self.fullNameTxtField.text?.rangeOfCharacter(from: characterSet as CharacterSet) != nil){
             numFoundFlag = false
             self.fullNameTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
             nameErrorLabel.text = "الرجاء كتابة الإسم بشكل صحيح"
@@ -148,7 +149,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             phoneErrorLabel.isHidden = false
             
         }
-        if (phoneNumTxtField.text?.hasPrefix("05")) == false{
+        if (phoneNumTxtField.text?.hasPrefix("05") == false || phoneNumTxtField.text?.hasPrefix("٠٥") == false ){
             phoneErrorCounter+=1
             self.phoneNumTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
             phoneErrorLabel.text = "رقم الجوال يجب أن يبدأ بـ 05"
@@ -264,19 +265,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     // button event to control checkbox state 
     @IBAction func clickedCheckbox(_ sender: UIButton) {
-        if (isButtonClicked == true){
-            isButtonClicked = false
-        }
-        else{
-            isButtonClicked = true
-        }
-        
-        if (isButtonClicked == true){
-            checkboxButton.setImage(checkbox, for: UIControlState.normal)
-        }
-        else{
-            checkboxButton.setImage(uncheckbox, for: UIControlState.normal )
-        }
+           Utilities().checkBox(sender: sender)
     }
     
     override func viewDidLoad() {
@@ -290,7 +279,7 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         IBANerrorLabel.isHidden = true
         bankLabel.isHidden = true
         dropdownList.isHidden = true
-        isButtonClicked = false
+        Utilities.isButtonClicked = false
         nextButtonStep2.backgroundColor = colors.selectedColor
         
         
