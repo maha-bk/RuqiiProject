@@ -281,7 +281,7 @@
             </objects>
             <point key="canvasLocation" x="1977" y="-2527"/>
         </scene>
-        <!--Customer Home-->
+        <!--الرئيسية-->
         <scene sceneID="Hu5-MA-mbZ">
             <objects>
                 <viewController id="XAz-TQ-ylk" customClass="CustomerHome" customModule="RuqiiSociety" customModuleProvider="target" sceneMemberID="viewController">
@@ -300,9 +300,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bK7-bl-SF0">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Item" id="vwR-Br-30o"/>
+                                    <tabBarItem title="Item" id="zjL-5R-FAb"/>
+                                    <tabBarItem title="Item" id="P1P-B7-aCc"/>
+                                    <tabBarItem title="Item" id="yAL-pT-sYM"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="الرئيسية" selectedImage="activeIcon" id="94z-uS-E16">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="customerNameLabel" destination="irb-3E-G1a" id="Ofk-i0-aA2"/>
                     </connections>
@@ -310,6 +324,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkU-Wb-MdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2088.8000000000002" y="-1336.2818590704649"/>
+        </scene>
+        <!--ملفي-->
+        <scene sceneID="7XG-tR-Ub3">
+            <objects>
+                <viewController id="uqz-zW-B8X" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="USP-Iw-rjD"/>
+                        <viewControllerLayoutGuide type="bottom" id="1QP-HS-MPU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pDK-um-msl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ملفي" id="xpR-Sg-1fl">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6o-d6-c2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="-580"/>
+        </scene>
+        <!--الإشعارات-->
+        <scene sceneID="OcA-kQ-tLA">
+            <objects>
+                <viewController id="Sj5-Zu-O9r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qki-RM-jxz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cbf-K0-Wrk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s4M-gV-lld">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="الإشعارات" selectedImage="notifications" id="xFf-N1-1pP">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTf-De-D1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-579"/>
+        </scene>
+        <!--طلباتي-->
+        <scene sceneID="MlL-Y3-vsM">
+            <objects>
+                <viewController id="Qv6-2D-F63" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F6u-Zi-OxM"/>
+                        <viewControllerLayoutGuide type="bottom" id="vui-jG-FpD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h8B-29-fAq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="طلباتي" selectedImage="icoOrders" id="RAe-hn-Bzu">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKd-H6-JUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1514" y="-578"/>
         </scene>
         <!--Expert Home-->
         <scene sceneID="2W0-io-P80">
@@ -442,6 +519,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4d-M4-fQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3440.8000000000002" y="-1336.2818590704649"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oTI-Q4-pvg">
+            <objects>
+                <tabBarController id="kaL-Yk-VrW" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="HeD-OA-W49">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XAz-TQ-ylk" kind="relationship" relationship="viewControllers" id="Nf4-ML-q3v"/>
+                        <segue destination="Qv6-2D-F63" kind="relationship" relationship="viewControllers" id="z87-o1-I8d"/>
+                        <segue destination="Sj5-Zu-O9r" kind="relationship" relationship="viewControllers" id="wd3-0g-Lbs"/>
+                        <segue destination="uqz-zW-B8X" kind="relationship" relationship="viewControllers" id="GLx-nO-8QZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pU-NZ-4PB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="-1336"/>
         </scene>
         <!--Services Settings-->
         <scene sceneID="dQ8-cd-316">
@@ -1704,6 +1801,7 @@
         <image name="OrdersIcon" width="24" height="24"/>
         <image name="RuqiiLogo" width="119" height="138"/>
         <image name="SettingsIcon" width="24" height="24"/>
+        <image name="activeIcon" width="28" height="28"/>
         <image name="arrow" width="33" height="27"/>
         <image name="backArrowIcon" width="1600" height="1600"/>
         <image name="border" width="144" height="40"/>
@@ -1716,6 +1814,7 @@
         <image name="icoDatabase" width="21" height="21"/>
         <image name="icoDesign" width="21" height="20"/>
         <image name="icoEvents" width="21" height="21"/>
+        <image name="icoOrders" width="28" height="28"/>
         <image name="icoPackage" width="21" height="21"/>
         <image name="icoPhone" width="30" height="30"/>
         <image name="icoPresentation" width="21" height="21"/>
@@ -1724,12 +1823,13 @@
         <image name="icoUser" width="30" height="30"/>
         <image name="icoWeb" width="19" height="19"/>
         <image name="iconTrans" width="19" height="19"/>
+        <image name="notifications" width="28" height="28"/>
         <image name="phoneIcon" width="30" height="30"/>
         <image name="unchecked" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gMU-tv-FOb"/>
         <segue reference="Fcj-R2-vDm"/>
-        <segue reference="Dz7-Ec-vDs"/>
-        <segue reference="Yb0-Vh-FWf"/>
+        <segue reference="Nf4-ML-q3v"/>
     </inferredMetricsTieBreakers>
 </document>
