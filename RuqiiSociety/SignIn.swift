@@ -230,6 +230,7 @@ class SignIn: UIViewController {
                     // Redirecting the user to the Home interface based on his/her role (Expert or Customer)
                     
                     if(user != nil){
+                          self.loadingLabel.isHidden = false
                        self.distinguishUserType()
                                                         }
                     
@@ -292,9 +293,9 @@ class SignIn: UIViewController {
       
         
        Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
-        
+       
         if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
-            self.loadingLabel.isHidden = false
+            ExpertInformation.ExpertPassword = self.passwordTxt.text
             self.UserType = "Expert"
             let expertRef = Database.database().reference().child("Experts/\(self.UserId)")
             expertRef.observe(.value , with: {

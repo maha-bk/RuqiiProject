@@ -29,11 +29,14 @@ var ViewAppearsAfterSettings = false
 
    override func viewWillAppear(_ animated: Bool) {
 
+    
+    if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true ){
+    let firstName = ExpertInformation.ExpertName!.components(separatedBy:" ").first
+        Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)}
+
         if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true || ViewAppearsAfterSettings == true ){
             
-            let firstName = ExpertInformation.ExpertName!.components(separatedBy:" ").first
-            Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
-            fullNameLabel.text = ExpertInformation.ExpertName
+                       fullNameLabel.text = ExpertInformation.ExpertName
             ratingCountsLabel.text = String(ExpertInformation.ExpertNumOfRating ?? 0)
             titleLabel.text = ExpertInformation.ExpertTitle
             pendingOrdersCountLabel.text =  String(ExpertInformation.ExpertPendingOrdersCount ?? 0)

@@ -80,7 +80,7 @@ class signupStep1: UIViewController {
         {
             // implement the moving to "signupStep2" with id of segua (moveToStep2)
             self.performSegue(withIdentifier: "moveToStep2", sender: self)
-            
+            ExpertInformation.ExpertPassword = self.passTxtField.text
         }
     }
     
