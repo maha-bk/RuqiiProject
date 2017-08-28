@@ -12,6 +12,7 @@ class SignIn: UIViewController {
     
     // Declaring the components of the view or interface
     
+    @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var passwordTxt: UITextField!
     
     @IBOutlet weak var emptyFieldsErrorLabel: UILabel!
@@ -229,6 +230,7 @@ class SignIn: UIViewController {
                     // Redirecting the user to the Home interface based on his/her role (Expert or Customer)
                     
                     if(user != nil){
+                          self.loadingLabel.isHidden = false
                        self.distinguishUserType()
                                                         }
                     
@@ -291,8 +293,9 @@ class SignIn: UIViewController {
       
         
        Database.database().reference().child("Experts").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
-        
+       
         if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+            ExpertInformation.ExpertPassword = self.passwordTxt.text
             self.UserType = "Expert"
             let expertRef = Database.database().reference().child("Experts/\(self.UserId)")
             expertRef.observe(.value , with: {
@@ -310,6 +313,8 @@ class SignIn: UIViewController {
         
         Database.database().reference().child("Customers").queryOrderedByKey().queryEqual(toValue: UserId).observe(.value, with: { (DataSnapshot) in
             if(DataSnapshot.hasChild(self.UserId) && DataSnapshot.exists()){
+                CustomerInformation.CustomerPassword = self.passwordTxt.text
+               
                 self.UserType = "Customer"
                 let customerRef = Database.database().reference().child("Customers/\(self.UserId)")
                 customerRef.observe(.value , with: {
@@ -432,6 +437,7 @@ class SignIn: UIViewController {
         emailErrorLabel.isHidden = true
         passwordErrorLabel.isHidden = true
         emptyFieldsErrorLabel.isHidden = true
+        loadingLabel.isHidden = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
         

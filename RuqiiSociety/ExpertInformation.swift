@@ -20,7 +20,7 @@ struct ExpertInformation {
    static var ExpertId: String!
    static var ExpertBankName : String!
    static var ExpertIban: String!
-   static var ExpertIsPhonePrivate: Bool!
+   static var ExpertIsPhonePrivate: Bool?
    static var ExpertNumOfRating: Int?
    static var ExpertTitle: String?
    static var ExpertCompletedOrdersCount: Int?
@@ -29,7 +29,7 @@ struct ExpertInformation {
    static var ExpertPendingOrdersDic: [String:Bool]?
    static var ExpertPortfolioDic: [String: String]?
    static var ExpertServicesDic: [String]?
-    
+   static var ExpertPassword: String!
     
    // The following function acts as an initializer
     
@@ -45,8 +45,7 @@ struct ExpertInformation {
         ExpertInformation.ExpertPhone = (snapshot.value! as! NSDictionary)["phone"] as! String
         ExpertInformation.ExpertBankName = (snapshot.value! as! NSDictionary)["bankName"] as! String
         ExpertInformation.ExpertIban = (snapshot.value! as! NSDictionary)["iban"] as! String
-        ExpertInformation.ExpertIsPhonePrivate = (snapshot.value! as! NSDictionary)["isPhonePrivate"] as! Bool
-        
+      
         
         // Setting the values for optional global variables
         
@@ -89,7 +88,11 @@ struct ExpertInformation {
         }
         else{ExpertInformation.ExpertPendingOrdersCount = 0}
         
-   
+        let temp9 = (snapshot.value! as! NSDictionary)["isPhonePrivate"] as? Bool
+        if (temp9 != nil){
+            ExpertInformation.ExpertIsPhonePrivate = temp9
+        }
+        else { ExpertInformation.ExpertIsPhonePrivate = false}
     
     
     

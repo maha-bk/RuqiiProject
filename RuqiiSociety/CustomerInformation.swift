@@ -21,7 +21,7 @@ struct CustomerInformation {
     static var CustomerIsPhonePrivate: Bool?
     static var CustomerOrdersCount: Int?
     static var CustomerOrdersDic: [String:Bool]?
-    
+    static var CustomerPassword: String!
     
     // The following function acts as an initializer
     
@@ -50,7 +50,7 @@ struct CustomerInformation {
         if (temp3 != nil){
             CustomerInformation.CustomerIsPhonePrivate = temp3
         }
-        else { CustomerInformation.CustomerIsPhonePrivate = true}
+        else { CustomerInformation.CustomerIsPhonePrivate = false}
     
         let temp4 = (snapshot.childSnapshot(forPath:"orders").value) as? [String: Bool]
         if (temp4 != nil){CustomerInformation.CustomerOrdersDic = temp4}

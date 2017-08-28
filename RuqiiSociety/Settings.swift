@@ -11,13 +11,15 @@ import UIKit
 class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     var selectedIndex = 0
-    
+    var backToHome = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
       self.navigationItem.title = "الإعدادات"
     }
 
+  
+    @IBOutlet weak var backBtn: UIButton!
   
     @IBOutlet weak var tableView: UITableView!
     var ChoiceLabelArray = ["الملف الشخصي","أسعار الخدمات"]
@@ -27,7 +29,23 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if (backToHome == true){
+        
+        let NextView = segue.destination as! ExpertHome
+            NextView.ViewAppearsAfterSettings = true
+        
+    }
+    
+    }// end of prepare function
+    
+    @IBAction func backBtnClicked(_ sender: Any) {
+        backToHome = true
+     performSegue(withIdentifier: "ExpertHome", sender: self)
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
    
         return ChoiceLabelArray.count
@@ -42,7 +60,7 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     }
     
-    
+  
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -50,9 +68,9 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
        selectedIndex = indexPath.row
         switch selectedIndex {
         case 0:
-            performSegue(withIdentifier: "الملف الشخصي", sender: self)
+            performSegue(withIdentifier: "profileSettings", sender: self)
         case 1:
-            performSegue(withIdentifier: "أسعار الخدمات", sender: self)
+            performSegue(withIdentifier: "servicesPrices", sender: self)
     
         default:
             print("Index greater than the list")

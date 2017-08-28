@@ -292,6 +292,7 @@ class signupStep3: UIViewController {
                 expertRef.observe(.value , with: {
                     (snapshot) in
                     ExpertInformation.loadExpertInfo(snapshot: snapshot,expertId: self.userID)
+                    
                     self.performSegue(withIdentifier: "moveToHome", sender: self)
                 }, withCancel: nil)
 
