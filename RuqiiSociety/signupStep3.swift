@@ -82,7 +82,7 @@ class signupStep3: UIViewController {
     }
 
         
-    
+    //
     
     
     // get services from database and represent it in buttons
