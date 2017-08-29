@@ -100,6 +100,7 @@ class signupStep3: UIViewController {
             }
             for i in 0..<self.servicesName.count
             {
+                 //(top: 10, left: 10, bottom: 10, right: 10)
                 self.ButtonsArray[i].imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 6)
                 
                 self.ButtonsArray[i].setTitle("   " + self.servicesName[i], for: .normal)
@@ -309,7 +310,7 @@ class signupStep3: UIViewController {
         super.viewDidLoad()
         startButtin.backgroundColor = colors.selectedColor
         //(top: 10, left: 10, bottom: 10, right: 10)
-        btn1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 6)
+      
         self.fillArrayOfButtons()
         self.getServices()
         isButtonClicked = false

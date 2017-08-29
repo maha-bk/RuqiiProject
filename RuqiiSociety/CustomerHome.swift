@@ -11,22 +11,23 @@ class CustomerHome: UIViewController {
     var ViewAppearsAfterLogin = false
     var ViewAppearsAfterSignUp = false
 
-    @IBOutlet weak var customerNameLabel: UILabel!
+     
+ 
     override func viewWillAppear(_ animated: Bool) {
         if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignUp == true ){
         
                 let firstName = CustomerInformation.CustomerName?.components(separatedBy:" ").first
                 Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
-         customerNameLabel.text = CustomerInformation.CustomerName
+            
+       
         }
-        
+                
     }// end of ViewWillAppear function
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }// end of viewDidLoad function
+   
+                }// end of viewDidLoad function
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
