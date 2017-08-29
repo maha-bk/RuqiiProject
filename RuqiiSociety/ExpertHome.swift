@@ -31,7 +31,7 @@ var ViewAppearsAfterSettings = false
 
     
     if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true ){
-    let firstName = ExpertInformation.ExpertName!.components(separatedBy:" ").first
+    let firstName = ExpertInformation.ExpertName.components(separatedBy:" ").first
         Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)}
 
         if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true || ViewAppearsAfterSettings == true ){

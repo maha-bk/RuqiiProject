@@ -379,8 +379,8 @@ class signUpCustomer: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-            let NextView = segue.destination as! CustomerHome
-            NextView.ViewAppearsAfterSignUp = true
+         //   let NextView = segue.destination as! CustomerHome
+           // NextView.ViewAppearsAfterSignUp = true
 
     }
     

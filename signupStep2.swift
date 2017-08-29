@@ -146,14 +146,18 @@ class signupStep2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             phoneErrorCounter+=1
             self.phoneNumTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
             phoneErrorLabel.text = "رقم الجوال يجب أن يكون ١٠ خانات"
+            
             phoneErrorLabel.isHidden = false
             
         }
-        if (phoneNumTxtField.text?.hasPrefix("05") == false || phoneNumTxtField.text?.hasPrefix("٠٥") == false ){
-            phoneErrorCounter+=1
-            self.phoneNumTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
-            phoneErrorLabel.text = "رقم الجوال يجب أن يبدأ بـ 05"
-            phoneErrorLabel.isHidden = false
+        if (phoneNumTxtField.text?.hasPrefix("05") == false ){
+            if(phoneNumTxtField.text?.hasPrefix("٠٥") == false){
+                phoneErrorCounter+=1
+                self.phoneNumTxtField.backgroundColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 0.2)
+                phoneErrorLabel.text = "رقم الجوال يجب أن يبدأ بـ 05"
+                phoneErrorLabel.isHidden = false
+            }
+            
         }
         
         if (phoneErrorCounter == 0){
