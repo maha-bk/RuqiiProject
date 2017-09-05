@@ -11,7 +11,7 @@ class CustomerHome: UIViewController {
     var ViewAppearsAfterLogin = false
     var ViewAppearsAfterSignUp = false
 
-     
+  
  
     override func viewWillAppear(_ animated: Bool) {
         if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignUp == true ){
@@ -21,13 +21,33 @@ class CustomerHome: UIViewController {
             
        
         }
+        tabbedBarSetting.menuButton.addTarget(self, action: #selector(self.menuButtonAction), for: UIControlEvents.touchUpInside)
+
+        
+
                 
     }// end of ViewWillAppear function
 
+    
+    // Add new Order button Touch Action
+    func menuButtonAction(sender: UIButton) {
+        //self.performSegue(withIdentifier: "moveToOrderStep1", sender: self)
+        let move = self.storyboard?.instantiateViewController(withIdentifier: "orderStep1") as! orderStep1
+        self.present(move, animated: true, completion: nil)
+               //self.pushViewController(move, animated: true)
+        
+      
+        
+        
+    }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-   
-                }// end of viewDidLoad function
+        self.definesPresentationContext = true 
+ 
+
+    }// end of viewDidLoad function
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
