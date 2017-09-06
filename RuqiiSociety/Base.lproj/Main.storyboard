@@ -298,7 +298,7 @@
                         <viewControllerLayoutGuide type="bottom" id="x4I-Vf-ajR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dvj-TJ-Wwy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ger-7P-YSy">
@@ -951,7 +951,7 @@
                         <outlet property="phoneTxt" destination="Rz8-Dz-hU3" id="8ak-KP-sFN"/>
                         <outlet property="saveBtn" destination="Npj-kA-0Li" id="xpY-Jw-eha"/>
                         <outlet property="titleTxt" destination="9EZ-ug-kar" id="U9J-z7-Kvo"/>
-                        <segue destination="VmY-ej-Al9" kind="show" identifier="backToSettings" id="roi-LO-Yx4"/>
+                        <segue destination="Gnk-b3-Cwc" kind="show" identifier="backToSettings" id="l4d-T7-i0P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KsE-qH-EPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
