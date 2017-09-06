@@ -71,6 +71,7 @@ class orderStep1: UIViewController {
     }
     
     // get services from database and represent it in buttons
+    //ll
     func getServices() {
         
         ref = Database.database().reference()
