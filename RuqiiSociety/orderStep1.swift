@@ -102,6 +102,7 @@ class orderStep1: UIViewController {
     }
     
     //to remove the observer for reading services
+    //comment
     deinit {
         self.ref.child("Services").removeObserver(withHandle: databaseHandle)
     }
