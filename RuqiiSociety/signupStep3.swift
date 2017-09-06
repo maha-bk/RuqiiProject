@@ -22,7 +22,7 @@ class signupStep3: UIViewController {
 
     
     var ButtonsArray = [UIButton]()
-      var s1 = String ()
+    
     
     // to hold services names from database
     var servicesName = [String] ()
