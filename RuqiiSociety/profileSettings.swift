@@ -3,7 +3,7 @@
 //  RuqiiSociety
 //  Created by  Maha Alkathiery on 05/08/2017.
 //  Copyright © 2017 Maha Alkathiery All rights reserved.
-///////
+/////////maha
 
 import UIKit
 import Firebase
@@ -183,6 +183,7 @@ class profileSettings: UIViewController {
                 ExpertInformation.ExpertPhone = phoneTxt.text
             
             }
+            
           /*  if(passwordChanged){
             //DB change password
               //  Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).changePassword({ email: ExpertInformation.ExpertEmail ,oldPassword: currentPasswordTxt.text,newassword: newPasswordTxt.text })
