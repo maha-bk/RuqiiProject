@@ -30,8 +30,9 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   
     if (backToHome == true){
-        
+        backToHome = false
         let NextView = segue.destination as! ExpertHome
             NextView.ViewAppearsAfterSettings = true
         
@@ -39,11 +40,15 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     }// end of prepare function
     
+    
     @IBAction func backBtnClicked(_ sender: Any) {
+        
         backToHome = true
-     performSegue(withIdentifier: "ExpertHome", sender: self)
+        
+        performSegue(withIdentifier: "ExpertHome", sender: self)
         
     }
+  
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

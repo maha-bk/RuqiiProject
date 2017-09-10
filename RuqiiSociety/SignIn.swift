@@ -370,11 +370,11 @@ class SignIn: UIViewController {
         Auth.auth().sendPasswordReset(withEmail: email!) { (error) in
             
             if (error != nil) {
-                Utilities().ShowAlert(title: "خطأ", msg:"عذرا حدث خطأ .الرجاء المحاولة مرة أخرى.", vc: self)
+                Utilities().ShowAlert(title: "خطأ", msg:"عذرا حدث خطأ .الرجاء المحاولة مرة أخرى.", vc: self, NextView: "")
                 return
             }
             else {
-                Utilities().ShowAlert(title: "تمت العملية بنجاح", msg: " تم إرسال رابط تغيير كلمة المرور إلي بريدك الإلكتروني", vc: self)
+                Utilities().ShowAlert(title: "تمت العملية بنجاح", msg: " تم إرسال رابط تغيير كلمة المرور إلي بريدك الإلكتروني", vc: self, NextView: "")
             }
         }
 
@@ -391,7 +391,7 @@ class SignIn: UIViewController {
         // Checking if the email is empty
         
         if (email?.isEmpty)!{
-        Utilities().ShowAlert(title: "خطأ", msg: "الرجاء تعبئة البريد الإلكتروني" , vc: self)
+        Utilities().ShowAlert(title: "خطأ", msg: "الرجاء تعبئة البريد الإلكتروني" , vc: self, NextView: "")
         return
         }
         
@@ -399,7 +399,7 @@ class SignIn: UIViewController {
         
         let flag = isValidEmailAddress(emailAddressString: email!)
         if (flag == false) {
-          Utilities().ShowAlert(title: "خطأ", msg: "الرجاء كتابة البريد الالكتروني بصيغة صحيحة" , vc: self)
+          Utilities().ShowAlert(title: "خطأ", msg: "الرجاء كتابة البريد الالكتروني بصيغة صحيحة" , vc: self, NextView: "")
         return
         }
         
@@ -410,7 +410,7 @@ class SignIn: UIViewController {
             // The email does not exist in the database
             
             if providers == nil{
-                Utilities().ShowAlert(title: "خطأ", msg: "البريد الالكتروني غير مسجل لدينا. الرجاء المحاولة مجددا." , vc: self)
+                Utilities().ShowAlert(title: "خطأ", msg: "البريد الالكتروني غير مسجل لدينا. الرجاء المحاولة مجددا." , vc: self, NextView: "")
             }
              // The email exists in the database
             else {

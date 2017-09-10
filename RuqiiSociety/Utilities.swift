@@ -14,7 +14,7 @@ class Utilities {
     static var isButtonClicked = Bool ()
     var checkbox = UIImage(named: "checked")
     var uncheckbox = UIImage(named: "unchecked")
-    
+ 
     /*static var checkbox = UIImage(named: "checked")
     static var uncheckbox = UIImage(named: "unchecked")
     static var isButtonClicked = Bool()
@@ -39,15 +39,28 @@ class Utilities {
 
     // function to show an Error alert to user by pop up
     // Note: UIAlertController is considered as UIViewController as well.
-    func ShowAlert (title: String, msg: String, vc: UIViewController){
+    func ShowAlert (title: String, msg: String, vc: UIViewController, NextView: String){
         
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         // this function will add a button to the popup 
         // when there is No Action after user clicks "حسنا" button, handler is nil
-        alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+        if (NextView != "") {
+            alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler:
+                {(_) -> Void in
+                    
+                    vc.performSegue(withIdentifier: NextView , sender: self)}
+            ))
+
+        }
+        else {
+            alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler:
+                nil))}
         vc.present(alert, animated: true, completion: nil)
+     
         
     }
+    
+
     
     func checkBox (sender: UIButton){
         if (Utilities.isButtonClicked == true){

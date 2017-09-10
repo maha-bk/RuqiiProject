@@ -17,7 +17,7 @@ class CustomerHome: UIViewController {
         if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignUp == true ){
         
                 let firstName = CustomerInformation.CustomerName?.components(separatedBy:" ").first
-                Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self)
+            Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self ,NextView: "")
             
        
         }

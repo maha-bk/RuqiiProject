@@ -6,18 +6,16 @@
 ///////
 
 import UIKit
-
+import Firebase
 class profileSettings: UIViewController {
-    
-    var checkbox = UIImage(named: "checked")
-    var uncheckbox = UIImage(named: "unchecked")
-    var isButtonClicked = Bool()
-    
+
  
     @IBOutlet weak var confirmPasswordTxt: DesignableTextField!
     @IBOutlet weak var newPasswordTxt: DesignableTextField!
     @IBOutlet weak var currentPasswordTxt: DesignableTextField!
     @IBOutlet weak var phoneTxt: DesignableTextField!
+
+    @IBOutlet weak var checkBoxBtn: UIButton!
     @IBOutlet weak var emailTxt: DesignableTextField!
     @IBOutlet weak var titleTxt: DesignableTextField!
     @IBOutlet weak var nameTxt: DesignableTextField!
@@ -131,15 +129,23 @@ class profileSettings: UIViewController {
         
     }// end of checkPhone function
     
+    
+    
     @IBAction func saveBtnClicked(_ sender: Any) {
-        var NoErrorFoundFlag = true
+    
+       var NoErrorFoundFlag = true
         var NoChangesMadeFlag = true
+        var nameChanged = false
+        var phoneChanged = false
+        var passwordChanged = false
         if(nameTxt.text != ExpertInformation.ExpertName)
         {
             if (checkName()){
              //DB
-            ExpertInformation.ExpertName = nameTxt.text
+                
+          
             NoChangesMadeFlag = false
+            nameChanged = true
             }
             
             else{
@@ -154,6 +160,7 @@ class profileSettings: UIViewController {
             //DB
             ExpertInformation.ExpertPhone = phoneTxt.text
                 NoChangesMadeFlag = false
+                phoneChanged = true
             }
                 
             else{
@@ -163,53 +170,51 @@ class profileSettings: UIViewController {
         
         }
         
+        if (NoErrorFoundFlag == true){
             
-            if (NoChangesMadeFlag == true){
-           
-         
-                  Utilities().ShowAlert(title:"",msg:"لم يتم العثور على تغييرات", vc: self)
-                            }
+           // let updatedExpert : [String : String] = ["name" : nameTxt.text!]
+            if (nameChanged){
+            Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).updateChildValues(["name": nameTxt.text ?? ExpertInformation.ExpertName])
+            ExpertInformation.ExpertName = nameTxt.text
+            }
             
-            else{
+            if (phoneChanged){
+                Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).updateChildValues(["phone": phoneTxt.text ?? ExpertInformation.ExpertPhone])
+                ExpertInformation.ExpertPhone = phoneTxt.text
+            
+            }
+          /*  if(passwordChanged){
+            //DB change password
+              //  Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).changePassword({ email: ExpertInformation.ExpertEmail ,oldPassword: currentPasswordTxt.text,newassword: newPasswordTxt.text })
                 
-                Utilities().ShowAlert(title:"",msg:"تم حفظ التغييرات", vc: self)
-                
-               
-               }
+                 /*Database.database().reference().child(Experts").child(ExpertInformation.ExpertId).changePassword(newPasswordTxt.text)
+            */
             
-            
-            
-             if (NoErrorFoundFlag == true){
-            self.performSegue(withIdentifier: "backToSettings", sender: self)
-
-                 }
+            }*/
+        }
+         if (NoChangesMadeFlag == true){
         
+            
+            Utilities().ShowAlert(title:"",msg:"لم يتم العثور على تغييرات", vc: self , NextView: "backToSettings")
+              
+                          }
+        else
+         {
+          Utilities().ShowAlert(title:"",msg:"تم حفظ التغييرات", vc: self , NextView: "backToSettings")
+        }
+    
+ 
+ 
     }//end of saveBtnClicked action
     
     
-    @IBAction func checkBoxBtnIsClicked(_ sender: UIButton) {
-      
+    @IBAction func checkBoxIsClicked(_ sender: UIButton) {
         
+           Utilities().checkBox(sender: sender)
         
-        
-        func clickedCheckbox() {
-            
-            
-            if (isButtonClicked == true){
-                isButtonClicked = false
-            }
-            else{
-               isButtonClicked  = true
-            }
-            
-            if (isButtonClicked == true){
-               sender.setImage(checkbox, for: UIControlState.normal)
-            }
-            else{
-                sender.setImage(uncheckbox, for: UIControlState.normal )
-            }
-        }
-    }
+    }//end of checkBoxIsClicked action
+    
+
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
