@@ -5,9 +5,11 @@ import UIKit
 class tabbedBarSetting: UITabBarController{
     static var move = Bool()
     static let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 79))
-   
+    var ViewAppearsAfterLogin = false
+
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.tabBar.barTintColor = colors.selectedColor
         //self.tabBar.tintColor = UIColor.init(red: 78/255 , green: 193/255 , blue: 187/255, alpha: 1)
@@ -27,13 +29,22 @@ class tabbedBarSetting: UITabBarController{
         self.tabBar.items?[2].setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.init(red: 251/255 , green: 177/255 , blue: 22/255, alpha: 1)], for: .selected)
         
         self.tabBar.items?[3].setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .selected)
-
-  
+        
+ 
         setupMiddleButton()
     }
     
  
- 
+    override func viewWillAppear(_ animated: Bool) {
+        if (ViewAppearsAfterLogin == true  ){
+            
+            let firstName = CustomerInformation.CustomerName?.components(separatedBy:" ").first
+            Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self ,NextView: "")
+            
+            
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

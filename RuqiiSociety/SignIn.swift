@@ -12,9 +12,10 @@ class SignIn: UIViewController {
     
     // Declaring the components of the view or interface
     
-    @IBOutlet weak var loadingLabel: UILabel!
-    @IBOutlet weak var passwordTxt: UITextField!
+   
     
+    @IBOutlet weak var passwordTxt: DesignableTextField!
+    @IBOutlet weak var loadingLabel: UIActivityIndicatorView!
     @IBOutlet weak var emptyFieldsErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     
@@ -77,7 +78,7 @@ class SignIn: UIViewController {
           }
     else if (UserType == "Customer"){
     
-        let NextView = segue.destination as! CustomerHome
+        let NextView = segue.destination as! tabbedBarSetting
         NextView.ViewAppearsAfterLogin = true
        
         

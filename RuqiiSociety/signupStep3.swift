@@ -239,7 +239,7 @@ class signupStep3: UIViewController {
         
        
         let NextView = segue.destination as! ExpertHome
-        NextView.ViewAppearsAfterSignup = true
+       
         NextView.userId = self.userID
         NextView.expertTit =  signupStep3.expertTitleString
         

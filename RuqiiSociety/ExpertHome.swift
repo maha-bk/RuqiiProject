@@ -11,7 +11,6 @@ import Foundation
 class ExpertHome: UIViewController {
     
 var ViewAppearsAfterLogin = false
-var ViewAppearsAfterSignup = false
 var ViewAppearsAfterSettings = false
     @IBOutlet weak var pendingOrdersCountLabel: UILabel!
 
@@ -30,12 +29,12 @@ var ViewAppearsAfterSettings = false
    override func viewWillAppear(_ animated: Bool) {
 
     
-    if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true ){
+    if (ViewAppearsAfterLogin == true  ){
         
     let firstName = ExpertInformation.ExpertName.components(separatedBy:" ").first
         Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self ,NextView: "")}
 
-        if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignup == true || ViewAppearsAfterSettings == true ){
+        if (ViewAppearsAfterLogin == true ||  ViewAppearsAfterSettings == true ){
             
                        fullNameLabel.text = ExpertInformation.ExpertName
             ratingCountsLabel.text = String(ExpertInformation.ExpertNumOfRating ?? 0)
@@ -43,7 +42,10 @@ var ViewAppearsAfterSettings = false
             pendingOrdersCountLabel.text =  String(ExpertInformation.ExpertPendingOrdersCount ?? 0)
             completedOrdersCountLabel.text = String(ExpertInformation.ExpertCompletedOrdersCount ?? 0)
                   }
- 
+    if (self.navigationController?.isNavigationBarHidden == false){
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+    
+    }
    
     }
     

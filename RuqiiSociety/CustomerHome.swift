@@ -8,19 +8,12 @@ import UIKit
 
 class CustomerHome: UIViewController {
 
-    var ViewAppearsAfterLogin = false
-    var ViewAppearsAfterSignUp = false
+   
 
   
  
     override func viewWillAppear(_ animated: Bool) {
-        if (ViewAppearsAfterLogin == true || ViewAppearsAfterSignUp == true ){
-        
-                let firstName = CustomerInformation.CustomerName?.components(separatedBy:" ").first
-            Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self ,NextView: "")
-            
-       
-        }
+ 
         tabbedBarSetting.menuButton.addTarget(self, action: #selector(self.menuButtonAction), for: UIControlEvents.touchUpInside)
 
         

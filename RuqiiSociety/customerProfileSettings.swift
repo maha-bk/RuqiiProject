@@ -1,29 +1,25 @@
-//  profileSettings.swift
+//  customerProfileSettings.swift
 //  RuqiiSociety
-//  Created by  Maha Alkathiery on 05/08/2017.
-//  Copyright © 2017 Maha Alkathiery All rights reserved.
-
+//  Created by Maha Alkatheiry on 9/13/17.
+//  Copyright © 2017 Maha Alkatheiry. All rights reserved.
 
 import UIKit
 import Firebase
+class customerProfileSettings: UIViewController {
 
-class profileSettings: UIViewController {
-    
     // Declaring the components of profileSettings interface
     
-    @IBOutlet weak var confirmPasswordTxt: DesignableTextField!
-    @IBOutlet weak var newPasswordTxt: DesignableTextField!
-    @IBOutlet weak var currentPasswordTxt: DesignableTextField!
-    @IBOutlet weak var phoneTxt: DesignableTextField!
-    @IBOutlet weak var checkBoxBtn: UIButton!
-    @IBOutlet weak var emailTxt: DesignableTextField!
-    @IBOutlet weak var titleTxt: DesignableTextField!
     @IBOutlet weak var nameTxt: DesignableTextField!
+    @IBOutlet weak var emailTxt: DesignableTextField!
+    @IBOutlet weak var phoneTxt: DesignableTextField!
+    @IBOutlet weak var currentPasswordTxt: DesignableTextField!
+    @IBOutlet weak var newPasswordTxt: DesignableTextField!
+    @IBOutlet weak var confirmPasswordTxt: DesignableTextField!
+    @IBOutlet weak var checkBoxBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var phoneErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
-    @IBOutlet weak var saveBtn: UIButton!
-    
     // Declaring the class variables
     
     var currentCheckBoxImage = UIImage (named: "unchecked")
@@ -83,7 +79,7 @@ class profileSettings: UIViewController {
             emptyPasswordFields = true
             NoPasswordError = true
         }
-        
+            
         else if (newPasswordTxt.text?.isEmpty == false && confirmPasswordTxt.text?.isEmpty == false)
         {
             // Checking if the text fields contain different text. If yes, the change will be rejected and proper error message will appear
@@ -137,7 +133,7 @@ class profileSettings: UIViewController {
             
             // Checking if both text fields are empty.
             
-     
+            
             
         else  {
             NoPasswordError = true
@@ -245,7 +241,7 @@ class profileSettings: UIViewController {
         
         //checking if the user's information have been changed
         
-        if(nameTxt.text != ExpertInformation.ExpertName)
+        if(nameTxt.text != CustomerInformation.CustomerName)
         {
             //check if the name change is valid or not
             if (checkName()){
@@ -262,7 +258,7 @@ class profileSettings: UIViewController {
             
         }
         
-        if (phoneTxt.text != ExpertInformation.ExpertPhone){
+        if (phoneTxt.text != CustomerInformation.CustomerPhone){
             if(checkPhone()){
                 
                 phoneChanged = true
@@ -276,7 +272,7 @@ class profileSettings: UIViewController {
             
         }
         
-        if ((newPasswordTxt.text != ExpertInformation.ExpertPassword && newPasswordTxt.text?.isEmpty == false) || (confirmPasswordTxt.text != ExpertInformation.ExpertPassword && confirmPasswordTxt.text?.isEmpty == false) ){
+        if ((newPasswordTxt.text != CustomerInformation.CustomerPassword && newPasswordTxt.text?.isEmpty == false) || (confirmPasswordTxt.text != CustomerInformation.CustomerPassword && confirmPasswordTxt.text?.isEmpty == false) ){
             if(checkPassword()){
                 
                 
@@ -295,7 +291,7 @@ class profileSettings: UIViewController {
         if (NoErrorFoundFlag == true){
             
             if (checkBoxBtn.currentImage != currentCheckBoxImage){
-                Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).updateChildValues(["isPhonePrivate": !(ExpertInformation.ExpertIsPhonePrivate!)])
+                Database.database().reference().child("Customers").child(CustomerInformation.CustomerId).updateChildValues(["phonePrivate": !(CustomerInformation.CustomerIsPhonePrivate!)])
                 NumberOfChanges += 1
             }
             
@@ -303,14 +299,14 @@ class profileSettings: UIViewController {
             
             if (nameChanged){
                 
-                Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).updateChildValues(["name": nameTxt.text ])
-                ExpertInformation.ExpertName = nameTxt.text
+                Database.database().reference().child("Customers").child(CustomerInformation.CustomerId).updateChildValues(["name": nameTxt.text ])
+                CustomerInformation.CustomerName = nameTxt.text
                 NumberOfChanges += 1
             }
             
             if (phoneChanged){
-                Database.database().reference().child("Experts").child(ExpertInformation.ExpertId).updateChildValues(["phone": phoneTxt.text])
-                ExpertInformation.ExpertPhone = phoneTxt.text
+                Database.database().reference().child("Customers").child(CustomerInformation.CustomerId).updateChildValues(["phone": phoneTxt.text])
+                CustomerInformation.CustomerPhone = phoneTxt.text
                 NumberOfChanges += 1
                 
             }
@@ -326,7 +322,7 @@ class profileSettings: UIViewController {
                         return
                     }
                     else {
-                        ExpertInformation.ExpertPassword = self.newPasswordTxt.text
+                        CustomerInformation.CustomerPassword = self.newPasswordTxt.text
                         
                     }
                     
@@ -382,13 +378,11 @@ class profileSettings: UIViewController {
         passwordErrorLabel.isHidden = true
         
         // Displaying the expert information on the interface components
-        
-        nameTxt.text =  ExpertInformation.ExpertName
-        titleTxt.text =  ExpertInformation.ExpertTitle!
-        emailTxt.text = ExpertInformation.ExpertEmail
-        phoneTxt.text = ExpertInformation.ExpertPhone
-        currentPasswordTxt.text =   "كلمة المرور الحالية : " + ExpertInformation.ExpertPassword
-        if (ExpertInformation.ExpertIsPhonePrivate == false){
+        emailTxt.text = CustomerInformation.CustomerEmail
+        nameTxt.text =  CustomerInformation.CustomerName
+        phoneTxt.text = CustomerInformation.CustomerPhone
+        currentPasswordTxt.text =   "كلمة المرور الحالية : " + CustomerInformation.CustomerPassword
+        if (CustomerInformation.CustomerIsPhonePrivate == false){
             
             checkBoxBtn.setImage(UIImage(named:"unchecked"), for: [])
             currentCheckBoxImage = UIImage(named:"unchecked")
@@ -407,6 +401,11 @@ class profileSettings: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     
-}
+    
+    
+    
+
+}// End of customerProfileSettings class
