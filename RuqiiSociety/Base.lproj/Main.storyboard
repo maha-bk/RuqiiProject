@@ -2022,10 +2022,10 @@
             </objects>
             <point key="canvasLocation" x="1513" y="332"/>
         </scene>
-        <!--View Controller-->
+        <!--Customer Profile-->
         <scene sceneID="kSU-Ok-JgJ">
             <objects>
-                <viewController id="bLG-m4-9pS" sceneMemberID="viewController">
+                <viewController id="bLG-m4-9pS" customClass="CustomerProfile" customModule="RuqiiSociety" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zes-yg-NNH"/>
                         <viewControllerLayoutGuide type="bottom" id="OdV-Nw-c6s"/>
@@ -2035,20 +2035,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgK-Q9-QYa">
-                                <rect key="frame" x="164" y="294" width="46" height="30"/>
+                                <rect key="frame" x="129" y="539" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back"/>
                                 <connections>
                                     <segue destination="c9T-3a-L05" kind="show" id="HLc-Hb-c0A"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gvj-sK-UKc">
+                                <rect key="frame" x="16" y="192" width="343" height="339"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CustomerProfileCroppedImage" translatesAutoresizingMaskIntoConstraints="NO" id="0Op-Tl-KmG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CustomerAccountImage" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-Ug-EGh">
+                                <rect key="frame" x="137" y="84" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="img" destination="a3N-Ug-EGh" id="ZSp-61-o8u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOP-dA-Wkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2423" y="285"/>
+            <point key="canvasLocation" x="2421.5999999999999" y="284.70764617691157"/>
         </scene>
         <!--Profile Settings-->
         <scene sceneID="WnH-M2-Uvw">
@@ -2911,6 +2927,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CustomerAccountImage" width="450" height="281"/>
+        <image name="CustomerProfileCroppedImage" width="372" height="125"/>
         <image name="EmailLogo" width="29" height="30"/>
         <image name="LockIcon" width="29" height="30"/>
         <image name="OrdersIcon" width="24" height="24"/>

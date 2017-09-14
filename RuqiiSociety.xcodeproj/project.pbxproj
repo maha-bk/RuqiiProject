@@ -36,6 +36,7 @@
 		CE2162FA1F482463006AD11B /* ExpertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2162F91F482463006AD11B /* ExpertInformation.swift */; };
 		CE2162FC1F48247E006AD11B /* CustomerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2162FB1F48247E006AD11B /* CustomerInformation.swift */; };
 		CE4272E31F696334006058F8 /* customerProfileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4272E21F696333006058F8 /* customerProfileSettings.swift */; };
+		CE4272E51F69C1CE006058F8 /* CustomerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4272E41F69C1CD006058F8 /* CustomerProfile.swift */; };
 		CEDB0D681F5EB91100F23C8A /* orderStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB0D671F5EB91100F23C8A /* orderStep2.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		CE2162F91F482463006AD11B /* ExpertInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertInformation.swift; sourceTree = "<group>"; };
 		CE2162FB1F48247E006AD11B /* CustomerInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInformation.swift; sourceTree = "<group>"; };
 		CE4272E21F696333006058F8 /* customerProfileSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customerProfileSettings.swift; sourceTree = "<group>"; };
+		CE4272E41F69C1CD006058F8 /* CustomerProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerProfile.swift; sourceTree = "<group>"; };
 		CEDB0D671F5EB91100F23C8A /* orderStep2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderStep2.swift; sourceTree = "<group>"; };
 		EE6DD696B7D081CED6B3ECC7 /* Pods-RuqiiSociety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuqiiSociety.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RuqiiSociety/Pods-RuqiiSociety.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				6B7BAAFE1F25CC280054365E /* SignIn.swift */,
 				6B7BAB041F266A0D0054365E /* Settings.swift */,
 				6BE4208A1F24939F00BD6797 /* Main.storyboard */,
+				CE4272E41F69C1CD006058F8 /* CustomerProfile.swift */,
 				CE4272E21F696333006058F8 /* customerProfileSettings.swift */,
 				6B7BAB081F27293F0054365E /* CustomizedCell.swift */,
 				6BE4208D1F24939F00BD6797 /* Assets.xcassets */,
@@ -544,6 +547,7 @@
 				6B8CD9A61F2EF868002F08E8 /* Utilities.swift in Sources */,
 				CE2162FA1F482463006AD11B /* ExpertInformation.swift in Sources */,
 				6B7BAB091F27293F0054365E /* CustomizedCell.swift in Sources */,
+				CE4272E51F69C1CE006058F8 /* CustomerProfile.swift in Sources */,
 				6B55908F1F362690000FD7EC /* servicesSettings.swift in Sources */,
 				6BE420B71F24E2EE00BD6797 /* signupStep2.swift in Sources */,
 			);
