@@ -7,29 +7,29 @@
 import UIKit
 
 class CustomerHome: UIViewController {
-
-   
-
-  
- 
+    
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
- 
-        tabbedBarSetting.menuButton.addTarget(self, action: #selector(self.menuButtonAction), for: UIControlEvents.touchUpInside)
-
         
-
-                
+        tabbedBarSetting.menuButton.addTarget(self, action: #selector(self.menuButtonAction), for: UIControlEvents.touchUpInside)
+        
+        
+        
+        
     }// end of ViewWillAppear function
-
+    
     
     // Add new Order button Touch Action
     func menuButtonAction(sender: UIButton) {
         //self.performSegue(withIdentifier: "moveToOrderStep1", sender: self)
         let move = self.storyboard?.instantiateViewController(withIdentifier: "orderStep1") as! orderStep1
         self.present(move, animated: true, completion: nil)
-               //self.pushViewController(move, animated: true)
+        //self.pushViewController(move, animated: true)
         
-      
+        
         
         
     }
@@ -37,11 +37,11 @@ class CustomerHome: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.definesPresentationContext = true 
- 
-
+        self.definesPresentationContext = true
+        
+        
     }// end of viewDidLoad function
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,6 +49,6 @@ class CustomerHome: UIViewController {
         
     }// end of idReceiveMemoryWarning function
     
-
-
+    
+    
 }// end of CustomerHome class

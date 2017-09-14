@@ -12,8 +12,8 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class orderStep1: UIViewController {
-
-    @IBOutlet weak var loadDataLabel: UILabel!
+    
+    
     @IBOutlet weak var InterestErrorLabel: UILabel!
     @IBOutlet weak var btn12: UIButton!
     @IBOutlet weak var btn11: UIButton!
@@ -33,7 +33,9 @@ class orderStep1: UIViewController {
     var ButtonsArray = [UIButton]()
     var ref: DatabaseReference!
     var databaseHandle : DatabaseHandle!
-
+    static var selectedInterests = [String] ()
+    
+    
     
     @IBAction func selectInterestActoin(_ sender: UIButton) {
         
@@ -91,7 +93,7 @@ class orderStep1: UIViewController {
                 
                 self.ButtonsArray[i].setTitle("   " + self.servicesName[i], for: .normal)
                 if (i == self.ButtonsArray.count - 1){
-                    self.loadDataLabel.isHidden = true
+                    self.activityIndicator.stopAnimating()
                 }
             }
             
@@ -102,37 +104,65 @@ class orderStep1: UIViewController {
     }
     
     //to remove the observer for reading services
-    //comment
     deinit {
         self.ref.child("Services").removeObserver(withHandle: databaseHandle)
     }
     
+    @IBAction func nextBtnActoin(_ sender: UIButton) {
+        
+        orderStep1.selectedInterests.removeAll()
+        
+        //to know the selected interests
+        for i in 0..<ButtonsArray.count{
+            if(ButtonsArray[i].currentBackgroundImage == #imageLiteral(resourceName: "darkBlue")){
+                orderStep1.selectedInterests.append(ButtonsArray[i].currentTitle!)
+                InterestErrorLabel.isHidden = true
+                
+                
+            }
+        }
+        //No interests selected, error will appear
+        if(orderStep1.selectedInterests.count == 0){
+            InterestErrorLabel.text = "يجب إختيار مجال واحد على الأقل"
+            InterestErrorLabel.isHidden = false
+            return
+        }
+        else{
+            self.performSegue(withIdentifier: "moveToOrderStep2", sender: self)
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        orderNextBtn.backgroundColor = UIColor.init(red: 155/255 , green: 155/255 , blue: 155/255, alpha: 1)
         fillArrayOfButtons()
         getServices()
         InterestErrorLabel.isHidden = true
         
-      
-
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityIndicator.startAnimating()
+        
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
