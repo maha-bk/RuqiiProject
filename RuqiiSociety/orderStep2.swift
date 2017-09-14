@@ -6,6 +6,8 @@
 //  Copyright © 2017 abdllah aljohar. All rights reserved.
 //
 
+
+
 import UIKit
 
 
@@ -32,7 +34,13 @@ class orderStep2: UIViewController, UITextViewDelegate {
     @IBAction func touchDownDateTxtField(_ sender: UITextField) {
         self.datePicker.isHidden = false
     }
+    
+    //hide date picker when user touch attached file text field
+    @IBAction func hideDatePicker(_ sender: UITextField) {
+          self.datePicker.isHidden = true
+    }
     /*
+    
      @IBAction func chooseFileBtnActoin(_ senr: UIButton) {
      let fileUrl = Foundation.URL(string: "/Users/abdllahaljohar/Desktop")
      //let fileBrowserde = FileBrowser()

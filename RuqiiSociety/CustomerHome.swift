@@ -8,10 +8,6 @@ import UIKit
 
 class CustomerHome: UIViewController {
     
-    
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         
         tabbedBarSetting.menuButton.addTarget(self, action: #selector(self.menuButtonAction), for: UIControlEvents.touchUpInside)
@@ -24,19 +20,20 @@ class CustomerHome: UIViewController {
     
     // Add new Order button Touch Action
     func menuButtonAction(sender: UIButton) {
+        print("hello")
+        //self.performSegue(withIdentifier: "move", sender: self)
+
         //self.performSegue(withIdentifier: "moveToOrderStep1", sender: self)
         let move = self.storyboard?.instantiateViewController(withIdentifier: "orderStep1") as! orderStep1
         self.present(move, animated: true, completion: nil)
         //self.pushViewController(move, animated: true)
-        
-        
-        
-        
+
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        tabbedBarSetting.menuButton.addTarget(self, action: #selector(self.menuButtonAction), for: UIControlEvents.touchUpInside)
         self.definesPresentationContext = true
         
         

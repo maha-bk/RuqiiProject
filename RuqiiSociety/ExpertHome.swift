@@ -9,7 +9,7 @@ import Firebase
 import FirebaseDatabase
 import Foundation
 class ExpertHome: UIViewController {
-    
+var ViewAppearsAfterSignUp = false
 var ViewAppearsAfterLogin = false
 var ViewAppearsAfterSettings = false
     @IBOutlet weak var pendingOrdersCountLabel: UILabel!
@@ -34,7 +34,7 @@ var ViewAppearsAfterSettings = false
     let firstName = ExpertInformation.ExpertName.components(separatedBy:" ").first
         Utilities().ShowAlert(title:"تم تسجيل الدخول",msg:" أهلا بك مجددا "+firstName!+" في مجتمع رقي  ", vc: self ,NextView: "")}
 
-        if (ViewAppearsAfterLogin == true ||  ViewAppearsAfterSettings == true ){
+        if (ViewAppearsAfterLogin == true ||  ViewAppearsAfterSettings == true || ViewAppearsAfterSignUp == true ){
             
                        fullNameLabel.text = ExpertInformation.ExpertName
             ratingCountsLabel.text = String(ExpertInformation.ExpertNumOfRating ?? 0)

@@ -21,6 +21,7 @@ class signupStep3: UIViewController {
     @IBOutlet weak var startButtin: UIButton!
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var ButtonsArray = [UIButton]()
     
        // to hold services names from database
@@ -235,7 +236,7 @@ class signupStep3: UIViewController {
         
         
         let NextView = segue.destination as! ExpertHome
-        
+        NextView.ViewAppearsAfterSignUp = true
         NextView.userId = self.userID
         NextView.expertTit =  signupStep3.expertTitleString
         

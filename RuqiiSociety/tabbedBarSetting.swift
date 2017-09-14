@@ -6,14 +6,14 @@ class tabbedBarSetting: UITabBarController{
     static var move = Bool()
     static let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 79))
     var ViewAppearsAfterLogin = false
-
-
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.tabBar.barTintColor = colors.selectedColor
         //self.tabBar.tintColor = UIColor.init(red: 78/255 , green: 193/255 , blue: 187/255, alpha: 1)
- 
+        
         // to move the two tab items  to be not very near to the menu button
         tabBar.items?[1].titlePositionAdjustment = UIOffsetMake(-15.0 , 0.0)
         tabBar.items?[2].titlePositionAdjustment = UIOffsetMake(15.0 , 0.0)
@@ -30,11 +30,11 @@ class tabbedBarSetting: UITabBarController{
         
         self.tabBar.items?[3].setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .selected)
         
- 
+        
         setupMiddleButton()
     }
     
- 
+    
     override func viewWillAppear(_ animated: Bool) {
         if (ViewAppearsAfterLogin == true  ){
             
@@ -45,7 +45,7 @@ class tabbedBarSetting: UITabBarController{
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,25 +58,25 @@ class tabbedBarSetting: UITabBarController{
         menuButtonFrame.origin.y = self.view.bounds.height - menuButtonFrame.height
         menuButtonFrame.origin.x = self.view.bounds.width / 2 - menuButtonFrame.size.width / 2
         tabbedBarSetting.menuButton.frame = menuButtonFrame
-    
-
+        
+        
         tabbedBarSetting.menuButton.layer.cornerRadius = menuButtonFrame.height/2
         self.view.addSubview(tabbedBarSetting.menuButton)
         
         tabbedBarSetting.menuButton.setImage(UIImage(named: "tweetButton"), for: UIControlState.normal)
         
-               
-
+        
+        
         //add touchUpInside action to the button
-               
+        
         self.view.layoutIfNeeded()
     }
     
-
-
-        
-        
     
-
-
+    
+    
+    
+    
+    
+    
 }

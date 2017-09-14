@@ -14,6 +14,7 @@ import FirebaseAuth
 class orderStep1: UIViewController {
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var InterestErrorLabel: UILabel!
     @IBOutlet weak var btn12: UIButton!
     @IBOutlet weak var btn11: UIButton!
