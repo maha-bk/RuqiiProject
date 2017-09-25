@@ -13,7 +13,7 @@ class Settings: UIViewController, UITableViewDelegate , UITableViewDataSource {
 
     
     @IBOutlet weak var backBtn: UIButton!
-  
+    
     @IBOutlet weak var tableView: UITableView!
     
     //Declaring the values of the table view cell's components.
