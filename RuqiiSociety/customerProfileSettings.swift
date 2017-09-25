@@ -20,6 +20,7 @@ class customerProfileSettings: UIViewController {
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var phoneErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
+    
     // Declaring the class variables
     
     var currentCheckBoxImage = UIImage (named: "unchecked")
@@ -73,13 +74,13 @@ class customerProfileSettings: UIViewController {
     func checkPassword()-> Bool {
         var NoPasswordError = true
         
-        // Checking if both text fields newPasswordTxt and confirmPasswordTxt contain a text and they are not empty
+        // Checking if both text fields are empty.
         if (newPasswordTxt.text?.isEmpty == true && confirmPasswordTxt.text?.isEmpty == true){
             
             emptyPasswordFields = true
             NoPasswordError = true
         }
-            
+         // Checking if both text fields newPasswordTxt and confirmPasswordTxt contain a text and they are not empty
         else if (newPasswordTxt.text?.isEmpty == false && confirmPasswordTxt.text?.isEmpty == false)
         {
             // Checking if the text fields contain different text. If yes, the change will be rejected and proper error message will appear
@@ -130,11 +131,7 @@ class customerProfileSettings: UIViewController {
             NoPasswordError = false
             
         }
-            
-            // Checking if both text fields are empty.
-            
-            
-            
+          
         else  {
             NoPasswordError = true
         }
@@ -259,6 +256,7 @@ class customerProfileSettings: UIViewController {
         }
         
         if (phoneTxt.text != CustomerInformation.CustomerPhone){
+            //check if the phone change is valid or not
             if(checkPhone()){
                 
                 phoneChanged = true
@@ -273,6 +271,7 @@ class customerProfileSettings: UIViewController {
         }
         
         if ((newPasswordTxt.text != CustomerInformation.CustomerPassword && newPasswordTxt.text?.isEmpty == false) || (confirmPasswordTxt.text != CustomerInformation.CustomerPassword && confirmPasswordTxt.text?.isEmpty == false) ){
+            //check if the password change is valid or not
             if(checkPassword()){
                 
                 
@@ -377,7 +376,7 @@ class customerProfileSettings: UIViewController {
         phoneErrorLabel.isHidden = true
         passwordErrorLabel.isHidden = true
         
-        // Displaying the expert information on the interface components
+        // Displaying the customer information on the interface components
         emailTxt.text = CustomerInformation.CustomerEmail
         nameTxt.text =  CustomerInformation.CustomerName
         phoneTxt.text = CustomerInformation.CustomerPhone

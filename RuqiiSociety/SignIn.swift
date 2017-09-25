@@ -35,6 +35,7 @@ class SignIn: UIViewController {
     var UserId = ""
     var ExpertProfileDictionary = [String: AnyObject]()
     var CustomerProfileDictionary = [String: AnyObject]()
+    
     // Clear the text in labels only without resetting the color of the text fields
 
     func clearLabelsWithflushing(){
@@ -45,7 +46,7 @@ class SignIn: UIViewController {
         
     }// end of clearLabelsWithflushing function
     
-    // hi maha bader
+    
     // Clear the email label and text field if there is no error
     
     func clearEmailErrorLabel(){
@@ -228,7 +229,7 @@ class SignIn: UIViewController {
         let email = emailTxt.text
         let password = passwordTxt.text
                 Auth.auth().signIn(withEmail: email!, password: password!, completion: {(user, error) in
-                    // Redirecting the user to the Home interface based on his/her role (Expert or Customer)
+                  
                     
                     if(user != nil){
                           self.loadingLabel.isHidden = false
@@ -286,7 +287,7 @@ class SignIn: UIViewController {
     }//end of checkPassowrd function
 
     
-    // Knowing the user type and based on it the user will be redirected to the proper home interface
+    // Knowing the user type and based on it, the user will be redirected to the proper home interface
     
     func distinguishUserType() {
     
@@ -431,7 +432,7 @@ class SignIn: UIViewController {
     
     
     /* When the view or interface is loaded for the first time clear all the error labels and create an object of type
-    UITapGestureRecognizer to dismiss the keyboard when it is not in use*/
+    UITapGestureRecognizer to dismiss the keyboard when it is not in the use mode*/
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,6 +12,7 @@ class ExpertHome: UIViewController {
 var ViewAppearsAfterSignUp = false
 var ViewAppearsAfterLogin = false
 var ViewAppearsAfterSettings = false
+    
     @IBOutlet weak var pendingOrdersCountLabel: UILabel!
 
    

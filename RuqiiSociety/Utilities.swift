@@ -39,6 +39,8 @@ class Utilities {
 
     // function to show an Error alert to user by pop up
     // Note: UIAlertController is considered as UIViewController as well.
+    
+    
     func ShowAlert (title: String, msg: String, vc: UIViewController, NextView: String){
         
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)

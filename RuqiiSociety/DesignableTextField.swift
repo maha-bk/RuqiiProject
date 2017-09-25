@@ -1,14 +1,12 @@
-//
+
 //  DesignableTextField.swift
 //  RuqiiSociety
-//
-//  Created by abdllah aljohar on 24/07/2017.
-
+//  Created by Maha Alkathiery on 24/07/2017.
 //This class is used to add icons in the text feilds
+
 import UIKit
 
-@IBDesignable// to show that this class can be used in the Interface builder as additional choicee
-
+@IBDesignable // to show that this class can be used in the Interface Builder as additional choicee
 class DesignableTextField: UITextField {
     //creating variable that appears in the attribute inspector
     @IBInspectable var rightIcon: UIImage?
@@ -19,7 +17,6 @@ class DesignableTextField: UITextField {
         }//end of did set
     
     }
-    
     
     func updateView(){
         if let icon = rightIcon{
@@ -36,8 +33,6 @@ class DesignableTextField: UITextField {
         }
     
     }
-    
-    
-    
+
     
 }//end of designableTextField class

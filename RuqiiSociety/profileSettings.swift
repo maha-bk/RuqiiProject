@@ -77,13 +77,13 @@ class profileSettings: UIViewController {
     func checkPassword()-> Bool {
         var NoPasswordError = true
         
-        // Checking if both text fields newPasswordTxt and confirmPasswordTxt contain a text and they are not empty
+        // Checking if both text fields are empty.
         if (newPasswordTxt.text?.isEmpty == true && confirmPasswordTxt.text?.isEmpty == true){
             
             emptyPasswordFields = true
             NoPasswordError = true
         }
-        
+         // Checking if both text fields newPasswordTxt and confirmPasswordTxt contain a text and they are not empty
         else if (newPasswordTxt.text?.isEmpty == false && confirmPasswordTxt.text?.isEmpty == false)
         {
             // Checking if the text fields contain different text. If yes, the change will be rejected and proper error message will appear
@@ -135,7 +135,7 @@ class profileSettings: UIViewController {
             
         }
             
-            // Checking if both text fields are empty.
+          
             
      
             
@@ -263,6 +263,8 @@ class profileSettings: UIViewController {
         }
         
         if (phoneTxt.text != ExpertInformation.ExpertPhone){
+            
+            //check if the phone change is valid or not
             if(checkPhone()){
                 
                 phoneChanged = true
@@ -277,6 +279,7 @@ class profileSettings: UIViewController {
         }
         
         if ((newPasswordTxt.text != ExpertInformation.ExpertPassword && newPasswordTxt.text?.isEmpty == false) || (confirmPasswordTxt.text != ExpertInformation.ExpertPassword && confirmPasswordTxt.text?.isEmpty == false) ){
+            //check if the password change is valid or not
             if(checkPassword()){
                 
                 
@@ -409,4 +412,4 @@ class profileSettings: UIViewController {
     }
     
     
-}
+}// End of profileSettings class

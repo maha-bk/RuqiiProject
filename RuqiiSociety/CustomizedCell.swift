@@ -1,18 +1,19 @@
-//
+
 //  CustomizedCell.swift
 //  RuqiiSociety
-//
-//  Created by abdllah aljohar on 25/07/2017.
-//  Copyright © 2017 abdllah aljohar. All rights reserved.
-//
+//  Created by Maha Alkatheiry on 25/07/2017.
+//  Copyright © 2017 Maha Alkatheiry. All rights reserved.
 
+/*This class is created to declare the table view cell's components in
+ the Settings interface. These components are filled with their values by the Settings class using
+ tableView cellForRowAt function */
 import UIKit
 
 class CustomizedCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
 
     @IBOutlet weak var DetailsIcon: UIImageView!
@@ -21,7 +22,7 @@ class CustomizedCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+      
     }
 
-}
+}// end of CustomizedCell class
